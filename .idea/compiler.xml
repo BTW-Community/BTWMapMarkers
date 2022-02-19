@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="My_Addon.main" target="8" />
+      <module name="My_Addon.minecraft" target="8" />
+      <module name="My_Addon.minecraftServer" target="8" />
+      <module name="My_Addon.server" target="8" />
+      <module name="My_Addon.test" target="8" />
+      <module name="Sledge's_BTW_Map_Markers_Addon.main" target="8" />
+      <module name="Sledge's_BTW_Map_Markers_Addon.minecraft" target="8" />
+      <module name="Sledge's_BTW_Map_Markers_Addon.minecraftServer" target="8" />
+      <module name="Sledge's_BTW_Map_Markers_Addon.server" target="8" />
+      <module name="Sledge's_BTW_Map_Markers_Addon.test" target="8" />
+      <module name="Sledge's_Map_Markers_Addon.server" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

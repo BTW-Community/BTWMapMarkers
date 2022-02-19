@@ -5,9 +5,9 @@ plugins {
 btw {
     // You can override your mod settings here or use this instead of gradle.properties
     modInfo {
-        name = "Sledge's BTW Map Markers Addon"
-        description = "Adds ability to place colored markers which will show on maps"
-        credits = ""
+        name = "Sledge's Map Markers Addon"
+        description = "Adds ability to place colored markers which will show on maps."
+        credits = "I'd like to thank my mother and father and also Cthulhu."
     }
 
     // Location of the MCP directory
