@@ -9,6 +9,10 @@ public class SledgesMapMarkersAddon extends FCAddOn {
 
     @Override
     public void Initialize() {
-        System.out.println("Where does this show up?");
+        FCAddOnHandler.LogMessage(this.getName() + " Version " + this.getVersionString() + " Initializing...");
+
+        SMMDefinitions.AddDefinitions();
+
+        FCAddOnHandler.LogMessage(this.getName() + " Initialized");
     }
 }
