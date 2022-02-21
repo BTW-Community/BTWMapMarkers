@@ -1,10 +1,12 @@
 package net.minecraft.src;
 
+import java.awt.*;
 import java.util.Random;
 
+import static net.minecraft.src.SMMDefinitions.map;
 import static net.minecraft.src.SMMDefinitions.mapMarkerItem;
 
-public class SMMBlockMapMarker extends Block {
+public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
     public SMMBlockMapMarker(int blockId) {
         super(blockId, Material.wood);
@@ -46,16 +48,39 @@ public class SMMBlockMapMarker extends Block {
     }
 
     @Override
-    public int onBlockPlaced( World world, int i, int j, int k, int iFacing, float fClickX, float fClickY, float fClickZ, int iMetadata )
+    public int onBlockPlaced( World world, int x, int y, int z, int facing, float clickX, float clickY, float clickZ, int metadata )
     {
-        FCUtilsBlockPos targetPos = new FCUtilsBlockPos( i, j, k, Block.GetOppositeFacing( iFacing ) );
+        FCUtilsBlockPos targetPos = new FCUtilsBlockPos( x, y, z, Block.GetOppositeFacing( facing ) );
 
-        if ( !FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing( world, targetPos.i, targetPos.j, targetPos.k, iFacing ) )
+        if ( !FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing( world, targetPos.i, targetPos.j, targetPos.k, facing ) )
         {
-            iFacing = FindValidFacing( world, i, j, k );
+            facing = FindValidFacing( world, x, y, z );
         }
 
-        return SetFacing( iMetadata, iFacing );
+        SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(world);
+        tileEntity.markerColor = Color.WHITE;
+        world.setBlockTileEntity(x,y,z,tileEntity);
+
+        map.AddMarker(tileEntity, facing);
+
+        return SetFacing( metadata, facing );
+    }
+
+    @Override
+    public void onBlockDestroyedByPlayer(World par1World, int par2, int par3, int par4, int par5)
+    {
+        super.onBlockDestroyedByPlayer(par1World, par2, par3, par4, par5);
+    }
+
+    @Override
+    public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6) {
+        super.breakBlock(par1World, par2, par3, par4, par5, par6);
+        TileEntity tileEntity = par1World.getBlockTileEntity(par2, par3, par4);
+        if (tileEntity instanceof SMMTileEntityMapMarker)
+        {
+            map.RemoveMarker((SMMTileEntityMapMarker) tileEntity);
+        }
+        par1World.removeBlockTileEntity(par2, par3, par4);
     }
 
     @Override
@@ -242,5 +267,13 @@ public class SMMBlockMapMarker extends Block {
         renderer.ClearUvRotation();
 
         return true;
+    }
+
+    @Override
+    public TileEntity createNewTileEntity(World world) { return new SMMTileEntityMapMarker(); }
+
+    public SMMTileEntityMapMarker getSMMTileEntityMapMarker(IBlockAccess iBlockAccess, int x, int y, int z)
+    {
+        return (SMMTileEntityMapMarker) iBlockAccess.getBlockTileEntity(x, y, z);
     }
 }
