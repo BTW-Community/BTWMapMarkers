@@ -58,7 +58,7 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         }
 
         SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(world);
-        tileEntity.markerColor = Color.WHITE;
+        tileEntity.MarkerId("position: " + x + "," + y + "," + z);
         world.setBlockTileEntity(x,y,z,tileEntity);
 
         map.AddMarker(tileEntity, facing);
@@ -75,11 +75,9 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     @Override
     public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6) {
         super.breakBlock(par1World, par2, par3, par4, par5, par6);
-        TileEntity tileEntity = par1World.getBlockTileEntity(par2, par3, par4);
-        if (tileEntity instanceof SMMTileEntityMapMarker)
-        {
-            map.RemoveMarker((SMMTileEntityMapMarker) tileEntity);
-        }
+
+        SMMTileEntityMapMarker mapEntity = getSMMTileEntityMapMarker(par1World, par2, par3, par4);
+        map.RemoveMarker(mapEntity);
         par1World.removeBlockTileEntity(par2, par3, par4);
     }
 
@@ -272,8 +270,8 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     @Override
     public TileEntity createNewTileEntity(World world) { return new SMMTileEntityMapMarker(); }
 
-    public SMMTileEntityMapMarker getSMMTileEntityMapMarker(IBlockAccess iBlockAccess, int x, int y, int z)
+    public SMMTileEntityMapMarker getSMMTileEntityMapMarker(IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
     {
-        return (SMMTileEntityMapMarker) iBlockAccess.getBlockTileEntity(x, y, z);
+        return (SMMTileEntityMapMarker) par1IBlockAccess.getBlockTileEntity(par2, par3, par4);
     }
 }

@@ -7,13 +7,15 @@ public class SMMItemMap extends FCItemMap{
     }
 
     public void AddMarker(SMMTileEntityMapMarker mapEntity, double rotation) {
+        FCAddOnHandler.LogMessage("adding " + mapEntity.MarkerId());
         addToMap(mapEntity.worldObj, mapEntity, mapEntity.xCoord, mapEntity.zCoord, rotation);
     }
 
     public void RemoveMarker(SMMTileEntityMapMarker mapEntity) {
         ItemStack itemStack = new ItemStack(this);
         MapData mapData = this.getMapData(itemStack, mapEntity.worldObj);
-        mapData.markersOnMap.remove(mapEntity);
+        FCAddOnHandler.LogMessage("removing " + mapEntity.MarkerId());
+        mapData.markersOnMap.remove(mapEntity.MarkerId());
     }
 
     private void addToMap(World world, SMMTileEntityMapMarker mapEntity, double xPosition, double zPosition, double rotation)
@@ -45,7 +47,8 @@ public class SMMItemMap extends FCItemMap{
         {
             if (Math.abs(xRelative) >= 320.0F || Math.abs(zRelative) >= 320.0F)
             {
-                mapData.markersOnMap.remove(mapEntity);
+                FCAddOnHandler.LogMessage("removing " + mapEntity.MarkerId());
+                mapData.markersOnMap.remove(mapEntity.MarkerId());
                 return;
             }
 
@@ -72,6 +75,6 @@ public class SMMItemMap extends FCItemMap{
             }
         }
 
-        mapData.markersOnMap.put(mapEntity, new MapCoord(mapData, (byte)icon, xLocal, zLocal, rotationValue));
+        mapData.markersOnMap.put(mapEntity.MarkerId(), new MapCoord(mapData, (byte)icon, xLocal, zLocal, rotationValue));
     }
 }

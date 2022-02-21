@@ -24,5 +24,7 @@ public class SMMDefinitions {
                 new ItemStack( FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, FCUtilsInventory.m_iIgnoreMetadata ),
                 new ItemStack( Item.paper )
         } );
+
+        TileEntity.addMapping(SMMTileEntityMapMarker.class, "SMMMapMarker");
     }
 }

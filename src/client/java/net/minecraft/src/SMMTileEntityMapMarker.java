@@ -1,20 +1,25 @@
 package net.minecraft.src;
 
-import java.awt.*;
+public class SMMTileEntityMapMarker extends TileEntity {
+    private String markerId;
 
-public class SMMTileEntityMapMarker extends TileEntity{
-    public Color markerColor = Color.WHITE;
-
+    @Override
     public void writeToNBT(NBTTagCompound nbtTag)
     {
         super.writeToNBT(nbtTag);
-        nbtTag.setInteger("color", markerColor.getRGB());
+        if (markerId != null && markerId.length() > 0)
+        {
+            nbtTag.setString("id", this.markerId);
+        }
     }
 
+    @Override
     public void readFromNBT(NBTTagCompound nbtTag)
     {
         super.readFromNBT(nbtTag);
-
-        this.markerColor = new Color(nbtTag.getInteger("color"));
+        this.markerId = nbtTag.getString("id");
     }
+
+    public String MarkerId() { return this.markerId; }
+    public void MarkerId(String id) { this.markerId = id; }
 }
