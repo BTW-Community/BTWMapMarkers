@@ -1,6 +1,5 @@
 package net.minecraft.src;
 
-import java.awt.*;
 import java.util.Random;
 
 import static net.minecraft.src.SMMDefinitions.map;
@@ -58,10 +57,9 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         }
 
         SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(world);
-        tileEntity.MarkerId("position: " + x + "," + y + "," + z);
         world.setBlockTileEntity(x,y,z,tileEntity);
 
-        map.AddMarker(tileEntity, facing);
+        map.AddMarker(this, world, x, z, facing);
 
         return SetFacing( metadata, facing );
     }
@@ -73,12 +71,11 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     }
 
     @Override
-    public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6) {
-        super.breakBlock(par1World, par2, par3, par4, par5, par6);
+    public void breakBlock(World world, int x, int y, int z, int par5, int par6) {
+        super.breakBlock(world, x, y, z, par5, par6);
 
-        SMMTileEntityMapMarker mapEntity = getSMMTileEntityMapMarker(par1World, par2, par3, par4);
-        map.RemoveMarker(mapEntity);
-        par1World.removeBlockTileEntity(par2, par3, par4);
+        map.RemoveMarker(this, world, x, z);
+        world.removeBlockTileEntity(x, y, z);
     }
 
     @Override
@@ -119,15 +116,15 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         }
     }
 
-//    @Override
-//    public boolean onBlockActivated( World world, int i, int j, int k, EntityPlayer player, int iFacing, float fXClick, float fYClick, float fZClick )
-//    {
-//        ItemStack equippedItem = player.getCurrentEquippedItem();
-//
-//        //Do some color application thingy
-//
-//        return false;
-//    }
+    @Override
+    public boolean onBlockActivated( World world, int i, int j, int k, EntityPlayer player, int iFacing, float fXClick, float fYClick, float fZClick )
+    {
+        //ItemStack equippedItem = player.getCurrentEquippedItem();
+
+        //Do some color application thingy
+
+        return false;
+    }
 
     @Override
     public int GetFacing( int iMetadata )
@@ -269,9 +266,4 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
     @Override
     public TileEntity createNewTileEntity(World world) { return new SMMTileEntityMapMarker(); }
-
-    public SMMTileEntityMapMarker getSMMTileEntityMapMarker(IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
-    {
-        return (SMMTileEntityMapMarker) par1IBlockAccess.getBlockTileEntity(par2, par3, par4);
-    }
 }

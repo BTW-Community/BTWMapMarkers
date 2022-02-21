@@ -107,7 +107,10 @@ public class MapData extends WorldSavedData
     	// clear the visible players every update to prevent players from receiving data about others
 
         playersVisibleOnMap.clear();
-        playersVisibleOnMap.putAll(markersOnMap);
+        if (!markersOnMap.isEmpty())
+        {
+            playersVisibleOnMap.putAll(markersOnMap);
+        }
         
         if ( par2ItemStack.isOnItemFrame() )
         {
