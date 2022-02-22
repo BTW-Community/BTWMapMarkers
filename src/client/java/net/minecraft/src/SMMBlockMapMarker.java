@@ -46,6 +46,14 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     }
 
     @Override
+    public void onBlockAdded(World par1World, int par2, int par3, int par4) {
+        super.onBlockAdded(par1World, par2, par3, par4);
+        SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(par1World);
+        par1World.setBlockTileEntity(par2,par3,par4,tileEntity);
+        tileEntity.SetMarkerId("SMM-Marker-" + par2 + '.' + par4);
+    }
+
+    @Override
     public int onBlockPlaced( World world, int x, int y, int z, int facing, float clickX, float clickY, float clickZ, int metadata )
     {
         FCUtilsBlockPos targetPos = new FCUtilsBlockPos( x, y, z, Block.GetOppositeFacing( facing ) );
@@ -55,17 +63,7 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
             facing = FindValidFacing( world, x, y, z );
         }
 
-        SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(world);
-        world.setBlockTileEntity(x,y,z,tileEntity);
-        tileEntity.SetMarkerId("SMM-Marker-" + x + '.' + z);
-
         return SetFacing( metadata, facing );
-    }
-
-    @Override
-    public void onBlockDestroyedByPlayer(World par1World, int par2, int par3, int par4, int par5)
-    {
-        super.onBlockDestroyedByPlayer(par1World, par2, par3, par4, par5);
     }
 
     @Override
@@ -115,10 +113,10 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     @Override
     public boolean onBlockActivated( World world, int i, int j, int k, EntityPlayer player, int iFacing, float fXClick, float fYClick, float fZClick )
     {
-        //ItemStack equippedItem = player.getCurrentEquippedItem();
-
-        //Do some color application thingy
-
+        SMMTileEntityMapMarker tile = (SMMTileEntityMapMarker) world.getBlockTileEntity(i, j, k);
+        if (tile != null) {
+            tile.SetIconIndex(tile.GetIconIndex() + 1);
+        }
         return false;
     }
 
