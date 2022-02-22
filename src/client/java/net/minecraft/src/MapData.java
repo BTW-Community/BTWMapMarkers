@@ -22,7 +22,6 @@ public class MapData extends WorldSavedData
      */
     private Map playersHashMap = new HashMap();
     public Map playersVisibleOnMap = new LinkedHashMap();
-    public Map markersOnMap = new LinkedHashMap();
 
     public MapData(String par1Str)
     {
@@ -102,33 +101,40 @@ public class MapData extends WorldSavedData
      */
     public void updateVisiblePlayers(EntityPlayer par1EntityPlayer, ItemStack par2ItemStack)
     {
-    	// FCMOD: Added to handle maps in frames entirely independent of player held
-    	
-    	// clear the visible players every update to prevent players from receiving data about others
+        // FCMOD: Added to handle maps in frames entirely independent of player held
+
+        // clear the visible players every update to prevent players from receiving data about others
 
         playersVisibleOnMap.clear();
-        if (!markersOnMap.isEmpty())
-        {
-            playersVisibleOnMap.putAll(markersOnMap);
+
+        // SMM MOD: find map marker tile entities and add them to the visible players list
+        for (Object tileEntity : par1EntityPlayer.worldObj.loadedTileEntityList) {
+            if (tileEntity instanceof SMMTileEntityMapMarker) {
+                SMMTileEntityMapMarker markerTile = (SMMTileEntityMapMarker) tileEntity;
+                if (IsLocationVisibleOnMap(par1EntityPlayer.worldObj, markerTile.xCoord, markerTile.yCoord, markerTile.zCoord)) {
+                    func_82567_a(4, par1EntityPlayer.worldObj, markerTile.GetMarkerId(), markerTile.xCoord, markerTile.zCoord, 1);
+                }
+            }
         }
-        
+        // END SMM MOD
+
         if ( par2ItemStack.isOnItemFrame() )
         {
-        	if ( IsEntityLocationVisibleOnMap( par2ItemStack.getItemFrame() ) )
-        	{
-        		// the following code adds the "you are here" marker
-        		
-                func_82567_a( 1, par1EntityPlayer.worldObj, "frame-" + par2ItemStack.getItemFrame().entityId, 
-                	(double)par2ItemStack.getItemFrame().xPosition, (double)par2ItemStack.getItemFrame().zPosition, 
-                	(double)(par2ItemStack.getItemFrame().hangingDirection * 90 + 180 ));
-                
-        		return;
-        	}
-            
+            if ( IsEntityLocationVisibleOnMap( par2ItemStack.getItemFrame() ) )
+            {
+                // the following code adds the "you are here" marker
+
+                func_82567_a( 1, par1EntityPlayer.worldObj, "frame-" + par2ItemStack.getItemFrame().entityId,
+                        (double)par2ItemStack.getItemFrame().xPosition, (double)par2ItemStack.getItemFrame().zPosition,
+                        (double)(par2ItemStack.getItemFrame().hangingDirection * 90 + 180 ));
+
+                return;
+            }
+
             return;
         }
-    	// END FCMOD
-    	
+        // END FCMOD
+
         if (!this.playersHashMap.containsKey(par1EntityPlayer))
         {
             MapInfo var3 = new MapInfo(this, par1EntityPlayer);
@@ -138,12 +144,12 @@ public class MapData extends WorldSavedData
 
         // FCMOD: Code added for custom handling of players on map, only processing the player holding it
         if ( !par1EntityPlayer.isDead && par1EntityPlayer.inventory.hasItemStack(par2ItemStack) && IsEntityLocationVisibleOnMap( par1EntityPlayer ) &&
-        	par1EntityPlayer.dimension == dimension )
+                par1EntityPlayer.dimension == dimension )
         {
             func_82567_a( 0, par1EntityPlayer.worldObj, par1EntityPlayer.getCommandSenderName(), par1EntityPlayer.posX, par1EntityPlayer.posZ, par1EntityPlayer.rotationYaw);
         }
-    	// END FCMOD
-        
+        // END FCMOD
+
         // FCMOD: Code removed
         /*
         if (!par1EntityPlayer.inventory.hasItemStack(par2ItemStack))
@@ -317,50 +323,50 @@ public class MapData extends WorldSavedData
 
         return var2;
     }
-    
+
     // FCMOD: Code added
     public boolean IsEntityLocationVisibleOnMap( Entity entity )
     {
         int i = MathHelper.floor_double( entity.posX );
         int j = MathHelper.floor_double( entity.posY ) + 2;
         int k = MathHelper.floor_double( entity.posZ );
-        
+
         if ( entity.dimension == dimension )
         {
-        	return IsLocationVisibleOnMap( entity.worldObj, i, j, k );
-}
-        
-        return false;        
+            return IsLocationVisibleOnMap( entity.worldObj, i, j, k );
+        }
+
+        return false;
     }
-    
-    public boolean IsLocationVisibleOnMap( World world, int i, int j, int k )    
+
+    public boolean IsLocationVisibleOnMap( World world, int i, int j, int k )
     {
-    	// check if location is within map bounds
-    	
+        // check if location is within map bounds
+
         int iMapScale = 1 << this.scale;
         float fRelativeI = (float)((double)i - (double)this.xCenter) / (float)iMapScale;
         float fRelativeK = (float)((double)k - (double)this.zCenter) / (float)iMapScale;
-        
+
         if ( Math.abs( fRelativeI ) > 64F || Math.abs( fRelativeK ) > 64F )
         {
-        	return false;
+            return false;
         }
-        
+
         // check if location is above ground
-        
-    	if ( !world.canBlockSeeTheSky( i, j, k ) && !( world.getTopSolidOrLiquidBlock( i, k ) <= j )  )
+
+        if ( !world.canBlockSeeTheSky( i, j, k ) && !( world.getTopSolidOrLiquidBlock( i, k ) <= j )  )
         {
-        	return false;
+            return false;
         }
-        
+
         Material material = world.getBlockMaterial( i, j, k );
-        
+
         if ( material != null && material.isLiquid() )
         {
-        	return false;
+            return false;
         }
-        
-    	return true;
+
+        return true;
     }
     // END FCMOD
 }

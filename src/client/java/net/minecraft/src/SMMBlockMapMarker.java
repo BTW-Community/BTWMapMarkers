@@ -2,7 +2,6 @@ package net.minecraft.src;
 
 import java.util.Random;
 
-import static net.minecraft.src.SMMDefinitions.map;
 import static net.minecraft.src.SMMDefinitions.mapMarkerItem;
 
 public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
@@ -58,8 +57,7 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
         SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(world);
         world.setBlockTileEntity(x,y,z,tileEntity);
-
-        map.AddMarker(this, world, x, z, facing);
+        tileEntity.SetMarkerId("SMM-Marker-" + x + '.' + z);
 
         return SetFacing( metadata, facing );
     }
@@ -73,8 +71,6 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     @Override
     public void breakBlock(World world, int x, int y, int z, int par5, int par6) {
         super.breakBlock(world, x, y, z, par5, par6);
-
-        map.RemoveMarker(this, world, x, z);
         world.removeBlockTileEntity(x, y, z);
     }
 

@@ -1,15 +1,15 @@
 package net.minecraft.src;
 
 public class SMMTileEntityMapMarker extends TileEntity {
-    private String markerId;
+    private String _markerId;
 
     @Override
     public void writeToNBT(NBTTagCompound nbtTag)
     {
         super.writeToNBT(nbtTag);
-        if (markerId != null && markerId.length() > 0)
+        if (_markerId != null && _markerId.length() > 0)
         {
-            nbtTag.setString("id", this.markerId);
+            nbtTag.setString("id", this._markerId);
         }
     }
 
@@ -17,9 +17,15 @@ public class SMMTileEntityMapMarker extends TileEntity {
     public void readFromNBT(NBTTagCompound nbtTag)
     {
         super.readFromNBT(nbtTag);
-        this.markerId = nbtTag.getString("id");
+        SetMarkerId(nbtTag.getString("id"));
     }
 
-    public String MarkerId() { return this.markerId; }
-    public void MarkerId(String id) { this.markerId = id; }
+    public String GetMarkerId() {
+        return this._markerId;
+    }
+
+    public void SetMarkerId(String markerId) {
+        this._markerId = markerId;
+        validate();
+    }
 }
