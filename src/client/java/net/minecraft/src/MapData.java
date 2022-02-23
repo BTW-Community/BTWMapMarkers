@@ -176,16 +176,15 @@ public class MapData extends WorldSavedData
         // END FCMOD
     }
 
+    // SMM MOD
     private void addSMMMapMarkers(EntityPlayer player) {
-        for (Object tileEntity : player.worldObj.loadedTileEntityList) {
-            if (tileEntity instanceof SMMTileEntityMapMarker) {
-                SMMTileEntityMapMarker markerTile = (SMMTileEntityMapMarker) tileEntity;
-                if (IsLocationVisibleOnMap(player.worldObj, markerTile.xCoord, markerTile.yCoord, markerTile.zCoord)) {
-                    func_82567_a(markerTile.GetIconIndex(), player.worldObj, markerTile.GetMarkerId(), markerTile.xCoord, markerTile.zCoord, 1);
-                }
+        for (SMMMapMarkerData marker : SMMDefinitions.WorldMapMarkers.values()) {
+            if (IsLocationVisibleOnMap(player.worldObj, marker.XPos, marker.YPos, marker.ZPos)) {
+                func_82567_a(marker.IconIndex, player.worldObj, marker.MarkerId, marker.XPos, marker.ZPos, 1);
             }
         }
     }
+    // END SMM MOD
 
     private void func_82567_a(int par1, World par2World, String par3Str, double par4, double par6, double par8)
     {

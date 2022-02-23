@@ -1,5 +1,8 @@
 package net.minecraft.src;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import static net.minecraft.src.FCRecipes.AddShapelessRecipe;
 
 public class SMMDefinitions {
@@ -8,6 +11,8 @@ public class SMMDefinitions {
 
     private static final int id_mapMarkerItem = 31900;
     public static Item mapMarkerItem;
+
+    public static Map<String, SMMMapMarkerData> WorldMapMarkers = new LinkedHashMap<>();
 
     public static void AddDefinitions()
     {

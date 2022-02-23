@@ -69,6 +69,9 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     @Override
     public void breakBlock(World world, int x, int y, int z, int par5, int par6) {
         super.breakBlock(world, x, y, z, par5, par6);
+        SMMTileEntityMapMarker tile = (SMMTileEntityMapMarker) world.getBlockTileEntity(x, y, z);
+        if (tile == null) return;
+        SMMDefinitions.WorldMapMarkers.remove(tile.GetMarkerId());
         world.removeBlockTileEntity(x, y, z);
     }
 
