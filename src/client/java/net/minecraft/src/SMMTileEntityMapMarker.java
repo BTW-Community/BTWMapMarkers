@@ -26,7 +26,10 @@ public class SMMTileEntityMapMarker extends TileEntity {
     }
 
     private void updateWorldMapMarkers() {
-        SMMDefinitions.WorldMapMarkers.put(this._markerId, new SMMMapMarkerData(this._markerId, this.xCoord, this.yCoord, this.zCoord, this._iconIndex));
+        if (this._markerId == null) return;
+        SMMMapMarkerData markerData = new SMMMapMarkerData(this._markerId, this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
+        SMMDefinitions.WorldMapMarkers.put(this._markerId, markerData);
+        System.out.println("SMMMapMarker Set: " + markerData);
     }
 
     public String GetMarkerId() {
@@ -43,8 +46,10 @@ public class SMMTileEntityMapMarker extends TileEntity {
     }
 
     public void SetIconIndex(int iconIndex) {
+        // skip 6 (default "off map" icon)
         if (iconIndex == 6) iconIndex = 7;
-        if (iconIndex == 13) iconIndex = 4;
+        // numbering starts back at 4 to skip default player icons
+        if (iconIndex > 15) iconIndex = 4;
         this._iconIndex = iconIndex;
         updateWorldMapMarkers();
     }

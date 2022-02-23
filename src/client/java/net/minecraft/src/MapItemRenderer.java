@@ -86,7 +86,9 @@ public class MapItemRenderer
         GL11.glEnable(GL11.GL_ALPHA_TEST);
         GL11.glDisable(GL11.GL_BLEND);
         par2RenderEngine.resetBoundTexture();
-        par2RenderEngine.bindTexture("/misc/mapicons.png");
+        // SMM MOD: different tile map
+        par2RenderEngine.bindTexture("/misc/mapiconsmore.png");
+        // END SMM MOD
         int var19 = 0;
 
         for (Iterator var20 = par3MapData.playersVisibleOnMap.values().iterator(); var20.hasNext(); ++var19)
@@ -97,16 +99,21 @@ public class MapItemRenderer
             GL11.glRotatef((float)(var21.iconRotation * 360) / 16.0F, 0.0F, 0.0F, 1.0F);
             GL11.glScalef(4.0F, 4.0F, 3.0F);
             GL11.glTranslatef(-0.125F, 0.125F, 0.0F);
-            float var22 = (float)(var21.iconSize % 4 + 0) / 4.0F;
-            float var23 = (float)(var21.iconSize / 4 + 0) / 4.0F;
-            float var24 = (float)(var21.iconSize % 4 + 1) / 4.0F;
-            float var25 = (float)(var21.iconSize / 4 + 1) / 4.0F;
+            // SMM MOD: expand byte to 16 slots
+            int iconSlot = var21.iconSize;
+            if (iconSlot < 0) iconSlot = 16+iconSlot;
+            float var22 = (float)(iconSlot % 4) / 4.0F;
+            float var23 = (float)(iconSlot / 4) / 4.0F;
+            float var24 = (float)(iconSlot % 4 + 1) / 4.0F;
+            float var25 = (float)(iconSlot / 4 + 1) / 4.0F;
+            // END SMM MOD
             var17.startDrawingQuads();
             // SMM MOD: negated z-index
-            var17.addVertexWithUV(-1.0D, 1.0D, (double)((float)-var19 * 0.001F), (double)var22, (double)var23);
-            var17.addVertexWithUV(1.0D, 1.0D, (double)((float)-var19 * 0.001F), (double)var24, (double)var23);
-            var17.addVertexWithUV(1.0D, -1.0D, (double)((float)-var19 * 0.001F), (double)var24, (double)var25);
-            var17.addVertexWithUV(-1.0D, -1.0D, (double)((float)-var19 * 0.001F), (double)var22, (double)var25);
+            int zIndex = -var19;
+            var17.addVertexWithUV(-1.0D, 1.0D, (double)((float) zIndex * 0.001F), (double)var22, (double)var23);
+            var17.addVertexWithUV(1.0D, 1.0D, (double)((float) zIndex * 0.001F), (double)var24, (double)var23);
+            var17.addVertexWithUV(1.0D, -1.0D, (double)((float) zIndex * 0.001F), (double)var24, (double)var25);
+            var17.addVertexWithUV(-1.0D, -1.0D, (double)((float) zIndex * 0.001F), (double)var22, (double)var25);
             // END SMM MOD
             var17.draw();
             GL11.glPopMatrix();

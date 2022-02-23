@@ -14,4 +14,9 @@ public class SMMMapMarkerData {
         ZPos = zPos;
         IconIndex = iconIndex;
     }
+
+    @Override
+    public String toString() {
+        return "markerId: " + MarkerId + ", xPos: " + XPos + ", YPos: " + YPos + ", ZPos: " + ZPos + ", iconIndex: " + IconIndex;
+    }
 }
