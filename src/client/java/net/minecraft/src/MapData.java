@@ -179,7 +179,7 @@ public class MapData extends WorldSavedData
     // SMM MOD
     private void addSMMMapMarkers(EntityPlayer player) {
         for (SMMMapMarkerData marker : SMMDefinitions.WorldMapMarkers.values()) {
-            if (IsLocationVisibleOnMap(player.worldObj, marker.XPos, marker.YPos, marker.ZPos)) {
+            if (IsLocationInMap(player.worldObj, marker.XPos, marker.YPos, marker.ZPos)) {
                 func_82567_a(marker.IconIndex, player.worldObj, marker.MarkerId, marker.XPos, marker.ZPos, 1);
             }
         }
@@ -372,4 +372,16 @@ public class MapData extends WorldSavedData
         return true;
     }
     // END FCMOD
+
+    // SMM MOD: Custom location check to allow underground markers
+    public boolean IsLocationInMap( World world, int i, int j, int k )
+    {
+        // check if location is within map bounds
+        int iMapScale = 1 << this.scale;
+        float fRelativeI = (float)((double)i - (double)this.xCenter) / (float)iMapScale;
+        float fRelativeK = (float)((double)k - (double)this.zCenter) / (float)iMapScale;
+
+        return !(Math.abs(fRelativeI) > 64F) && !(Math.abs(fRelativeK) > 64F);
+    }
+    // END SMM MOD
 }
