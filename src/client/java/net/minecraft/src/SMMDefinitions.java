@@ -12,7 +12,8 @@ public class SMMDefinitions {
     private static final int id_mapMarkerItem = 31900;
     public static Item mapMarkerItem;
 
-    public static Map<String, SMMMapMarkerData> WorldMapMarkers = new LinkedHashMap<>();
+    @SuppressWarnings("Convert2Diamond")
+    public static Map<String, SMMMapMarkerData> WorldMapMarkers = new LinkedHashMap<String, SMMMapMarkerData>();
 
     public static void AddDefinitions()
     {

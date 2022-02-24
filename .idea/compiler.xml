@@ -12,7 +12,6 @@
       <module name="Sledge's_BTW_Map_Markers_Addon.minecraftServer" target="8" />
       <module name="Sledge's_BTW_Map_Markers_Addon.server" target="8" />
       <module name="Sledge's_BTW_Map_Markers_Addon.test" target="8" />
-      <module name="Sledge's_Map_Markers_Addon.server" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
