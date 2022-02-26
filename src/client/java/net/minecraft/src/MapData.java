@@ -178,7 +178,8 @@ public class MapData extends WorldSavedData
 
     // SMM MOD
     private void addSMMMapMarkers(EntityPlayer player) {
-        for (SMMMapMarkerData marker : SMMDefinitions.WorldMapMarkers.values()) {
+        for (Object markerObj : SMMDefinitions.WorldMapMarkers.values()) {
+            SMMMapMarkerData marker = (SMMMapMarkerData) markerObj;
             if (IsLocationInMap(player.worldObj, marker.XPos, marker.YPos, marker.ZPos)) {
                 func_82567_a(marker.IconIndex, player.worldObj, marker.MarkerId, marker.XPos, marker.ZPos, 1);
             }

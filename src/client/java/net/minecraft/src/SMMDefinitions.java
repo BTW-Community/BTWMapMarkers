@@ -12,8 +12,8 @@ public class SMMDefinitions {
     private static final int id_mapMarkerItem = 31900;
     public static Item mapMarkerItem;
 
-    @SuppressWarnings("Convert2Diamond")
-    public static Map<String, SMMMapMarkerData> WorldMapMarkers = new LinkedHashMap<String, SMMMapMarkerData>();
+    @SuppressWarnings("rawtypes")
+    public static Map WorldMapMarkers = new LinkedHashMap<String, SMMMapMarkerData>();
 
     public static void AddDefinitions()
     {
@@ -26,6 +26,11 @@ public class SMMDefinitions {
 
         AddShapelessRecipe( new ItemStack( mapMarkerItem, 1 ), new Object[] {
                 new ItemStack( FCBetterThanWolves.fcBlockWoodMouldingItemStubID, 1, FCUtilsInventory.m_iIgnoreMetadata ),
+                new ItemStack( Item.paper )
+        } );
+
+        AddShapelessRecipe( new ItemStack( mapMarkerItem, 1 ), new Object[] {
+                new ItemStack( Item.stick ),
                 new ItemStack( Item.paper )
         } );
 
