@@ -51,7 +51,7 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(par1World);
         par1World.setBlockTileEntity(par2,par3,par4,tileEntity);
         tileEntity.SetMarkerId("SMM-Marker-" + par2 + '.' + par4);
-        par1World.setBlockMetadataWithNotify(par2, par3, par4, tileEntity.GetIconIndex());
+        par1World.setBlockMetadataWithNotify(par2, par3, par4, tileEntity.GetIconFileIndex());
     }
 
     @Override
@@ -91,7 +91,7 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         SMMTileEntityMapMarker tile = getBlockTileEntity(world, i, j, k);
         if (tile != null) {
             tile.SetIconIndex(tile.GetIconIndex() + 1);
-            world.setBlockMetadataWithNotify(i, j, k, tile.GetIconIndex());
+            world.setBlockMetadataWithNotify(i, j, k, tile.GetIconFileIndex());
             return true;
         }
         return false;

@@ -48,9 +48,16 @@ public class SMMTileEntityMapMarker extends TileEntity {
     public void SetIconIndex(int iconIndex) {
         // skip 6 (default "off map" icon)
         if (iconIndex == 6) iconIndex = 7;
+        // skip 9 thru 11 for now
+        if (iconIndex == 9) iconIndex = 12;
         // numbering starts back at 4 to skip default player icons
         if (iconIndex > 15) iconIndex = 4;
         this._iconIndex = iconIndex;
         updateWorldMapMarkers();
+    }
+
+    public int GetIconFileIndex() {
+        int[] valueMap = {0, 0, 0, 0, 0, 5, 0, 14, 11, 0, 0, 0, 7, 4, 1, 10};
+        return valueMap[_iconIndex];
     }
 }

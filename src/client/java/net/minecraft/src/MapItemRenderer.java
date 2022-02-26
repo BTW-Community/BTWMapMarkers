@@ -87,7 +87,7 @@ public class MapItemRenderer
         GL11.glDisable(GL11.GL_BLEND);
         par2RenderEngine.resetBoundTexture();
         // SMM MOD: different tile map
-        par2RenderEngine.bindTexture("/misc/mapiconsmore.png");
+        par2RenderEngine.bindTexture("/misc/mapicons.png");
         // END SMM MOD
         int var19 = 0;
 
@@ -100,8 +100,7 @@ public class MapItemRenderer
             GL11.glScalef(4.0F, 4.0F, 3.0F);
             GL11.glTranslatef(-0.125F, 0.125F, 0.0F);
             // SMM MOD: expand byte to 16 slots
-            int iconSlot = var21.iconSize;
-            if (iconSlot < 0) iconSlot = 16+iconSlot;
+            int iconSlot = var21.iconSize & 255;
             float var22 = (float)(iconSlot % 4) / 4.0F;
             float var23 = (float)(iconSlot / 4) / 4.0F;
             float var24 = (float)(iconSlot % 4 + 1) / 4.0F;
