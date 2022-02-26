@@ -51,44 +51,16 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(par1World);
         par1World.setBlockTileEntity(par2,par3,par4,tileEntity);
         tileEntity.SetMarkerId("SMM-Marker-" + par2 + '.' + par4);
-    }
-
-    @Override
-    public int onBlockPlaced( World world, int x, int y, int z, int facing, float clickX, float clickY, float clickZ, int metadata )
-    {
-        FCUtilsBlockPos targetPos = new FCUtilsBlockPos( x, y, z, Block.GetOppositeFacing( facing ) );
-
-        if ( !FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing( world, targetPos.i, targetPos.j, targetPos.k, facing ) )
-        {
-            facing = FindValidFacing( world, x, y, z );
-        }
-
-        return SetFacing( metadata, facing );
+        par1World.setBlockMetadataWithNotify(par2, par3, par4, tileEntity.GetIconIndex());
     }
 
     @Override
     public void breakBlock(World world, int x, int y, int z, int par5, int par6) {
         super.breakBlock(world, x, y, z, par5, par6);
-        SMMTileEntityMapMarker tile = (SMMTileEntityMapMarker) world.getBlockTileEntity(x, y, z);
+        SMMTileEntityMapMarker tile = getBlockTileEntity(world, x, y, z);
         if (tile == null) return;
         SMMDefinitions.WorldMapMarkers.remove(tile.GetMarkerId());
         world.removeBlockTileEntity(x, y, z);
-    }
-
-    @Override
-    public AxisAlignedBB GetBlockBoundsFromPoolBasedOnState(
-            IBlockAccess blockAccess, int i, int j, int k )
-    {
-        double m_dBlockHeight = (24D / 16D);
-        double m_dBlockWidth = (2D / 16D);
-        double m_dBlockHalfWidth = (m_dBlockWidth / 2D);
-        AxisAlignedBB box = AxisAlignedBB.getAABBPool().getAABB(
-                0.5D - m_dBlockHalfWidth, 0D, 0.5D - m_dBlockHalfWidth,
-                0.5D + m_dBlockHalfWidth, m_dBlockHeight, 0.5D + m_dBlockHalfWidth);
-
-        box.TiltToFacingAlongJ( GetFacing( blockAccess, i, j, k ) );
-
-        return box;
     }
 
     @Override
@@ -104,7 +76,7 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
         int iFacing = GetFacing( world, i, j, k );
 
-        FCUtilsBlockPos anchorPos = new FCUtilsBlockPos( i, j, k, Block.GetOppositeFacing( iFacing ) );
+        FCUtilsBlockPos anchorPos = new FCUtilsBlockPos( i, j, k, iFacing );
 
         if ( !FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing( world, anchorPos.i, anchorPos.j, anchorPos.k, iFacing ) )
         {
@@ -116,27 +88,13 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     @Override
     public boolean onBlockActivated( World world, int i, int j, int k, EntityPlayer player, int iFacing, float fXClick, float fYClick, float fZClick )
     {
-        SMMTileEntityMapMarker tile = (SMMTileEntityMapMarker) world.getBlockTileEntity(i, j, k);
+        SMMTileEntityMapMarker tile = getBlockTileEntity(world, i, j, k);
         if (tile != null) {
             tile.SetIconIndex(tile.GetIconIndex() + 1);
+            world.setBlockMetadataWithNotify(i, j, k, tile.GetIconIndex());
+            return true;
         }
         return false;
-    }
-
-    @Override
-    public int GetFacing( int iMetadata )
-    {
-        return ( iMetadata & 7 );
-    }
-
-    @Override
-    public int SetFacing( int iMetadata, int iFacing )
-    {
-        iMetadata &= ~7; // filter out old facing
-
-        iMetadata |= iFacing;
-
-        return iMetadata;
     }
 
     @Override
@@ -151,36 +109,23 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         return -1F;
     }
 
-    private int FindValidFacing( World world, int i, int j, int k )
-    {
-        for ( int iFacing = 0; iFacing < 6; iFacing++ )
-        {
-            FCUtilsBlockPos targetPos = new FCUtilsBlockPos( i, j, k, iFacing );
-
-            if ( FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing( world, targetPos.i, targetPos.j, targetPos.k,
-                    Block.GetOppositeFacing( iFacing ) ) )
-            {
-                return Block.GetOppositeFacing( iFacing );
-            }
-        }
-
-        return 0;
-    }
-
     //----------- Client Side Functionality -----------//
 
-    private Icon m_IconTop;
-    private Icon m_IconSide;
+    private Icon iconStake;
+    private Icon[] iconFlags;
 
     @Override
     public void registerIcons( IconRegister register )
     {
-        Icon sideIcon = register.registerIcon( "smmBlockMapMarker_side" );
+        iconStake = register.registerIcon("fcBlockLogChewedOak_side");
+        blockIcon = iconStake;
 
-        blockIcon = sideIcon;
+        iconFlags = new Icon[16];
 
-        m_IconTop = register.registerIcon( "smmBlockMapMarker_top" );
-        m_IconSide = sideIcon;
+        for (int i = 0; i < iconFlags.length; ++i)
+        {
+            iconFlags[i] = register.registerIcon("cloth_" + i);
+        }
     }
 
     @Override
@@ -190,11 +135,11 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
         if ( iSide == iFacing || iSide == Block.GetOppositeFacing( iFacing ) )
         {
-           return m_IconTop;
+            return iconFlags[blockAccess.getBlockMetadata(i, j, k)];
         }
         else
         {
-           return m_IconSide;
+           return iconStake;
         }
     }
 
@@ -211,56 +156,40 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     }
 
     @Override
+    protected AxisAlignedBB GetFixedBlockBoundsFromPool() {
+        double m_dBlockHeight = 1D;
+        double m_dBlockWidth = (1D / 16D);
+        double m_dBlockHalfWidth = (m_dBlockWidth / 2D);
+
+        return AxisAlignedBB.getAABBPool().getAABB(
+                0.5D - m_dBlockHalfWidth, 0D, 0.5D - m_dBlockHalfWidth,
+                0.5D + m_dBlockHalfWidth, m_dBlockHeight, 0.5D + m_dBlockHalfWidth);
+    }
+
+    @Override
     public boolean RenderBlock( RenderBlocks renderer, int i, int j, int k )
     {
-        IBlockAccess blockAccess = renderer.blockAccess;
+        AxisAlignedBB shaft = GetFixedBlockBoundsFromPool();
+        AxisAlignedBB flag = new AxisAlignedBB(shaft.minX, shaft.maxY - 0.25D, shaft.minZ - (6D / 16D), shaft.maxX, shaft.maxY, shaft.minZ);
 
-        int iFacing = GetFacing( blockAccess, i, j, k );
+        //shaft
+        renderer.setRenderBounds(shaft);
+        renderer.renderStandardBlock( this, i, j, k);
 
-        if ( iFacing == 0 )
-        {
-            renderer.SetUvRotateSouth( 3 );
-            renderer.SetUvRotateNorth( 3 );
-            renderer.SetUvRotateEast( 3 );
-            renderer.SetUvRotateWest( 3 );
-        }
-        else if ( iFacing == 2 )
-        {
-            renderer.SetUvRotateSouth( 1 );
-            renderer.SetUvRotateNorth( 2 );
-        }
-        else if ( iFacing == 3 )
-        {
-            renderer.SetUvRotateSouth( 2 );
-            renderer.SetUvRotateNorth( 1 );
-            renderer.SetUvRotateTop( 3 );
-            renderer.SetUvRotateBottom( 3 );
-        }
-        else if ( iFacing == 4 )
-        {
-            renderer.SetUvRotateEast( 1 );
-            renderer.SetUvRotateWest( 2 );
-            renderer.SetUvRotateTop( 2 );
-            renderer.SetUvRotateBottom( 1 );
-        }
-        else if (  iFacing == 5 )
-        {
-            renderer.SetUvRotateEast( 2 );
-            renderer.SetUvRotateWest( 1 );
-            renderer.SetUvRotateTop( 1 );
-            renderer.SetUvRotateBottom( 2 );
-        }
-
-        renderer.setRenderBounds( GetBlockBoundsFromPoolBasedOnState(
-                renderer.blockAccess, i, j, k ) );
-
-        renderer.renderStandardBlock( this, i, j, k );
-
-        renderer.ClearUvRotation();
+        //flag
+        renderer.unlockBlockBounds();
+        renderer.setRenderBounds(flag);
+        renderer.setOverrideBlockTexture(iconFlags[renderer.blockAccess.getBlockMetadata(i, j, k)]);
+        renderer.renderStandardBlock(this, i, j, k);
+        renderer.clearOverrideBlockTexture();
 
         return true;
     }
 
     @Override
     public TileEntity createNewTileEntity(World world) { return new SMMTileEntityMapMarker(); }
+
+    private SMMTileEntityMapMarker getBlockTileEntity(IBlockAccess blockAccess, int i, int j, int k) {
+        return (SMMTileEntityMapMarker) blockAccess.getBlockTileEntity(i, j, k);
+    }
 }
