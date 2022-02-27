@@ -28,7 +28,8 @@ public class SMMTileEntityMapMarker extends TileEntity {
     private void updateWorldMapMarkers() {
         if (this._markerId == null) return;
         SMMMapMarkerData markerData = new SMMMapMarkerData(this._markerId, this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
-        SMMDefinitions.WorldMapMarkers.put(this._markerId, markerData);
+        //noinspection unchecked
+        SledgesMapMarkersAddon.WorldMapMarkers.put(this._markerId, markerData);
         System.out.println("SMMMapMarker Set: " + markerData);
     }
 

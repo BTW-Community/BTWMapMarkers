@@ -2,7 +2,8 @@ package net.minecraft.src;
 
 import java.util.Random;
 
-import static net.minecraft.src.SMMDefinitions.mapMarkerItem;
+import static net.minecraft.src.SledgesMapMarkersAddon.WorldMapMarkers;
+import static net.minecraft.src.SledgesMapMarkersAddon.mapMarkerItem;
 
 public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
@@ -57,7 +58,7 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         super.breakBlock(world, x, y, z, par5, par6);
         SMMTileEntityMapMarker tile = getBlockTileEntity(world, x, y, z);
         if (tile == null) return;
-        SMMDefinitions.WorldMapMarkers.remove(tile.GetMarkerId());
+        WorldMapMarkers.remove(tile.GetMarkerId());
         world.removeBlockTileEntity(x, y, z);
     }
 

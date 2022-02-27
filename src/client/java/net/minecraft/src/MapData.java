@@ -2,6 +2,8 @@ package net.minecraft.src;
 
 import java.util.*;
 
+import static net.minecraft.src.SledgesMapMarkersAddon.WorldMapMarkers;
+
 public class MapData extends WorldSavedData
 {
     public int xCenter;
@@ -178,7 +180,7 @@ public class MapData extends WorldSavedData
 
     // SMM MOD
     private void addSMMMapMarkers(EntityPlayer player) {
-        for (Object markerObj : SMMDefinitions.WorldMapMarkers.values()) {
+        for (Object markerObj : WorldMapMarkers.values()) {
             SMMMapMarkerData marker = (SMMMapMarkerData) markerObj;
             if (IsLocationInMap(player.worldObj, marker.XPos, marker.YPos, marker.ZPos)) {
                 func_82567_a(marker.IconIndex, player.worldObj, marker.MarkerId, marker.XPos, marker.ZPos, 1);
