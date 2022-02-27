@@ -30,6 +30,11 @@ public class SledgesMapMarkersAddon extends FCAddOn {
         FCAddOnHandler.LogMessage(this.getName() + " Initialized");
     }
 
+    @Override
+    public FCAddOnUtilsWorldData createWorldData() {
+        return new SMMUtilsWorldData();
+    }
+
     private static void AddDefinitions()
     {
         mapMarker = new SMMBlockMapMarker(id_mapMarker);
