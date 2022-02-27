@@ -8,11 +8,9 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
     public SMMBlockMapMarker(int blockId) {
         super(blockId, Material.wood);
-        setHardness( 2F );
-        setResistance( 5F );
-        SetAxesEffectiveOn( true );
 
-        SetFireProperties(FCEnumFlammability.PLANKS);
+        setHardness( 0F );
+        setResistance( 0F );
         setStepSound(soundWoodFootstep);
     }
 
