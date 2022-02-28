@@ -7,12 +7,23 @@ import static net.minecraft.src.SledgesMapMarkersAddon.mapMarkerItem;
 
 public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
+    double m_dBlockHeight = 1D;
+    double m_dBlockWidth = (1D / 16D);
+    double m_dBlockHalfWidth = (m_dBlockWidth / 2D);
+
     public SMMBlockMapMarker(int blockId) {
         super(blockId, Material.wood);
 
         setHardness( 0F );
         setResistance( 0F );
+        SetBuoyant();
         setStepSound(soundWoodFootstep);
+    }
+
+    @Override
+    public AxisAlignedBB getCollisionBoundingBoxFromPool( World world, int i, int j, int k )
+    {
+        return null;
     }
 
     @Override
@@ -41,7 +52,12 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
             }
         }
 
-        return false;
+        return canPlaceOn(world, i, j - 1, k);
+    }
+
+    protected boolean canPlaceOn( World world, int i, int j, int k)
+    {
+        return FCUtilsWorld.DoesBlockHaveSmallCenterHardpointToFacing( world, i, j, k, 1, true );
     }
 
     @Override
@@ -156,19 +172,19 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
     @Override
     protected AxisAlignedBB GetFixedBlockBoundsFromPool() {
-        double m_dBlockHeight = 1D;
-        double m_dBlockWidth = (1D / 16D);
-        double m_dBlockHalfWidth = (m_dBlockWidth / 2D);
-
         return AxisAlignedBB.getAABBPool().getAABB(
                 0.5D - m_dBlockHalfWidth, 0D, 0.5D - m_dBlockHalfWidth,
-                0.5D + m_dBlockHalfWidth, m_dBlockHeight, 0.5D + m_dBlockHalfWidth);
+                0.5D + m_dBlockHalfWidth, m_dBlockHeight, 0.5D + m_dBlockHalfWidth)
+                .expand(0D, 0D, (3D / 16D))
+                .offset(0D, 0D, -(3D / 16D));
     }
 
     @Override
     public boolean RenderBlock( RenderBlocks renderer, int i, int j, int k )
     {
-        AxisAlignedBB shaft = GetFixedBlockBoundsFromPool();
+        AxisAlignedBB shaft = AxisAlignedBB.getAABBPool().getAABB(
+                0.5D - m_dBlockHalfWidth, 0D, 0.5D - m_dBlockHalfWidth,
+                0.5D + m_dBlockHalfWidth, m_dBlockHeight, 0.5D + m_dBlockHalfWidth);
         AxisAlignedBB flag = new AxisAlignedBB(shaft.minX, shaft.maxY - 0.25D, shaft.minZ - (6D / 16D), shaft.maxX, shaft.maxY, shaft.minZ);
 
         //shaft
