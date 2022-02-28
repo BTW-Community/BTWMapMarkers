@@ -11,6 +11,7 @@ public class SMMUtilsWorldData implements FCAddOnUtilsWorldData{
         for (Object markerObj : WorldMapMarkers.values()) {
             SMMMapMarkerData markerData = (SMMMapMarkerData) markerObj;
             markerTags.setString(markerData.MarkerId, markerData.toString());
+            System.out.println("SMMMapMarkers Saved: " + markerData);
         }
         tag.setCompoundTag("markers", markerTags);
     }
@@ -26,6 +27,7 @@ public class SMMUtilsWorldData implements FCAddOnUtilsWorldData{
             if (markerData == null) continue;
             //noinspection unchecked
             WorldMapMarkers.put(tagString.getName(), markerData);
+            System.out.println("SMMMapMarkers Loaded: " + markerData);
         }
     }
 
