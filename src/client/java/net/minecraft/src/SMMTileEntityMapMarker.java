@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import static net.minecraft.src.SledgesMapMarkersAddon.WorldMapMarkers;
+
 public class SMMTileEntityMapMarker extends TileEntity {
     private String _markerId;
     private int _iconIndex = 4;
@@ -29,7 +31,7 @@ public class SMMTileEntityMapMarker extends TileEntity {
         if (this._markerId == null) return;
         SMMMapMarkerData markerData = new SMMMapMarkerData(this._markerId, this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
         //noinspection unchecked
-        SledgesMapMarkersAddon.WorldMapMarkers.put(this._markerId, markerData);
+        WorldMapMarkers.put(this._markerId, markerData);
     }
 
     public String GetMarkerId() {

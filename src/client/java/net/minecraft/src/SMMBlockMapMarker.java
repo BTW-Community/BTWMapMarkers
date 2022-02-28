@@ -1,9 +1,9 @@
 package net.minecraft.src;
 
+import java.util.ArrayList;
 import java.util.Random;
 
-import static net.minecraft.src.SledgesMapMarkersAddon.WorldMapMarkers;
-import static net.minecraft.src.SledgesMapMarkersAddon.mapMarkerItem;
+import static net.minecraft.src.SledgesMapMarkersAddon.*;
 
 public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
@@ -63,10 +63,29 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     @Override
     public void onBlockAdded(World par1World, int par2, int par3, int par4) {
         super.onBlockAdded(par1World, par2, par3, par4);
+        removeNearbyBadMarkers(par1World, par2, par4);
         SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(par1World);
         par1World.setBlockTileEntity(par2,par3,par4,tileEntity);
         tileEntity.SetMarkerId("SMM-Marker-" + par2 + '.' + par4);
         par1World.setBlockMetadataWithNotify(par2, par3, par4, tileEntity.GetIconFileIndex());
+    }
+
+    private void removeNearbyBadMarkers(World world, int x, int z) {
+        ArrayList<String> badMarkerIds = new ArrayList<>();
+        for (Object markerObj : WorldMapMarkers.values()) {
+            SMMMapMarkerData existingMarker = (SMMMapMarkerData) markerObj;
+            if (existingMarker.XPos >= x - 64
+                    && existingMarker.XPos <= x + 64
+                    && existingMarker.ZPos >= z - 64
+                    && existingMarker.ZPos <= z + 64
+                    && world.getBlockId(existingMarker.XPos, existingMarker.YPos, existingMarker.ZPos) != mapMarker.blockID) {
+                badMarkerIds.add(existingMarker.MarkerId);
+            }
+        }
+        for (String badMarkerId : badMarkerIds) {
+            WorldMapMarkers.remove(badMarkerId);
+            System.out.println("SMMMapMarkers Removed Bad Marker: " + badMarkerId);
+        }
     }
 
     @Override
