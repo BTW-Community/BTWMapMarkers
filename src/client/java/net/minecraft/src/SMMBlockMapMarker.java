@@ -39,6 +39,23 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     }
 
     @Override
+    public boolean canPlaceBlockOnSide(World world, int i, int j, int k, int iSide) {
+        FCUtilsBlockPos targetPos = new FCUtilsBlockPos( i, j, k, Block.GetOppositeFacing( iSide ) );
+        if ( FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing( world, targetPos.i, targetPos.j, targetPos.k, iSide ) )
+        {
+            int iTargetID = world.getBlockId( targetPos.i, targetPos.j, targetPos.k );
+            return CanStickInBlockType(iTargetID);
+        }
+        return false;
+    }
+
+    public boolean CanStickInBlockType( int iBlockID )
+    {
+        Block block = Block.blocksList[iBlockID];
+        return block != null;
+    }
+
+    @Override
     public boolean canPlaceBlockAt( World world, int i, int j, int k )
     {
         for ( int iFacing = 0; iFacing < 6; iFacing++ )
@@ -67,11 +84,12 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(par1World);
         par1World.setBlockTileEntity(par2,par3,par4,tileEntity);
         tileEntity.SetMarkerId("SMM-Marker-" + par2 + '.' + par4);
-        par1World.setBlockMetadataWithNotify(par2, par3, par4, tileEntity.GetIconFileIndex());
+        //par1World.setBlockMetadataWithNotify(par2, par3, par4, tileEntity.GetIconFileIndex());
     }
 
     private void removeNearbyBadMarkers(World world, int x, int z) {
-        ArrayList<String> badMarkerIds = new ArrayList<>();
+        //noinspection Convert2Diamond
+        ArrayList<String> badMarkerIds = new ArrayList<String>();
         for (Object markerObj : WorldMapMarkers.values()) {
             SMMMapMarkerData existingMarker = (SMMMapMarkerData) markerObj;
             if (existingMarker.XPos >= x - 64
