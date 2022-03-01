@@ -84,7 +84,6 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(par1World);
         par1World.setBlockTileEntity(par2,par3,par4,tileEntity);
         tileEntity.SetMarkerId("SMM-Marker-" + par2 + '.' + par4);
-        //par1World.setBlockMetadataWithNotify(par2, par3, par4, tileEntity.GetIconFileIndex());
     }
 
     private void removeNearbyBadMarkers(World world, int x, int z) {
@@ -163,6 +162,7 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
     //----------- Client Side Functionality -----------//
 
+    @SuppressWarnings("FieldCanBeLocal")
     private Icon iconStake;
     private Icon[] iconFlags;
 
@@ -177,21 +177,6 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         for (int i = 0; i < iconFlags.length; ++i)
         {
             iconFlags[i] = register.registerIcon("cloth_" + i);
-        }
-    }
-
-    @Override
-    public Icon getBlockTexture( IBlockAccess blockAccess, int i, int j, int k, int iSide )
-    {
-        int iFacing = GetFacing( blockAccess, i, j, k);
-
-        if ( iSide == iFacing || iSide == Block.GetOppositeFacing( iFacing ) )
-        {
-            return iconFlags[blockAccess.getBlockMetadata(i, j, k)];
-        }
-        else
-        {
-           return iconStake;
         }
     }
 
