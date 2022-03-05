@@ -1,11 +1,11 @@
 package net.minecraft.src;
 
-import java.util.ArrayList;
 import java.util.Random;
 
-import static net.minecraft.src.SledgesMapMarkersAddon.*;
+import static net.minecraft.src.SledgesMapMarkersAddon.WorldMapMarkers;
+import static net.minecraft.src.SledgesMapMarkersAddon.mapMarkerItem;
 
-public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
+public class SMMBlockMapMarker extends BlockContainer {
 
     double m_dBlockHeight = 1D;
     double m_dBlockWidth = (1D / 16D);
@@ -21,7 +21,7 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     }
 
     @Override
-    public AxisAlignedBB getCollisionBoundingBoxFromPool( World world, int i, int j, int k )
+    public AxisAlignedBB getCollisionBoundingBoxFromPool( World world, int x, int y, int z )
     {
         return null;
     }
@@ -39,9 +39,9 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     }
 
     @Override
-    public boolean canPlaceBlockOnSide(World world, int i, int j, int k, int iSide) {
-        FCUtilsBlockPos targetPos = new FCUtilsBlockPos( i, j, k, Block.GetOppositeFacing( iSide ) );
-        if ( FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing( world, targetPos.i, targetPos.j, targetPos.k, iSide ) )
+    public boolean canPlaceBlockOnSide(World world, int x, int y, int z, int side) {
+        FCUtilsBlockPos targetPos = new FCUtilsBlockPos( x, y, z, Block.GetOppositeFacing( side ) );
+        if ( FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing( world, targetPos.i, targetPos.j, targetPos.k, side ) )
         {
             int iTargetID = world.getBlockId( targetPos.i, targetPos.j, targetPos.k );
             return CanStickInBlockType(iTargetID);
@@ -49,18 +49,18 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
         return false;
     }
 
-    public boolean CanStickInBlockType( int iBlockID )
+    public boolean CanStickInBlockType( int blockId )
     {
-        Block block = Block.blocksList[iBlockID];
+        Block block = Block.blocksList[blockId];
         return block != null;
     }
 
     @Override
-    public boolean canPlaceBlockAt( World world, int i, int j, int k )
+    public boolean canPlaceBlockAt( World world, int x, int y, int z )
     {
         for ( int iFacing = 0; iFacing < 6; iFacing++ )
         {
-            FCUtilsBlockPos targetPos = new FCUtilsBlockPos( i, j, k, iFacing );
+            FCUtilsBlockPos targetPos = new FCUtilsBlockPos( x, y, z, iFacing );
 
             if ( FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing( world, targetPos.i, targetPos.j, targetPos.k,
                     Block.GetOppositeFacing( iFacing ) ) )
@@ -69,93 +69,146 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
             }
         }
 
-        return canPlaceOn(world, i, j - 1, k);
+        return canPlaceOn(world, x, y - 1, z);
     }
 
-    protected boolean canPlaceOn( World world, int i, int j, int k)
+    protected boolean canPlaceOn( World world, int x, int y, int z)
     {
-        return FCUtilsWorld.DoesBlockHaveSmallCenterHardpointToFacing( world, i, j, k, 1, true );
+        return FCUtilsWorld.DoesBlockHaveSmallCenterHardpointToFacing( world, x, y, z, 1, true );
     }
 
     @Override
-    public void onBlockAdded(World par1World, int par2, int par3, int par4) {
-        super.onBlockAdded(par1World, par2, par3, par4);
-        removeNearbyBadMarkers(par1World, par2, par4);
-        SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(par1World);
-        par1World.setBlockTileEntity(par2,par3,par4,tileEntity);
-        tileEntity.SetMarkerId("SMM-Marker-" + par2 + '.' + par4);
-    }
-
-    private void removeNearbyBadMarkers(World world, int x, int z) {
-        //noinspection Convert2Diamond
-        ArrayList<String> badMarkerIds = new ArrayList<String>();
-        for (Object markerObj : WorldMapMarkers.values()) {
-            SMMMapMarkerData existingMarker = (SMMMapMarkerData) markerObj;
-            if (existingMarker.XPos >= x - 64
-                    && existingMarker.XPos <= x + 64
-                    && existingMarker.ZPos >= z - 64
-                    && existingMarker.ZPos <= z + 64
-                    && world.getBlockId(existingMarker.XPos, existingMarker.YPos, existingMarker.ZPos) != mapMarker.blockID) {
-                badMarkerIds.add(existingMarker.MarkerId);
-            }
-        }
-        for (String badMarkerId : badMarkerIds) {
-            WorldMapMarkers.remove(badMarkerId);
-            System.out.println("SMMMapMarkers Removed Bad Marker: " + badMarkerId);
-        }
+    public void onBlockAdded(World world, int x, int y, int z) {
+        super.onBlockAdded(world, x, y, z);
+        SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) createNewTileEntity(world);
+        world.setBlockTileEntity(x, y, z, tileEntity);
+        tileEntity.Initialize();
+        //System.out.println("onBlockAdded: " + tileEntity.GetMarkerId());
     }
 
     @Override
     public void breakBlock(World world, int x, int y, int z, int par5, int par6) {
+        SMMTileEntityMapMarker tile = (SMMTileEntityMapMarker) world.getBlockTileEntity(x, y, z);
+        if (tile != null) {
+            WorldMapMarkers.remove(tile.GetMarkerId());
+        }
         super.breakBlock(world, x, y, z, par5, par6);
-        SMMTileEntityMapMarker tile = getBlockTileEntity(world, x, y, z);
-        if (tile == null) return;
-        WorldMapMarkers.remove(tile.GetMarkerId());
-        world.removeBlockTileEntity(x, y, z);
     }
 
     @Override
-    public int idDropped(int iMetaData, Random random, int iFortuneModifier )
+    public int idDropped(int metaData, Random random, int fortuneModifier )
     {
         return mapMarkerItem.itemID;
     }
 
     @Override
-    public void onNeighborBlockChange( World world, int i, int j, int k, int iNeighborBlockID )
+    public void onNeighborBlockChange( World world, int x, int y, int z, int neighborBlockId )
     {
-        // pop the block off if it no longer has a valid anchor point
-
-        int iFacing = GetFacing( world, i, j, k );
-
-        FCUtilsBlockPos anchorPos = new FCUtilsBlockPos( i, j, k, iFacing );
-
-        if ( !FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing( world, anchorPos.i, anchorPos.j, anchorPos.k, iFacing ) )
+        if (!FCUtilsWorld.DoesBlockHaveCenterHardpointToFacing(world, x, y - 1, z, 1))
         {
-            dropBlockAsItem( world, i, j, k, world.getBlockMetadata( i, j, k ), 0 );
-            world.setBlockWithNotify( i, j, k, 0 );
+            this.dropBlockAsItem(world, x, y, z, world.getBlockMetadata(x, y, z), 0);
+            world.setBlockToAir(x, y, z);
         }
     }
 
     @Override
-    public boolean onBlockActivated( World world, int i, int j, int k, EntityPlayer player, int iFacing, float fXClick, float fYClick, float fZClick )
+    public int onBlockPlaced(World world, int x, int y, int z, int side, float clickX, float clickY, float clickZ, int metaData)
     {
-        SMMTileEntityMapMarker tile = getBlockTileEntity(world, i, j, k);
-        if (tile != null) {
-            tile.SetIconIndex(tile.GetIconIndex() + 1);
-            world.setBlockMetadataWithNotify(i, j, k, tile.GetIconFileIndex());
-            return true;
+        return metaData;
+//        int alignment;
+//
+//        float xOffsetFromCenter = Math.abs( clickX - 0.5F );
+//        float yOffsetFromCenter = Math.abs( clickY - 0.5F );
+//        float zOffsetFromCenter = Math.abs( clickZ - 0.5F );
+//
+//        switch ( side )
+//        {
+//            case 0:
+//                if ( xOffsetFromCenter > zOffsetFromCenter )
+//                {
+//                    alignment = clickX > 0.5F ? 9 : 11;
+//                }
+//                else
+//                {
+//                    alignment = clickZ > 0.5F ? 10 : 8;
+//                }
+//                break;
+//            case 1:
+//                if ( xOffsetFromCenter > zOffsetFromCenter )
+//                {
+//                    alignment = clickX > 0.5F ? 1 : 3;
+//                }
+//                else
+//                {
+//                    alignment = clickZ > 0.5F ? 2 : 0;
+//                }
+//                break;
+//            case 2:
+//                if ( xOffsetFromCenter > yOffsetFromCenter )
+//                {
+//                    alignment = clickX > 0.5F ? 6 : 7;
+//                }
+//                else
+//                {
+//                    alignment = clickY > 0.5F ? 10 : 2;
+//                }
+//                break;
+//            case 3:
+//                if ( xOffsetFromCenter > yOffsetFromCenter )
+//                {
+//                    alignment = clickX > 0.5F ? 5 : 4;
+//                }
+//                else
+//                {
+//                    alignment = clickY > 0.5F ? 8 : 0;
+//                }
+//                break;
+//            case 4:
+//                if ( zOffsetFromCenter > yOffsetFromCenter )
+//                {
+//                    alignment = clickZ > 0.5F ? 6 : 5;
+//                }
+//                else
+//                {
+//                    alignment = clickY > 0.5F ? 9 : 1;
+//                }
+//                break;
+//            default: // 5
+//                if ( zOffsetFromCenter > yOffsetFromCenter )
+//                {
+//                    alignment = clickZ > 0.5F ? 7 : 4;
+//                }
+//                else
+//                {
+//                    alignment = clickY > 0.5F ? 11 : 3;
+//                }
+//                break;
+//        }
+//
+//        return alignment;
+    }
+
+    @Override
+    public boolean onBlockActivated( World world, int x, int y, int z, EntityPlayer player, int facing, float xClick, float yClick, float zClick )
+    {
+        SMMTileEntityMapMarker tile = (SMMTileEntityMapMarker) world.getBlockTileEntity(x, y, z);
+        if (tile == null) {
+            return false;
         }
-        return false;
+        int iconIndex = tile.GetIconIndex();
+        //System.out.println("OnBlockActivated: " + tile.GetMarkerId() + " iconIndexBefore = " + iconIndex);
+        tile.SetIconIndex(iconIndex + 1);
+        return true;
     }
 
     @Override
-    public boolean CanGroundCoverRestOnBlock( World world, int i, int j, int k )
+    public boolean CanGroundCoverRestOnBlock( World world, int x, int y, int z )
     {
-        return world.doesBlockHaveSolidTopSurface( i, j - 1, k );
+        return world.doesBlockHaveSolidTopSurface( x, y - 1, z );
     }
 
     @Override
-    public float GroundCoverRestingOnVisualOffset( IBlockAccess blockAccess, int i, int j, int k )
+    public float GroundCoverRestingOnVisualOffset( IBlockAccess blockAccess, int x, int y, int z )
     {
         return -1F;
     }
@@ -181,15 +234,15 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     }
 
     @Override
-    public boolean shouldSideBeRendered( IBlockAccess blockAccess, int iNeighborI, int iNeighborJ, int iNeighborK, int iSide )
+    public boolean shouldSideBeRendered( IBlockAccess blockAccess, int neighborX, int neighborY, int neighborZ, int side )
     {
         return true;
     }
 
     @Override
-    public int idPicked( World world, int i, int j, int k )
+    public int idPicked( World world, int x, int y, int z )
     {
-        return idDropped( world.getBlockMetadata( i, j, k ), world.rand, 0 );
+        return idDropped( world.getBlockMetadata( x, y, z ), world.rand, 0 );
     }
 
     @Override
@@ -202,7 +255,7 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
     }
 
     @Override
-    public boolean RenderBlock( RenderBlocks renderer, int i, int j, int k )
+    public boolean RenderBlock( RenderBlocks renderer, int x, int y, int z )
     {
         AxisAlignedBB shaft = AxisAlignedBB.getAABBPool().getAABB(
                 0.5D - m_dBlockHalfWidth, 0D, 0.5D - m_dBlockHalfWidth,
@@ -211,13 +264,23 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
         //shaft
         renderer.setRenderBounds(shaft);
-        renderer.renderStandardBlock( this, i, j, k);
+        renderer.renderStandardBlock( this, x, y, z);
 
+        SMMTileEntityMapMarker tileEntity = (SMMTileEntityMapMarker) renderer.blockAccess.getBlockTileEntity(x, y, z);
+        int iconFileIndex;
+        if (tileEntity != null) {
+            iconFileIndex = tileEntity.GetIconFileIndex();
+            //System.out.println("RenderBlock: " + tileEntity.GetMarkerId() + " iconIndex = " + tileEntity.GetIconIndex() + ", IconFileIndex = " + iconFileIndex);
+        }
+        else {
+            iconFileIndex = 0;
+            //System.out.println("RenderBlock: missing tile entity");
+        }
         //flag
         renderer.unlockBlockBounds();
         renderer.setRenderBounds(flag);
-        renderer.setOverrideBlockTexture(iconFlags[renderer.blockAccess.getBlockMetadata(i, j, k)]);
-        renderer.renderStandardBlock(this, i, j, k);
+        renderer.setOverrideBlockTexture(iconFlags[iconFileIndex]);
+        renderer.renderStandardBlock(this, x, y, z);
         renderer.clearOverrideBlockTexture();
 
         return true;
@@ -225,8 +288,4 @@ public class SMMBlockMapMarker extends Block implements ITileEntityProvider {
 
     @Override
     public TileEntity createNewTileEntity(World world) { return new SMMTileEntityMapMarker(); }
-
-    private SMMTileEntityMapMarker getBlockTileEntity(IBlockAccess blockAccess, int i, int j, int k) {
-        return (SMMTileEntityMapMarker) blockAccess.getBlockTileEntity(i, j, k);
-    }
 }

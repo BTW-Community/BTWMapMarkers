@@ -86,9 +86,7 @@ public class MapItemRenderer
         GL11.glEnable(GL11.GL_ALPHA_TEST);
         GL11.glDisable(GL11.GL_BLEND);
         par2RenderEngine.resetBoundTexture();
-        // SMM MOD: different tile map
         par2RenderEngine.bindTexture("/misc/mapicons.png");
-        // END SMM MOD
         int var19 = 0;
 
         for (Iterator var20 = par3MapData.playersVisibleOnMap.values().iterator(); var20.hasNext(); ++var19)

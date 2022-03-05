@@ -1,7 +1,5 @@
 package net.minecraft.src;
 
-import java.util.Locale;
-
 public class SMMMapMarkerData {
     public final String MarkerId;
     public final int XPos;
@@ -22,20 +20,18 @@ public class SMMMapMarkerData {
         return "MarkerId: " + MarkerId + ", XPos: " + XPos + ", YPos: " + YPos + ", ZPos: " + ZPos + ", IconIndex: " + IconIndex;
     }
 
-    @SuppressWarnings("SpellCheckingInspection")
     public static SMMMapMarkerData Deserialize(String serialized) {
         try {
-            serialized = serialized.toLowerCase(Locale.ROOT);
             String[] splits = serialized.split("[,]");
-            String markerId = splits[0].replace("markerid: ", "").trim();
-            int xPos = Integer.parseInt(splits[1].replace("xpos: ", "").trim());
-            int yPos = Integer.parseInt(splits[2].replace("ypos: ", "").trim());
-            int zPos = Integer.parseInt(splits[3].replace("zpos: ", "").trim());
-            int iconIndex = Integer.parseInt(splits[4].replace("iconindex: ", "").trim());
+            String markerId = splits[0].replace("MarkerId: ", "").trim();
+            int xPos = Integer.parseInt(splits[1].replace("XPos: ", "").trim());
+            int yPos = Integer.parseInt(splits[2].replace("YPos: ", "").trim());
+            int zPos = Integer.parseInt(splits[3].replace("ZPos: ", "").trim());
+            int iconIndex = Integer.parseInt(splits[4].replace("IconIndex: ", "").trim());
 
             return new SMMMapMarkerData(markerId, xPos, yPos, zPos, iconIndex);
         } catch (NumberFormatException e) {
-            System.out.println("MapMarker Data was not able to be deserialized for '" + serialized + "' with error " + e);
+            //System.out.println("MapMarker Data was not able to be deserialized for '" + serialized + "' with error " + e);
             return null;
         }
     }
