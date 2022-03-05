@@ -18,7 +18,7 @@ public class SledgesMapMarkersAddon extends FCAddOn {
     public static Map WorldMapMarkers = new LinkedHashMap<String, SMMMapMarkerData>();
 
     private SledgesMapMarkersAddon() {
-        super("Sledge Map Markers", "0.2.4", "SMM");
+        super("Sledge Map Markers", "0.3.0", "SMM");
     }
 
     @Override
