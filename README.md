@@ -10,3 +10,5 @@ Flag colors cycle when right clicked.
 The flag colors corespond with the markers on the map.
 
 ![image](https://user-images.githubusercontent.com/66319713/156904691-299ef99c-af9f-469c-9185-494c911eb479.png)
+
+The recipe is shapeless consisting of paper and either a stick(shaft) or any type of wood moulding.
