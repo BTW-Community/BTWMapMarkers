@@ -12,12 +12,14 @@ import static btw.community.sledge.MapMarkersAddon.mapMarker;
 
 public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPacketHandler {
     private int _iconIndex = 4;
+    private int rotation = 0;
 
     @Override
     public void writeToNBT(NBTTagCompound nbtTag)
     {
         super.writeToNBT(nbtTag);
         nbtTag.setInteger("icon", this._iconIndex);
+        nbtTag.setInteger("rotation", this.rotation);
         //System.out.println("Tile saved: markerId = " + this.GetMarkerId() + ", iconIndex = " + this._iconIndex);
     }
 
@@ -30,6 +32,12 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
             //System.out.println("Tile loaded: markerId = " + this.GetMarkerId() + ", iconIndex = " + this._iconIndex);
             this._iconIndex = nbtTag.getInteger("icon");
         }
+
+        if (nbtTag.hasKey("rotation"))
+        {
+            this.rotation = nbtTag.getInteger("rotation");
+        }
+
         //else {
             //System.out.println("Tile loaded: markerId = " + this.GetMarkerId() + ", iconIndex = null");
         //}
@@ -39,6 +47,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
     public Packet getDescriptionPacket() {
         NBTTagCompound nbtTag = new NBTTagCompound();
         nbtTag.setInteger("icon", this._iconIndex);
+        nbtTag.setInteger("rotation", this.rotation);
         return new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 1, nbtTag);
     }
 
@@ -48,6 +57,12 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
             //System.out.println("Tile packet loaded: markerId = " + this.GetMarkerId() + ", iconIndex = " + this._iconIndex);
             this._iconIndex = nbtTag.getInteger("icon");
         }
+
+        if (nbtTag.hasKey("rotation"))
+        {
+            this.rotation = nbtTag.getInteger("rotation");
+        }
+
 //        else {
 //            System.out.println("Tile packet loaded: markerId = " + this.GetMarkerId() + ", iconIndex = null");
 //        }
@@ -92,7 +107,18 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         return this._iconIndex;
     }
 
+    public void setFlagRotation (int rotation)
+    {
+        this.rotation = rotation;
+    }
+
+    public int getFlagRotation() {
+        return this.rotation;
+    }
+
     public void SetIconIndex(int iconIndex) {
+        // start at 4 to skip default player icons
+        if (iconIndex < 4) iconIndex = 4;
         // skip 6 (default "off map" icon)
         if (iconIndex == 6) iconIndex = 7;
         // skip 9 thru 11 for now

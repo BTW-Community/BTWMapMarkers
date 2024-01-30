@@ -16,7 +16,7 @@ public class MapMarkersAddon extends BTWAddon {
     private static MapMarkersAddon instance;
 
     private MapMarkersAddon() {
-        super("Map Markers", "2.0.0", "SMM");
+        super("Map Markers", "2.1.0", "SMM");
     }
 
     private static final int id_mapMarker = 2900;

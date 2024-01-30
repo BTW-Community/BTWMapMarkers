@@ -10,7 +10,6 @@ import static btw.community.sledge.MapMarkersAddon.WorldMapMarkers;
 import static btw.community.sledge.MapMarkersAddon.mapMarkerItem;
 
 public class MapMarkerBlock extends BlockContainer {
-
     double m_dBlockHeight = 1D;
     double m_dBlockWidth = (2D / 16D);
     double m_dBlockHalfWidth = (m_dBlockWidth / 2D);
@@ -111,12 +110,20 @@ public class MapMarkerBlock extends BlockContainer {
     }
 
     @Override
-    public void onNeighborBlockChange(World world, int x, int y, int z, int neighborBlockId) {
-        int facing = getFacing(world, x, y, z);
+    public boolean canBlockStay(World world, int x, int y, int z) {
+        return canPlaceBlockAt(world, x, y, z);
+    }
 
-        if (!canPlaceBlockOnSide(world, x, y, z, Block.getOppositeFacing(facing))) {
-            // pop the block off if it no longer has a valid anchor point
-            dropBlockAsItem(world, x, y, z, world.getBlockMetadata(x, y, z), 0);
+    @Override
+    public void onNeighborBlockChange(World world, int x, int y, int z, int neighborBlockId) {
+        if (!canBlockStay(world, x, y, z)) {
+            MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
+            if (tile != null) {
+
+                // pop the block off if it no longer has a valid anchor point
+                dropBlockAsItem(world, x, y, z, tile.GetIconIndex(), 0);
+                WorldMapMarkers.remove(tile.GetMarkerId());
+            }
             world.setBlockWithNotify(x, y, z, 0);
         }
     }
@@ -155,6 +162,24 @@ public class MapMarkerBlock extends BlockContainer {
     }
 
     @Override
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving player, ItemStack stack)
+    {
+        int meta = world.getBlockMetadata(x, y, z);
+        int playerRotation = ((MathHelper.floor_double((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3) + 2) % 4; //turns playerRotation into 0 - 4
+        MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
+
+        if (tile != null) {
+            tile.Initialize();
+            if (meta <= 1)
+            {
+                tile.setFlagRotation(Direction.directionToFacing[playerRotation]);
+            }
+            else tile.setFlagRotation(0);
+        }
+
+    }
+
+    @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int facing, float xClick,
                                     float yClick, float zClick)
     {
@@ -163,7 +188,6 @@ public class MapMarkerBlock extends BlockContainer {
             return false;
         }
         int iconIndex = tile.GetIconIndex();
-        //System.out.println("OnBlockActivated: " + tile.GetMarkerId() + " iconIndexBefore = " + iconIndex);
         tile.SetIconIndex(iconIndex + 1);
         return true;
     }
@@ -198,8 +222,7 @@ public class MapMarkerBlock extends BlockContainer {
     }
 
     @Override
-    public boolean shouldSideBeRendered(IBlockAccess blockAccess, int neighborX, int neighborY, int neighborZ,
-                                        int side)
+    public boolean shouldSideBeRendered(IBlockAccess blockAccess, int neighborX, int neighborY, int neighborZ, int side)
     {
         return true;
     }
@@ -211,30 +234,52 @@ public class MapMarkerBlock extends BlockContainer {
 
     @Override
     public AxisAlignedBB getBlockBoundsFromPoolBasedOnState(IBlockAccess blockAccess, int x, int y, int z) {
+        MapMarkerTileEntity tile = (MapMarkerTileEntity) blockAccess.getBlockTileEntity(x, y, z);
         int metaData = blockAccess.getBlockMetadata(x, y, z);
 
         AxisAlignedBB box = shaftBox.makeTemporaryCopy();
         box.expandToInclude(flagBox);
-        box = getBoxPosition(box, metaData);
+        box = getBoxPosition(box, metaData, tile);
 
         return box;
     }
 
-    private AxisAlignedBB getBoxPosition(AxisAlignedBB box, int position) {
+    private AxisAlignedBB getBoxPosition(AxisAlignedBB box, int position, MapMarkerTileEntity tile) {
+
         box = box.makeTemporaryCopy();
-        box.rotateAroundYToFacing(position);
+
+        if (tile != null) {
+
+            if (position == 0)
+            {
+                int flagRotation = tile.getFlagRotation();
+                int tempRot = flagRotation;
+
+                if (flagRotation == 4) tempRot = 5;
+                if (flagRotation == 5) tempRot = 4;
+
+                box.rotateAroundYToFacing(tempRot);
+            }
+            else if (position == 1)
+            {
+                box.rotateAroundYToFacing(tile.getFlagRotation());
+            }
+            else box.rotateAroundYToFacing(position);
+        }
+
         box.tiltToFacingAlongY(position);
+
         return box;
     }
 
     @Override
     public boolean renderBlock(RenderBlocks renderer, int x, int y, int z) {
+        MapMarkerTileEntity tileEntity = (MapMarkerTileEntity) renderer.blockAccess.getBlockTileEntity(x, y, z);
         int metaData = renderer.blockAccess.getBlockMetadata(x, y, z);
 
-        AxisAlignedBB shaft = getBoxPosition(shaftBox, metaData);
-        AxisAlignedBB flag = getBoxPosition(flagBox, metaData);
+        AxisAlignedBB shaft = getBoxPosition(shaftBox, metaData, tileEntity);
+        AxisAlignedBB flag = getBoxPosition(flagBox, metaData, tileEntity);
 
-        MapMarkerTileEntity tileEntity = (MapMarkerTileEntity) renderer.blockAccess.getBlockTileEntity(x, y, z);
         int iconFileIndex = 0;
         if (tileEntity != null) {
             iconFileIndex = tileEntity.GetIconFileIndex();
