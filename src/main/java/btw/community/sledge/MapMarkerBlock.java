@@ -98,9 +98,32 @@ public class MapMarkerBlock extends BlockContainer {
     }
 
     @Override
+    public void onBlockHarvested(World world, int x, int y, int z, int meta, EntityPlayer player) {
+        int itemID = mapMarkerItem.itemID;
+        MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
+
+        if (tile != null && !player.capabilities.isCreativeMode)
+        {
+            ItemStack stackDropped = new ItemStack(itemID, 1, tile.GetIconIndex());
+            dropBlockAsItem_do(world, x, y, z, stackDropped);
+        }
+    }
+
+    @Override
     public int idDropped(int metaData, Random random, int fortuneModifier)
     {
-        return mapMarkerItem.itemID;
+        return 0;
+    }
+
+    @Override
+    public int damageDropped(int meta) {
+        return meta;
+    }
+
+    public int getDamageValue(World world, int x, int y, int z)
+    {
+        MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
+        return this.damageDropped(tile.GetIconIndex());
     }
 
     @Override
@@ -164,6 +187,7 @@ public class MapMarkerBlock extends BlockContainer {
 
         if (tile != null) {
             tile.Initialize();
+            tile.setIconIndex(stack.getItemDamage());
             if (meta <= 1)
             {
                 tile.setFlagRotation(Direction.directionToFacing[playerRotation]);
@@ -184,9 +208,9 @@ public class MapMarkerBlock extends BlockContainer {
         ItemStack heldItem = player.getCurrentEquippedItem();
         if (heldItem == null)
         {
-            int iconIndex = tile.GetIconIndex();
-            tile.setIconIndex(iconIndex + 1);
-            return true;
+//            int iconIndex = tile.GetIconIndex();
+//            tile.setIconIndex(iconIndex + 1);
+            return false;
         }
         else if (tile.isHidden() && heldItem.getItem() instanceof ItemMap){
             tile.attemptActivate(heldItem);

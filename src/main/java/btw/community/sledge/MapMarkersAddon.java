@@ -10,13 +10,13 @@ import net.minecraft.src.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static btw.crafting.recipe.RecipeManager.addCauldronRecipe;
 import static btw.crafting.recipe.RecipeManager.addShapelessRecipe;
 
 public class MapMarkersAddon extends BTWAddon {
-    private static MapMarkersAddon instance;
 
     private MapMarkersAddon() {
-        super("Map Markers", "2.1.0", "SMM");
+        super("Map Markers", "2.2.0", "SMM");
     }
 
     private static final int id_mapMarker = 2900;
@@ -31,13 +31,8 @@ public class MapMarkersAddon extends BTWAddon {
     public void initialize() {
         AddonHandler.logMessage(this.getName() + " Version " + this.getVersionString() + " Initializing...");
         AddDefinitions();
+        AddRecipes();
         AddonHandler.logMessage(this.getName() + " Initialized");
-    }
-
-    public static MapMarkersAddon getInstance() {
-        if (instance == null)
-            instance = new MapMarkersAddon();
-        return instance;
     }
 
     @Override
@@ -50,12 +45,41 @@ public class MapMarkersAddon extends BTWAddon {
         mapMarker = new MapMarkerBlock(id_mapMarker);
         Item.itemsList[mapMarker.blockID] = new ItemBlock(mapMarker.blockID - 256);
 
-        mapMarkerItem = (new ItemReed(id_mapMarkerItem - 256, mapMarker)).
+        mapMarkerItem = (new MapMarkerItem(id_mapMarkerItem - 256, mapMarker,
+                "smmItemMapMarker")).
                 setBuoyant().setFilterableProperties(Item.FILTERABLE_SOLID_BLOCK).
-                setUnlocalizedName("smmItemMapMarker").setCreativeTab(CreativeTabs.tabMisc);
+                setCreativeTab(CreativeTabs.tabMisc);
 
+        TileEntity.addMapping(MapMarkerTileEntity.class, "SMMMapMarker");
+    }
+
+    private void AddRecipes() {
+
+        int[] dyes = {
+                15, //white
+                10, //lime green
+                1, //red
+                4, //blue
+                8, //gray
+                11, //yellow
+                14, //orange
+                5, //purple
+        };
+
+        int[] markers = {
+                0,
+                5,
+                7,
+                8,
+                12,
+                13,
+                14,
+                15
+        };
+
+        //Default, aka white marker
         addShapelessRecipe( new ItemStack( mapMarkerItem, 1 ), new Object[] {
-                new ItemStack(BTWItems.woodMouldingStubID, 1, InventoryUtils.IGNORE_METADATA),
+                new ItemStack( BTWItems.woodMouldingStubID, 1, InventoryUtils.IGNORE_METADATA),
                 new ItemStack( Item.paper )
         } );
 
@@ -64,6 +88,20 @@ public class MapMarkersAddon extends BTWAddon {
                 new ItemStack( Item.paper )
         } );
 
-        TileEntity.addMapping(MapMarkerTileEntity.class, "SMMMapMarker");
+        //dying any marker with dyes
+        for (int i = 0; i < markers.length; i++) {
+            addShapelessRecipe( new ItemStack( mapMarkerItem, 1, markers[i] ), new Object[] {
+                    new ItemStack( mapMarkerItem, 1, InventoryUtils.IGNORE_METADATA ),
+                    new ItemStack( Item.dyePowder, 1, dyes[i] )
+            } );
+        }
+
+        //cauldron dying any marker with dyes
+        for (int i = 0; i < markers.length; i++) {
+            addCauldronRecipe( new ItemStack( mapMarkerItem, 16, markers[i] ), new ItemStack[] {
+                    new ItemStack( mapMarkerItem, 16, InventoryUtils.IGNORE_METADATA ),
+                    new ItemStack( Item.dyePowder, 1, dyes[i] )
+            } );
+        }
     }
 }
