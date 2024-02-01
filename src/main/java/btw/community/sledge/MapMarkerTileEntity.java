@@ -1,10 +1,9 @@
 package btw.community.sledge;
 
 import btw.block.tileentity.TileEntityDataPacketHandler;
-import net.minecraft.src.NBTTagCompound;
-import net.minecraft.src.Packet;
-import net.minecraft.src.Packet132TileEntityData;
-import net.minecraft.src.TileEntity;
+import btw.item.items.MapItem;
+import net.minecraft.src.*;
+
 import java.util.ArrayList;
 
 import static btw.community.sledge.MapMarkersAddon.WorldMapMarkers;
@@ -13,6 +12,7 @@ import static btw.community.sledge.MapMarkersAddon.mapMarker;
 public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPacketHandler {
     private int _iconIndex = 4;
     private int rotation = 0;
+    private boolean hidden = false;
 
     @Override
     public void writeToNBT(NBTTagCompound nbtTag)
@@ -20,27 +20,26 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         super.writeToNBT(nbtTag);
         nbtTag.setInteger("icon", this._iconIndex);
         nbtTag.setInteger("rotation", this.rotation);
-        //System.out.println("Tile saved: markerId = " + this.GetMarkerId() + ", iconIndex = " + this._iconIndex);
+        nbtTag.setBoolean("hidden", this.hidden);
+        //worldObj.markBlockRangeForRenderUpdate( xCoord, yCoord, zCoord, xCoord, yCoord, zCoord );
+        this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
     }
 
     @Override
     public void readFromNBT(NBTTagCompound nbtTag)
     {
-        //System.out.println("Tile Loading");
         super.readFromNBT(nbtTag);
         if (nbtTag.hasKey("icon")) {
-            //System.out.println("Tile loaded: markerId = " + this.GetMarkerId() + ", iconIndex = " + this._iconIndex);
             this._iconIndex = nbtTag.getInteger("icon");
         }
-
         if (nbtTag.hasKey("rotation"))
         {
             this.rotation = nbtTag.getInteger("rotation");
         }
-
-        //else {
-            //System.out.println("Tile loaded: markerId = " + this.GetMarkerId() + ", iconIndex = null");
-        //}
+        if (nbtTag.hasKey("hidden"))
+        {
+            this.hidden = nbtTag.getBoolean("hidden");
+        }
     }
 
     @Override
@@ -48,37 +47,36 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         NBTTagCompound nbtTag = new NBTTagCompound();
         nbtTag.setInteger("icon", this._iconIndex);
         nbtTag.setInteger("rotation", this.rotation);
+        nbtTag.setBoolean("hidden", this.hidden);
         return new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 1, nbtTag);
     }
 
     @Override
     public void readNBTFromPacket(NBTTagCompound nbtTag) {
         if (nbtTag.hasKey("icon")) {
-            //System.out.println("Tile packet loaded: markerId = " + this.GetMarkerId() + ", iconIndex = " + this._iconIndex);
             this._iconIndex = nbtTag.getInteger("icon");
         }
-
         if (nbtTag.hasKey("rotation"))
         {
             this.rotation = nbtTag.getInteger("rotation");
         }
-
-//        else {
-//            System.out.println("Tile packet loaded: markerId = " + this.GetMarkerId() + ", iconIndex = null");
-//        }
-        this.worldObj.markBlockForRenderUpdate(this.xCoord, this.yCoord, this.zCoord);
+        if (nbtTag.hasKey("hidden"))
+        {
+            this.hidden = nbtTag.getBoolean("hidden");
+        }
+        //worldObj.markBlockRangeForRenderUpdate( xCoord, yCoord, zCoord, xCoord, yCoord, zCoord );
+        this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
     }
 
     public void Initialize() {
+        hidden = true;
         removeNearbyBadMarkers();
         updateWorldMapMarkers();
     }
 
     private void removeNearbyBadMarkers() {
-        //noinspection Convert2Diamond
-        ArrayList<String> badMarkerIds = new ArrayList<String>();
-        for (Object markerObj : WorldMapMarkers.values()) {
-            MapMarkerData existingMarker = (MapMarkerData) markerObj;
+        ArrayList<String> badMarkerIds = new ArrayList<>();
+        for (MapMarkerData existingMarker : WorldMapMarkers.values()) {
             if (existingMarker.XPos >= this.xCoord - 64
                     && existingMarker.XPos <= this.xCoord + 64
                     && existingMarker.ZPos >= this.zCoord - 64
@@ -89,14 +87,19 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         }
         for (String badMarkerId : badMarkerIds) {
             WorldMapMarkers.remove(badMarkerId);
-            //System.out.println("SMMMapMarkers Removed Bad Marker: " + badMarkerId);
         }
     }
 
     private void updateWorldMapMarkers() {
-        MapMarkerData markerData = new MapMarkerData(this.GetMarkerId(), this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
-        //noinspection unchecked
-        WorldMapMarkers.put(this.GetMarkerId(), markerData);
+        if (!this.worldObj.isRemote) {
+
+            MapMarkerData markerData = new MapMarkerData(this.GetMarkerId(), this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
+            if (hidden) {
+                WorldMapMarkers.remove(this.GetMarkerId());
+            } else {
+                WorldMapMarkers.put(this.GetMarkerId(), markerData);
+            }
+       }
     }
 
     public String GetMarkerId() {
@@ -116,7 +119,33 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         return this.rotation;
     }
 
-    public void SetIconIndex(int iconIndex) {
+    public void attemptActivate(ItemStack stack){
+        if (worldObj.isRemote) return;
+        if (isLocationOnMap(stack)) {
+            this.hidden = false;
+        }
+        else {
+            this.hidden = true;
+        }
+        updateWorldMapMarkers();
+        this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
+    }
+
+    private boolean isLocationOnMap(ItemStack stack) {
+        MapItem mapItem = (MapItem) stack.getItem();
+        MapData mapData = mapItem.getMapData(stack, worldObj);
+        int mapScale = 1 << mapData.scale;
+        float relativeX = (float) ((double) xCoord - (double) mapData.xCenter) / (float) mapScale;
+        float relativeZ = (float) ((double) zCoord - (double) mapData.zCenter) / (float) mapScale;
+        //System.out.println("Remote " + worldObj.isRemote + " Scale " + mapScale + " x " + xCoord + " centerX " + mapData.xCenter + " relativeX " + relativeX + " z " + zCoord + " centerZ " + mapData.zCenter + " relativeZ " + relativeZ);
+        return !(Math.abs(relativeX) > 64F) && !(Math.abs(relativeZ) > 64F);
+    }
+
+    public boolean isHidden(){
+        return this.hidden;
+    }
+
+    public void setIconIndex(int iconIndex) {
         // start at 4 to skip default player icons
         if (iconIndex < 4) iconIndex = 4;
         // skip 6 (default "off map" icon)
@@ -126,14 +155,8 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         // numbering starts back at 4 to skip default player icons
         if (iconIndex > 15) iconIndex = 4;
         this._iconIndex = iconIndex;
-        if (this.worldObj.isRemote) {
-            updateWorldMapMarkers();
-            //System.out.println("TileSetIconIndex remote: " + this.GetMarkerId() + " iconIndex = " + iconIndex + ", iconFileIndex = " + GetIconFileIndex());
-            this.worldObj.markBlockForRenderUpdate(this.xCoord, this.yCoord, this.zCoord);
-        }
-//        else {
-//            System.out.println("TileSetIconIndex: " + this.GetMarkerId() + " iconIndex = " + iconIndex + ", iconFileIndex = " + GetIconFileIndex());
-//        }
+        updateWorldMapMarkers();
+        this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
     }
 
     public int GetIconFileIndex() {

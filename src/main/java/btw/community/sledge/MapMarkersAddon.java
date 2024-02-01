@@ -25,8 +25,7 @@ public class MapMarkersAddon extends BTWAddon {
     private static final int id_mapMarkerItem = 31900;
     public static Item mapMarkerItem;
 
-    @SuppressWarnings("rawtypes")
-    public static Map WorldMapMarkers = new LinkedHashMap<String, MapMarkerData>();
+    public static Map<String, MapMarkerData> WorldMapMarkers = new LinkedHashMap<>();
 
     @Override
     public void initialize() {

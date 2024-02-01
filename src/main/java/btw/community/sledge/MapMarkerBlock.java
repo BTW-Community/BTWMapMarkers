@@ -18,8 +18,11 @@ public class MapMarkerBlock extends BlockContainer {
     AxisAlignedBB shaftBox = new AxisAlignedBB(
             0.5D - m_dBlockHalfWidth, 0D, 0.5D - m_dBlockHalfWidth,
             0.5D + m_dBlockHalfWidth, m_dBlockHeight, 0.5D + m_dBlockHalfWidth);
-    AxisAlignedBB flagBox = new AxisAlignedBB(
+    AxisAlignedBB flagBoxActivated = new AxisAlignedBB(
             shaftBox.minX, shaftBox.maxY - 0.25D, shaftBox.minZ - (6D / 16D),
+            shaftBox.maxX, shaftBox.maxY, shaftBox.minZ);
+    AxisAlignedBB flagBoxDeactivated = new AxisAlignedBB(
+            shaftBox.minX, shaftBox.maxY - 0.35D, shaftBox.minZ - (4D / 16D),
             shaftBox.maxX, shaftBox.maxY, shaftBox.minZ);
 
     public MapMarkerBlock(int blockId) {
@@ -83,15 +86,6 @@ public class MapMarkerBlock extends BlockContainer {
         int facing = world.getBlockMetadata(x, y, z);
         return WorldUtils.doesBlockHaveSmallCenterHardpointToFacing(world, x, y, z,
                 Block.getOppositeFacing(facing), true);
-    }
-
-    @Override
-    public void onBlockAdded(World world, int x, int y, int z) {
-        super.onBlockAdded(world, x, y, z);
-        MapMarkerTileEntity tileEntity = (MapMarkerTileEntity) createNewTileEntity(world);
-        world.setBlockTileEntity(x, y, z, tileEntity);
-        tileEntity.Initialize();
-        //System.out.println("onBlockAdded: " + tileEntity.GetMarkerId());
     }
 
     @Override
@@ -176,20 +170,30 @@ public class MapMarkerBlock extends BlockContainer {
             }
             else tile.setFlagRotation(0);
         }
-
     }
 
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int facing, float xClick,
                                     float yClick, float zClick)
     {
+        if (world.isRemote) return false;
         MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
         if (tile == null) {
             return false;
         }
-        int iconIndex = tile.GetIconIndex();
-        tile.SetIconIndex(iconIndex + 1);
-        return true;
+        ItemStack heldItem = player.getCurrentEquippedItem();
+        if (heldItem == null)
+        {
+            int iconIndex = tile.GetIconIndex();
+            tile.setIconIndex(iconIndex + 1);
+            return true;
+        }
+        else if (tile.isHidden() && heldItem.getItem() instanceof ItemMap){
+            tile.attemptActivate(heldItem);
+            return true;
+        }
+
+        return false;
     }
 
     @Override
@@ -238,6 +242,7 @@ public class MapMarkerBlock extends BlockContainer {
         int metaData = blockAccess.getBlockMetadata(x, y, z);
 
         AxisAlignedBB box = shaftBox.makeTemporaryCopy();
+        AxisAlignedBB flagBox = tile.isHidden() ? flagBoxDeactivated : flagBoxActivated;
         box.expandToInclude(flagBox);
         box = getBoxPosition(box, metaData, tile);
 
@@ -278,12 +283,12 @@ public class MapMarkerBlock extends BlockContainer {
         int metaData = renderer.blockAccess.getBlockMetadata(x, y, z);
 
         AxisAlignedBB shaft = getBoxPosition(shaftBox, metaData, tileEntity);
+        AxisAlignedBB flagBox = tileEntity.isHidden() ? flagBoxDeactivated : flagBoxActivated;
         AxisAlignedBB flag = getBoxPosition(flagBox, metaData, tileEntity);
 
-        int iconFileIndex = 0;
+        int iconFileIndex = tileEntity.GetIconFileIndex();
         if (tileEntity != null) {
             iconFileIndex = tileEntity.GetIconFileIndex();
-            //System.out.println("RenderBlock: " + tileEntity.GetMarkerId() + " iconIndex = " + tileEntity.GetIconIndex() + ", IconFileIndex = " + iconFileIndex);
         }
 
         //shaftBox
