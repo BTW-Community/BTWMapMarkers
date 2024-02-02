@@ -4,8 +4,6 @@ import btw.world.util.BlockPos;
 import btw.world.util.WorldUtils;
 import net.minecraft.src.*;
 
-import java.util.Random;
-
 import static btw.community.sledge.MapMarkersAddon.WorldMapMarkers;
 import static btw.community.sledge.MapMarkersAddon.mapMarkerItem;
 
@@ -14,7 +12,6 @@ public class MapMarkerBlock extends BlockContainer {
     double m_dBlockWidth = (2D / 16D);
     double m_dBlockHalfWidth = (m_dBlockWidth / 2D);
 
-    //AxisAlignedBB shaftBox = AxisAlignedBB.getAABBPool().getAABB(
     AxisAlignedBB shaftBox = new AxisAlignedBB(
             0.5D - m_dBlockHalfWidth, 0D, 0.5D - m_dBlockHalfWidth,
             0.5D + m_dBlockHalfWidth, m_dBlockHeight, 0.5D + m_dBlockHalfWidth);
@@ -26,7 +23,7 @@ public class MapMarkerBlock extends BlockContainer {
             shaftBox.maxX, shaftBox.maxY, shaftBox.minZ);
 
     public MapMarkerBlock(int blockId) {
-        super(blockId, Material.wood);
+        super(blockId, Material.circuits);
 
         setHardness( 0F );
         setResistance( 0F );
@@ -52,6 +49,9 @@ public class MapMarkerBlock extends BlockContainer {
         return false;
     }
 
+    //side is where player is edge where player is looking
+    //blockPos shifts to the block being faced
+    //checks if that block has center hardpoint on the side being faced
     @Override
     public boolean canPlaceBlockOnSide(World world, int x, int y, int z, int side) {
         BlockPos targetPos = new BlockPos(x, y, z, Block.getOppositeFacing( side));
@@ -68,27 +68,6 @@ public class MapMarkerBlock extends BlockContainer {
     }
 
     @Override
-    public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-        for (int facing = 0; facing < 6; facing++) {
-            BlockPos targetPos = new BlockPos(x, y, z, facing);
-
-            if (WorldUtils.doesBlockHaveCenterHardpointToFacing(world, targetPos.x, targetPos.y, targetPos.z,
-                    Block.getOppositeFacing(facing)))
-            {
-                return true;
-            }
-        }
-
-        return canPlaceOn(world, x, y - 1, z);
-    }
-
-    protected boolean canPlaceOn( World world, int x, int y, int z) {
-        int facing = world.getBlockMetadata(x, y, z);
-        return WorldUtils.doesBlockHaveSmallCenterHardpointToFacing(world, x, y, z,
-                Block.getOppositeFacing(facing), true);
-    }
-
-    @Override
     public void breakBlock(World world, int x, int y, int z, int par5, int par6) {
         MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
         if (tile != null) {
@@ -98,56 +77,42 @@ public class MapMarkerBlock extends BlockContainer {
     }
 
     @Override
-    public void onBlockHarvested(World world, int x, int y, int z, int meta, EntityPlayer player) {
-        int itemID = mapMarkerItem.itemID;
-        MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
+    public void onFluidFlowIntoBlock(World world, int x, int y, int z, BlockFluid fluidBlock) {
+        dropAsItem(world, x, y, z);
+    }
 
-        if (tile != null && !player.capabilities.isCreativeMode)
-        {
-            ItemStack stackDropped = new ItemStack(itemID, 1, tile.GetIconIndex());
-            dropBlockAsItem_do(world, x, y, z, stackDropped);
+    @Override
+    public void onBlockHarvested(World world, int x, int y, int z, int meta, EntityPlayer player) {
+        if (!player.capabilities.isCreativeMode) {
+            dropAsItem(world, x, y, z);
         }
     }
 
-    @Override
-    public int idDropped(int metaData, Random random, int fortuneModifier)
-    {
-        return 0;
+    private void dropAsItem(World world, int x, int y, int z) {
+        int itemID = mapMarkerItem.itemID;
+        int iconIndex = ((MapMarkerTileEntity) world.getBlockTileEntity(x, y, z)).getIconIndex();
+        ItemStack stackDropped = new ItemStack(itemID, 1, iconIndex);
+        dropBlockAsItem_do(world, x, y, z, stackDropped);
+        world.setBlockToAir(x, y, z);
     }
 
     @Override
-    public int damageDropped(int meta) {
-        return meta;
-    }
-
     public int getDamageValue(World world, int x, int y, int z)
     {
-        MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
-        return this.damageDropped(tile.GetIconIndex());
-    }
-
-    @Override
-    public boolean canBlockStay(World world, int x, int y, int z) {
-        return canPlaceBlockAt(world, x, y, z);
+        return ((MapMarkerTileEntity) world.getBlockTileEntity(x, y, z)).getIconIndex();
     }
 
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z, int neighborBlockId) {
-        if (!canBlockStay(world, x, y, z)) {
-            MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
-            if (tile != null) {
-
-                // pop the block off if it no longer has a valid anchor point
-                dropBlockAsItem(world, x, y, z, tile.GetIconIndex(), 0);
-                WorldMapMarkers.remove(tile.GetMarkerId());
-            }
-            world.setBlockWithNotify(x, y, z, 0);
+        //facing should be the part that sticks out, the method works out the anchor
+        int iFacing = getFacing(world, x, y, z);
+        if ( !canPlaceBlockOnSide( world, x, y, z, iFacing) ) {
+            dropAsItem(world, x, y, z);
         }
     }
 
     @Override
-    public boolean hasSmallCenterHardPointToFacing(IBlockAccess blockAccess, int x, int y, int z, int facing,
-                                                   boolean ignoreTransparency)
+    public boolean hasSmallCenterHardPointToFacing(IBlockAccess blockAccess, int x, int y, int z, int facing, boolean ignoreTransparency)
     {
         // only has upwards facing hard point for torches
         return facing == 1 && getFacing( blockAccess, x, y, z ) == 0;
@@ -159,36 +124,43 @@ public class MapMarkerBlock extends BlockContainer {
 
     public void onCrushedByFallingEntity(World world, int x, int y, int z, EntityFallingSand entity) {
         if ( !world.isRemote ) {
-            dropBlockAsItem(world, x, y, z, world.getBlockMetadata(x, y, z), 0);
+            dropAsItem(world, x, y, z);
         }
     }
 
     @Override
-    public void onNeighborDisrupted(World world, int x, int y, int z, int toFacing) {
-        if (toFacing == getFacing(world, x, y, z)) {
-            dropBlockAsItem(world, x, y, z, world.getBlockMetadata(x, y, z), 0);
-            world.setBlockWithNotify(x, y, z, 0);
-        }
+    public int getFacing(int iMetadata)
+    {
+        // shaft facing is the tip that sticks out
+        return iMetadata;
+    }
+
+    @Override
+    public int setFacing(int iMetadata, int iFacing)
+    {
+        //return iMetadata | iFacing;
+        return iFacing;
     }
 
     @Override
     public int onBlockPlaced(World world, int x, int y, int z, int side, float clickX, float clickY, float clickZ,
                              int metaData)
     {
-        return side;
+        metaData = setFacing(metaData, side);
+        return metaData;
     }
 
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving player, ItemStack stack)
     {
-        int meta = world.getBlockMetadata(x, y, z);
+        int facing = world.getBlockMetadata(x, y, z);
         int playerRotation = ((MathHelper.floor_double((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3) + 2) % 4; //turns playerRotation into 0 - 4
         MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
 
         if (tile != null) {
             tile.Initialize();
             tile.setIconIndex(stack.getItemDamage());
-            if (meta <= 1)
+            if (facing <= 1)
             {
                 tile.setFlagRotation(Direction.directionToFacing[playerRotation]);
             }
@@ -206,13 +178,8 @@ public class MapMarkerBlock extends BlockContainer {
             return false;
         }
         ItemStack heldItem = player.getCurrentEquippedItem();
-        if (heldItem == null)
-        {
-//            int iconIndex = tile.GetIconIndex();
-//            tile.setIconIndex(iconIndex + 1);
-            return false;
-        }
-        else if (tile.isHidden() && heldItem.getItem() instanceof ItemMap){
+        if (heldItem == null) return false;
+        if (tile.isHidden() && heldItem.getItem() instanceof ItemMap){
             tile.attemptActivate(heldItem);
             return true;
         }
@@ -257,7 +224,8 @@ public class MapMarkerBlock extends BlockContainer {
 
     @Override
     public int idPicked(World world, int x, int y, int z) {
-        return idDropped( world.getBlockMetadata(x, y, z ), world.rand, 0);
+        int iconIndex = ((MapMarkerTileEntity) world.getBlockTileEntity(x, y, z)).getIconIndex();
+        return idDropped( iconIndex, world.rand, 0);
     }
 
     @Override
@@ -311,9 +279,6 @@ public class MapMarkerBlock extends BlockContainer {
         AxisAlignedBB flag = getBoxPosition(flagBox, metaData, tileEntity);
 
         int iconFileIndex = tileEntity.GetIconFileIndex();
-        if (tileEntity != null) {
-            iconFileIndex = tileEntity.GetIconFileIndex();
-        }
 
         //shaftBox
         renderer.setRenderBounds(shaft);

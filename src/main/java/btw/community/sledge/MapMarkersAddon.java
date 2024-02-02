@@ -43,7 +43,7 @@ public class MapMarkersAddon extends BTWAddon {
     private static void AddDefinitions()
     {
         mapMarker = new MapMarkerBlock(id_mapMarker);
-        Item.itemsList[mapMarker.blockID] = new ItemBlock(mapMarker.blockID - 256);
+        //Item.itemsList[mapMarker.blockID] = new ItemBlock(mapMarker.blockID - 256);
 
         mapMarkerItem = (new MapMarkerItem(id_mapMarkerItem - 256, mapMarker,
                 "smmItemMapMarker")).
@@ -67,7 +67,7 @@ public class MapMarkersAddon extends BTWAddon {
         };
 
         int[] markers = {
-                0,
+                4,
                 5,
                 7,
                 8,

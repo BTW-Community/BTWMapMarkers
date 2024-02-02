@@ -18,7 +18,7 @@ public class MapMarkerItem extends ItemReed {
     @Override
     public void getSubItems(int id, CreativeTabs tab, List list)
     {
-        list.add(new ItemStack(id, 1, 0));
+        list.add(new ItemStack(id, 1, 4));
         list.add(new ItemStack(id, 1, 5));
         list.add(new ItemStack(id, 1, 7));
         list.add(new ItemStack(id, 1, 8));
@@ -33,7 +33,7 @@ public class MapMarkerItem extends ItemReed {
     @Override
     public void registerIcons(IconRegister register) {
 
-        flagIcons[0] = register.registerIcon(name);
+        flagIcons[4] = register.registerIcon(name + "_4");
         flagIcons[5] = register.registerIcon(name + "_5");
         flagIcons[7] = register.registerIcon(name + "_7");
         flagIcons[8] = register.registerIcon(name + "_8");

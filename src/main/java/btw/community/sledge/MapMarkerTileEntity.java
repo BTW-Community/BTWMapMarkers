@@ -21,7 +21,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         nbtTag.setInteger("icon", this._iconIndex);
         nbtTag.setInteger("rotation", this.rotation);
         nbtTag.setBoolean("hidden", this.hidden);
-        //worldObj.markBlockRangeForRenderUpdate( xCoord, yCoord, zCoord, xCoord, yCoord, zCoord );
+        
         this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
     }
 
@@ -64,7 +64,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         {
             this.hidden = nbtTag.getBoolean("hidden");
         }
-        //worldObj.markBlockRangeForRenderUpdate( xCoord, yCoord, zCoord, xCoord, yCoord, zCoord );
+
         this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
     }
 
@@ -91,7 +91,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
     }
 
     private void updateWorldMapMarkers() {
-        if (!this.worldObj.isRemote) {
+        if (this.worldObj != null && !this.worldObj.isRemote) {
 
             MapMarkerData markerData = new MapMarkerData(this.GetMarkerId(), this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
             if (hidden) {
@@ -106,10 +106,6 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         return "SMM-Marker " + this.xCoord + "." + this.yCoord + '.' + this.zCoord;
     }
 
-    public int GetIconIndex() {
-        return this._iconIndex;
-    }
-
     public void setFlagRotation (int rotation)
     {
         this.rotation = rotation;
@@ -121,12 +117,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
 
     public void attemptActivate(ItemStack stack){
         if (worldObj.isRemote) return;
-        if (isLocationOnMap(stack)) {
-            this.hidden = false;
-        }
-        else {
-            this.hidden = true;
-        }
+        this.hidden = !isLocationOnMap(stack);
         updateWorldMapMarkers();
         this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
     }
@@ -137,7 +128,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         int mapScale = 1 << mapData.scale;
         float relativeX = (float) ((double) xCoord - (double) mapData.xCenter) / (float) mapScale;
         float relativeZ = (float) ((double) zCoord - (double) mapData.zCenter) / (float) mapScale;
-        //System.out.println("Remote " + worldObj.isRemote + " Scale " + mapScale + " x " + xCoord + " centerX " + mapData.xCenter + " relativeX " + relativeX + " z " + zCoord + " centerZ " + mapData.zCenter + " relativeZ " + relativeZ);
+
         return !(Math.abs(relativeX) > 64F) && !(Math.abs(relativeZ) > 64F);
     }
 
@@ -145,6 +136,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         return this.hidden;
     }
 
+    public int getIconIndex() { return _iconIndex; }
     public void setIconIndex(int iconIndex) {
         // start at 4 to skip default player icons
         if (iconIndex < 4) iconIndex = 4;
@@ -155,6 +147,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         // numbering starts back at 4 to skip default player icons
         if (iconIndex > 15) iconIndex = 4;
         this._iconIndex = iconIndex;
+
         updateWorldMapMarkers();
         this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
     }

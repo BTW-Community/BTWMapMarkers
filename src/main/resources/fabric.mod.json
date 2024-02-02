@@ -14,7 +14,7 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "textures/items/smmItemMapMarker.png",
+  "icon": "smmItemMapMarker_4.png",
 
   "environment": "*",
   "mixins": [
