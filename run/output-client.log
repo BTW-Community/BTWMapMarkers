@@ -1,0 +1,1312 @@
+2024-01-28 15:11:50 [CLIENT] [INFO] Setting user: Player562
+2024-01-28 15:11:50 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 15:22:15 [CLIENT] [INFO] Setting user: Player828
+2024-01-28 15:22:15 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 15:25:44 [CLIENT] [INFO] Setting user: Player171
+2024-01-28 15:25:44 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 15:27:21 [CLIENT] [INFO] Setting user: Player985
+2024-01-28 15:27:21 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 15:29:01 [CLIENT] [INFO] Setting user: Player984
+2024-01-28 15:29:01 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 15:31:01 [CLIENT] [INFO] Setting user: Player968
+2024-01-28 15:31:01 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 15:32:01 [CLIENT] [INFO] Setting user: Player812
+2024-01-28 15:32:01 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 15:32:02 [CLIENT] [WARNING] TextureManager.createTexture called for file textures/blocks/fcBlockLogChewedOak_side.png, but that file does not exist. Ignoring.
+2024-01-28 15:36:55 [CLIENT] [INFO] Setting user: Player125
+2024-01-28 15:36:55 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 15:36:57 [CLIENT] [WARNING] TextureManager.createTexture called for file textures/blocks/fcBlockLogChewedOak_side.png, but that file does not exist. Ignoring.
+2024-01-28 15:38:10 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 15:38:10 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 16:15:23 [CLIENT] [INFO] Setting user: Player453
+2024-01-28 16:15:23 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 16:15:25 [CLIENT] [WARNING] TextureManager.createTexture called for file textures/blocks/fcBlockLogChewedOak_side.png, but that file does not exist. Ignoring.
+2024-01-28 16:15:33 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 16:15:33 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 16:19:23 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 16:19:23 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 16:19:58 [CLIENT] [INFO] Stopping!
+2024-01-28 16:43:36 [CLIENT] [INFO] Setting user: Player109
+2024-01-28 16:43:36 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 16:43:45 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 16:43:45 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 16:48:41 [CLIENT] [INFO] [CHAT] /defaultgamemode, /msg, /testfor, /loc, /seed, /tell, /gamemode, /toggledownfall, /weather, /me, /scoreboard, /give, /debug, /clear, /say, /kill, /spawnpoint, /difficulty, /help, /gamerule, /effect, /enchant, /w, /publish, /xp, /time, /tp, /?
+2024-01-28 16:48:48 [CLIENT] [INFO] [CHAT] set, add
+2024-01-28 16:48:50 [CLIENT] [INFO] [CHAT] day, night
+2024-01-28 16:48:51 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-28 16:51:33 [CLIENT] [INFO] Stopping!
+2024-01-28 17:22:02 [CLIENT] [INFO] Setting user: Player734
+2024-01-28 17:22:02 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 17:22:12 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 17:22:12 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 17:24:18 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 17:24:18 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 17:24:41 [CLIENT] [INFO] Stopping!
+2024-01-28 19:08:09 [CLIENT] [INFO] Setting user: Player453
+2024-01-28 19:08:09 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 19:08:23 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 19:08:23 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 19:08:49 [CLIENT] [INFO] Stopping!
+2024-01-28 19:11:30 [CLIENT] [INFO] Setting user: Player953
+2024-01-28 19:11:30 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 19:13:42 [CLIENT] [INFO] Setting user: Player828
+2024-01-28 19:13:42 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 19:22:00 [CLIENT] [INFO] Setting user: Player656
+2024-01-28 19:22:00 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 19:22:08 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 19:22:08 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 19:22:15 [CLIENT] [INFO] Stopping!
+2024-01-28 19:33:11 [CLIENT] [INFO] Setting user: Player140
+2024-01-28 19:33:11 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 19:33:21 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 19:33:21 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 19:39:55 [CLIENT] [INFO] Stopping!
+2024-01-28 19:46:25 [CLIENT] [INFO] Setting user: Player15
+2024-01-28 19:46:25 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 19:46:36 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 19:46:36 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 19:46:46 [CLIENT] [INFO] Stopping!
+2024-01-28 19:49:28 [CLIENT] [INFO] Setting user: Player328
+2024-01-28 19:49:28 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 19:49:35 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 19:49:35 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 19:49:52 [CLIENT] [INFO] Stopping!
+2024-01-28 19:50:29 [CLIENT] [INFO] Setting user: Player343
+2024-01-28 19:50:29 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 19:50:39 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 19:50:39 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 19:51:43 [CLIENT] [INFO] Stopping!
+2024-01-28 19:52:03 [CLIENT] [INFO] Setting user: Player218
+2024-01-28 19:52:03 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 19:52:14 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 19:52:14 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 19:56:48 [CLIENT] [INFO] Stopping!
+2024-01-28 20:12:04 [CLIENT] [INFO] Setting user: Player218
+2024-01-28 20:12:04 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 20:12:13 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 20:12:13 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 20:12:41 [CLIENT] [INFO] [CHAT] <Player218> time set day
+2024-01-28 20:12:47 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-28 20:14:24 [CLIENT] [INFO] Stopping!
+2024-01-28 20:15:28 [CLIENT] [INFO] Setting user: Player984
+2024-01-28 20:15:28 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 20:16:00 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 20:16:00 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 20:21:49 [CLIENT] [INFO] Stopping!
+2024-01-28 20:22:36 [CLIENT] [INFO] Setting user: Player359
+2024-01-28 20:22:36 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 20:22:54 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 20:22:54 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 20:27:38 [CLIENT] [INFO] Stopping!
+2024-01-28 21:24:02 [CLIENT] [INFO] Setting user: Player781
+2024-01-28 21:24:03 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:24:11 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:24:11 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:25:52 [CLIENT] [INFO] Stopping!
+2024-01-28 21:26:38 [CLIENT] [INFO] Setting user: Player93
+2024-01-28 21:26:38 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:26:49 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:26:49 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:27:29 [CLIENT] [INFO] Stopping!
+2024-01-28 21:27:51 [CLIENT] [INFO] Setting user: Player890
+2024-01-28 21:27:51 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:27:59 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:27:59 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:28:36 [CLIENT] [INFO] Stopping!
+2024-01-28 21:29:42 [CLIENT] [INFO] Setting user: Player250
+2024-01-28 21:29:42 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:29:53 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:29:53 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:30:47 [CLIENT] [INFO] Stopping!
+2024-01-28 21:31:23 [CLIENT] [INFO] Setting user: Player828
+2024-01-28 21:31:23 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:31:31 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:31:31 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:31:58 [CLIENT] [INFO] Stopping!
+2024-01-28 21:32:52 [CLIENT] [INFO] Setting user: Player453
+2024-01-28 21:32:52 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:33:08 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:33:08 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:33:52 [CLIENT] [INFO] Stopping!
+2024-01-28 21:35:49 [CLIENT] [INFO] Setting user: Player937
+2024-01-28 21:35:49 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:35:57 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:35:57 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:36:41 [CLIENT] [INFO] Stopping!
+2024-01-28 21:37:41 [CLIENT] [INFO] Setting user: Player609
+2024-01-28 21:37:41 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:37:50 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:37:50 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:38:24 [CLIENT] [INFO] Stopping!
+2024-01-28 21:39:17 [CLIENT] [INFO] Setting user: Player578
+2024-01-28 21:39:17 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:39:24 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:39:24 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:40:26 [CLIENT] [INFO] Stopping!
+2024-01-28 21:41:45 [CLIENT] [INFO] Setting user: Player781
+2024-01-28 21:41:45 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:41:54 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:41:54 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:42:46 [CLIENT] [INFO] Stopping!
+2024-01-28 21:44:24 [CLIENT] [INFO] Setting user: Player171
+2024-01-28 21:44:24 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:44:31 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:44:31 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:45:36 [CLIENT] [INFO] Stopping!
+2024-01-28 21:47:37 [CLIENT] [INFO] Setting user: Player265
+2024-01-28 21:47:37 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 21:47:45 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 21:47:45 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 21:48:28 [CLIENT] [INFO] Stopping!
+2024-01-28 22:00:53 [CLIENT] [INFO] Setting user: Player796
+2024-01-28 22:00:53 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:01:01 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:01:01 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:01:10 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-28 22:01:59 [CLIENT] [INFO] Stopping!
+2024-01-28 22:03:30 [CLIENT] [INFO] Setting user: Player125
+2024-01-28 22:03:30 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:03:37 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:03:37 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:04:08 [CLIENT] [INFO] Stopping!
+2024-01-28 22:22:07 [CLIENT] [INFO] Setting user: Player250
+2024-01-28 22:22:07 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:22:24 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:22:24 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:23:36 [CLIENT] [INFO] Stopping!
+2024-01-28 22:23:50 [CLIENT] [INFO] Setting user: Player78
+2024-01-28 22:23:50 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:23:59 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:23:59 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:25:11 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:25:11 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:25:18 [CLIENT] [INFO] Stopping!
+2024-01-28 22:25:40 [CLIENT] [INFO] Setting user: Player843
+2024-01-28 22:25:40 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:25:56 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:25:56 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:29:37 [CLIENT] [INFO] Stopping!
+2024-01-28 22:31:24 [CLIENT] [INFO] Setting user: Player796
+2024-01-28 22:31:24 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:31:38 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:31:38 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:32:32 [CLIENT] [INFO] Stopping!
+2024-01-28 22:33:10 [CLIENT] [INFO] Setting user: Player15
+2024-01-28 22:33:10 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:33:19 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:33:19 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:34:50 [CLIENT] [INFO] Setting user: Player828
+2024-01-28 22:34:50 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:34:58 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:34:58 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:35:48 [CLIENT] [INFO] Setting user: Player343
+2024-01-28 22:35:48 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:35:56 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:35:56 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:36:50 [CLIENT] [INFO] Setting user: Player734
+2024-01-28 22:36:50 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:36:59 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:36:59 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:38:05 [CLIENT] [INFO] Setting user: Player640
+2024-01-28 22:38:05 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:38:13 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:38:13 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:38:55 [CLIENT] [INFO] Setting user: Player984
+2024-01-28 22:38:55 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:39:09 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:39:09 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:39:23 [CLIENT] [INFO] Stopping!
+2024-01-28 22:39:40 [CLIENT] [INFO] Setting user: Player859
+2024-01-28 22:39:40 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:39:48 [CLIENT] [WARNING] Failed to add pack.mcmeta in resources
+2024-01-28 22:39:48 [CLIENT] [WARNING] Failed to add READ_ME_I_AM_VERY_IMPORTANT in resources
+2024-01-28 22:39:51 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:39:51 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:40:59 [CLIENT] [INFO] Setting user: Player322
+2024-01-28 22:40:59 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:41:07 [CLIENT] [WARNING] Failed to add pack.mcmeta in resources
+2024-01-28 22:41:07 [CLIENT] [WARNING] Failed to add READ_ME_I_AM_VERY_IMPORTANT in resources
+2024-01-28 22:41:09 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:41:09 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:42:03 [CLIENT] [INFO] Setting user: Player218
+2024-01-28 22:42:03 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:42:12 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:42:12 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:43:02 [CLIENT] [INFO] Setting user: Player390
+2024-01-28 22:43:02 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:43:21 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:43:21 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:43:50 [CLIENT] [INFO] Stopping!
+2024-01-28 22:52:24 [CLIENT] [INFO] Setting user: Player906
+2024-01-28 22:52:24 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:52:31 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:52:31 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:53:29 [CLIENT] [INFO] Stopping!
+2024-01-28 22:53:39 [CLIENT] [INFO] Setting user: Player218
+2024-01-28 22:53:39 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:53:47 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:53:47 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:54:33 [CLIENT] [INFO] Stopping!
+2024-01-28 22:54:47 [CLIENT] [INFO] Setting user: Player953
+2024-01-28 22:54:47 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:54:54 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:54:54 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:56:07 [CLIENT] [INFO] Stopping!
+2024-01-28 22:57:14 [CLIENT] [INFO] Setting user: Player718
+2024-01-28 22:57:14 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 22:57:27 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 22:57:27 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 22:58:20 [CLIENT] [INFO] Stopping!
+2024-01-28 23:22:33 [CLIENT] [INFO] Setting user: Player921
+2024-01-28 23:22:33 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 23:22:41 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 23:22:41 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 23:25:53 [CLIENT] [INFO] Stopping!
+2024-01-28 23:39:35 [CLIENT] [INFO] Setting user: Player62
+2024-01-28 23:39:35 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 23:39:44 [CLIENT] [INFO] Stopping!
+2024-01-28 23:40:00 [CLIENT] [INFO] Setting user: Player765
+2024-01-28 23:40:00 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-28 23:40:08 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-28 23:40:08 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-28 23:41:42 [CLIENT] [INFO] Stopping!
+2024-01-29 10:24:28 [CLIENT] [INFO] Setting user: Player203
+2024-01-29 10:24:28 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 10:24:58 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 10:24:58 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-29 10:25:13 [CLIENT] [INFO] Stopping!
+2024-01-29 10:33:01 [CLIENT] [INFO] Setting user: Player750
+2024-01-29 10:33:01 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 10:37:16 [CLIENT] [INFO] Setting user: Player750
+2024-01-29 10:37:16 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 10:37:59 [CLIENT] [INFO] Setting user: Player328
+2024-01-29 10:37:59 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 10:43:16 [CLIENT] [INFO] Setting user: Player984
+2024-01-29 10:43:16 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 10:44:41 [CLIENT] [INFO] Setting user: Player859
+2024-01-29 10:44:41 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 11:45:12 [CLIENT] [INFO] Setting user: Player125
+2024-01-29 11:45:12 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 11:45:42 [CLIENT] [INFO] Setting user: Player609
+2024-01-29 11:45:42 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 11:46:17 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 11:46:17 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-29 11:46:17 [CLIENT] [WARNING] Memory connection overburdened; after processing 2500 packets, we still have 2176 to go!
+2024-01-29 11:46:47 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-29 11:47:06 [CLIENT] [INFO] Stopping!
+2024-01-29 11:58:36 [CLIENT] [INFO] Setting user: Player765
+2024-01-29 11:58:36 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 11:58:47 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 11:58:47 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-29 11:59:15 [CLIENT] [INFO] Stopping!
+2024-01-29 12:00:08 [CLIENT] [INFO] Setting user: Player171
+2024-01-29 12:00:08 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 12:00:15 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 12:00:15 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-29 12:00:44 [CLIENT] [INFO] Stopping!
+2024-01-29 12:02:00 [CLIENT] [INFO] Setting user: Player250
+2024-01-29 12:02:00 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 12:02:06 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 12:02:06 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-29 12:02:48 [CLIENT] [INFO] Stopping!
+2024-01-29 12:03:51 [CLIENT] [INFO] Setting user: Player859
+2024-01-29 12:03:51 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 12:03:58 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 12:03:58 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-29 12:04:11 [CLIENT] [INFO] Stopping!
+2024-01-29 12:04:32 [CLIENT] [INFO] Setting user: Player93
+2024-01-29 12:04:32 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 12:04:39 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 12:04:39 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-29 12:05:23 [CLIENT] [INFO] Stopping!
+2024-01-29 12:09:56 [CLIENT] [INFO] Setting user: Player593
+2024-01-29 12:09:56 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 12:10:03 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 12:10:03 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-29 12:11:18 [CLIENT] [INFO] Stopping!
+2024-01-29 12:11:39 [CLIENT] [INFO] Setting user: Player593
+2024-01-29 12:11:39 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 12:11:46 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 12:11:46 [CLIENT] [INFO] [CHAT] §fMap Markers V2.0.0
+2024-01-29 12:12:02 [CLIENT] [INFO] Stopping!
+2024-01-29 18:25:06 [CLIENT] [INFO] Setting user: Player359
+2024-01-29 18:25:06 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 18:25:09 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 18:25:16 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 18:25:16 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 18:27:27 [CLIENT] [INFO] Stopping!
+2024-01-29 18:35:58 [CLIENT] [INFO] Setting user: Player171
+2024-01-29 18:35:58 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 18:36:01 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 18:36:05 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 18:36:05 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 18:37:23 [CLIENT] [INFO] Stopping!
+2024-01-29 19:03:47 [CLIENT] [INFO] Setting user: Player296
+2024-01-29 19:03:47 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 19:03:50 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 19:04:09 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 19:04:09 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 19:05:14 [CLIENT] [INFO] Stopping!
+2024-01-29 19:05:27 [CLIENT] [INFO] Setting user: Player515
+2024-01-29 19:05:27 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 19:05:30 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 19:05:45 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 19:05:45 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 19:06:20 [CLIENT] [INFO] Stopping!
+2024-01-29 19:38:13 [CLIENT] [INFO] Setting user: Player234
+2024-01-29 19:38:13 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 19:38:16 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 19:38:28 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 19:38:28 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 19:41:18 [CLIENT] [INFO] Stopping!
+2024-01-29 20:20:55 [CLIENT] [INFO] Setting user: Player703
+2024-01-29 20:20:55 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 20:20:57 [CLIENT] [WARNING] TextureManager.createTexture called for file textures/blocks/fcBlockLogChewedOak_side.png, but that file does not exist. Ignoring.
+2024-01-29 20:20:58 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 20:21:24 [CLIENT] [INFO] Stopping!
+2024-01-29 20:25:22 [CLIENT] [INFO] Setting user: Player437
+2024-01-29 20:25:22 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 20:25:25 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 20:27:29 [CLIENT] [INFO] Stopping!
+2024-01-29 20:27:41 [CLIENT] [INFO] Setting user: Player406
+2024-01-29 20:27:41 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 20:27:44 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 20:28:11 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 20:28:11 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 20:29:51 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-29 20:31:59 [CLIENT] [INFO] Stopping!
+2024-01-29 20:40:25 [CLIENT] [INFO] Setting user: Player703
+2024-01-29 20:40:25 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 20:40:28 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 20:40:33 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 20:40:33 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 20:42:44 [CLIENT] [INFO] Stopping!
+2024-01-29 20:46:12 [CLIENT] [INFO] Setting user: Player796
+2024-01-29 20:46:13 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 20:46:15 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 20:46:20 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 20:46:20 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 20:47:35 [CLIENT] [INFO] Stopping!
+2024-01-29 20:59:51 [CLIENT] [INFO] Setting user: Player469
+2024-01-29 20:59:51 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 20:59:54 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 21:00:00 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 21:00:00 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 21:00:20 [CLIENT] [INFO] Stopping!
+2024-01-29 21:02:54 [CLIENT] [INFO] Setting user: Player750
+2024-01-29 21:02:55 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 21:02:57 [CLIENT] [WARNING] TextureManager.createTexture: Skipping textures/items/smmItemMapMarker_15.png because of broken aspect ratio and not animation
+2024-01-29 21:03:02 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 21:03:02 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 21:03:34 [CLIENT] [INFO] Stopping!
+2024-01-29 21:40:50 [CLIENT] [INFO] Setting user: Player984
+2024-01-29 21:40:50 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 21:40:58 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 21:40:58 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 21:41:24 [CLIENT] [INFO] Stopping!
+2024-01-29 21:42:11 [CLIENT] [INFO] Setting user: Player78
+2024-01-29 21:42:11 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 21:42:18 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 21:42:18 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 21:43:19 [CLIENT] [INFO] Stopping!
+2024-01-29 21:43:40 [CLIENT] [INFO] Setting user: Player500
+2024-01-29 21:43:40 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 21:43:47 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 21:43:47 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 21:45:06 [CLIENT] [INFO] Stopping!
+2024-01-29 21:45:18 [CLIENT] [INFO] Setting user: Player937
+2024-01-29 21:45:18 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 21:45:25 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 21:45:25 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 21:45:59 [CLIENT] [INFO] Stopping!
+2024-01-29 21:46:20 [CLIENT] [INFO] Setting user: Player890
+2024-01-29 21:46:20 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 21:46:36 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 21:46:36 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 21:48:51 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-29 21:50:33 [CLIENT] [INFO] Stopping!
+2024-01-29 21:50:58 [CLIENT] [INFO] Setting user: Player796
+2024-01-29 21:50:58 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 21:51:04 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 21:51:04 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 21:55:08 [CLIENT] [INFO] Stopping!
+2024-01-29 22:08:58 [CLIENT] [INFO] Setting user: Player250
+2024-01-29 22:08:58 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 22:09:07 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 22:09:07 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 22:10:08 [CLIENT] [INFO] Stopping!
+2024-01-29 22:26:16 [CLIENT] [INFO] Setting user: Player46
+2024-01-29 22:26:16 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-29 22:26:28 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-29 22:26:28 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-29 22:30:35 [CLIENT] [INFO] Stopping!
+2024-01-30 07:56:15 [CLIENT] [INFO] Setting user: Player312
+2024-01-30 07:56:15 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 08:06:49 [CLIENT] [INFO] Setting user: Player421
+2024-01-30 08:06:49 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 08:07:32 [CLIENT] [INFO] Setting user: Player968
+2024-01-30 08:07:32 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 08:08:18 [CLIENT] [INFO] Setting user: Player390
+2024-01-30 08:08:18 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 11:29:57 [CLIENT] [INFO] Setting user: Player609
+2024-01-30 11:29:57 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 11:30:14 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 11:30:14 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 11:30:43 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-30 11:30:47 [CLIENT] [INFO] [CHAT] /defaultgamemode, /msg, /testfor, /loc, /seed, /tell, /gamemode, /toggledownfall, /weather, /me, /scoreboard, /give, /debug, /clear, /say, /kill, /spawnpoint, /difficulty, /help, /gamerule, /effect, /enchant, /w, /publish, /xp, /time, /tp, /?
+2024-01-30 11:31:31 [CLIENT] [INFO] Stopping!
+2024-01-30 12:05:10 [CLIENT] [INFO] Setting user: Player828
+2024-01-30 12:05:10 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 12:05:25 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 12:05:25 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 12:43:24 [CLIENT] [INFO] Stopping!
+2024-01-30 19:44:49 [CLIENT] [INFO] Setting user: Player671
+2024-01-30 19:44:49 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 19:45:10 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 19:45:10 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 19:46:49 [CLIENT] [INFO] Stopping!
+2024-01-30 20:27:07 [CLIENT] [INFO] Setting user: Player578
+2024-01-30 20:27:07 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 20:27:41 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 20:27:41 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 20:28:08 [CLIENT] [INFO] Stopping!
+2024-01-30 20:37:13 [CLIENT] [INFO] Setting user: Player421
+2024-01-30 20:37:13 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 20:37:18 [CLIENT] [INFO] Stopping!
+2024-01-30 20:37:39 [CLIENT] [INFO] Setting user: Player625
+2024-01-30 20:37:39 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 20:37:50 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 20:37:50 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 20:38:17 [CLIENT] [INFO] Stopping!
+2024-01-30 21:22:01 [CLIENT] [INFO] Setting user: Player875
+2024-01-30 21:22:01 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 21:22:17 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 21:22:17 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 21:23:17 [CLIENT] [INFO] Stopping!
+2024-01-30 21:24:42 [CLIENT] [INFO] Setting user: Player218
+2024-01-30 21:24:42 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 21:24:58 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 21:24:58 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 21:25:42 [CLIENT] [INFO] Stopping!
+2024-01-30 21:28:41 [CLIENT] [INFO] Setting user: Player515
+2024-01-30 21:28:41 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 21:29:06 [CLIENT] [WARNING] Failed to add pack.mcmeta in resources
+2024-01-30 21:29:06 [CLIENT] [WARNING] Failed to add READ_ME_I_AM_VERY_IMPORTANT in resources
+2024-01-30 21:29:13 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 21:29:13 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 21:29:50 [CLIENT] [INFO] Stopping!
+2024-01-30 21:30:08 [CLIENT] [INFO] Setting user: Player140
+2024-01-30 21:30:08 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 21:30:21 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 21:30:21 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 21:30:38 [CLIENT] [INFO] Stopping!
+2024-01-30 21:34:14 [CLIENT] [INFO] Setting user: Player906
+2024-01-30 21:34:14 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 21:34:36 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 21:34:36 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 21:35:00 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-30 21:35:44 [CLIENT] [INFO] Stopping!
+2024-01-30 21:44:02 [CLIENT] [INFO] Setting user: Player484
+2024-01-30 21:44:02 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 21:44:12 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 21:44:12 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 21:46:47 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 21:46:47 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 21:47:17 [CLIENT] [INFO] Stopping!
+2024-01-30 22:12:00 [CLIENT] [INFO] Setting user: Player703
+2024-01-30 22:12:00 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 22:12:15 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 22:12:15 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 22:12:57 [CLIENT] [INFO] Stopping!
+2024-01-30 22:13:21 [CLIENT] [INFO] Setting user: Player234
+2024-01-30 22:13:21 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 22:13:31 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 22:13:31 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 22:14:51 [CLIENT] [INFO] Stopping!
+2024-01-30 22:15:02 [CLIENT] [INFO] Setting user: Player953
+2024-01-30 22:15:02 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 22:16:08 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 22:16:08 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 22:17:53 [CLIENT] [INFO] Stopping!
+2024-01-30 22:27:44 [CLIENT] [INFO] Setting user: Player390
+2024-01-30 22:27:44 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 22:27:58 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 22:27:58 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 22:28:48 [CLIENT] [INFO] Stopping!
+2024-01-30 22:47:12 [CLIENT] [INFO] Setting user: Player812
+2024-01-30 22:47:12 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 22:47:21 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 22:47:21 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 22:48:12 [CLIENT] [INFO] Stopping!
+2024-01-30 22:50:34 [CLIENT] [INFO] Setting user: Player765
+2024-01-30 22:50:35 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 22:50:42 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 22:50:42 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 22:51:21 [CLIENT] [INFO] Stopping!
+2024-01-30 22:52:33 [CLIENT] [INFO] Setting user: Player93
+2024-01-30 22:52:33 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 22:52:42 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 22:52:42 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 22:57:10 [CLIENT] [INFO] Stopping!
+2024-01-30 23:10:01 [CLIENT] [INFO] Setting user: Player593
+2024-01-30 23:10:01 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:10:08 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:10:08 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:12:19 [CLIENT] [INFO] Setting user: Player15
+2024-01-30 23:12:19 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:12:40 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:12:40 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:13:32 [CLIENT] [INFO] Stopping!
+2024-01-30 23:22:15 [CLIENT] [INFO] Setting user: Player593
+2024-01-30 23:22:15 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:22:25 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:22:25 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:23:07 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-30 23:23:17 [CLIENT] [INFO] Stopping!
+2024-01-30 23:25:25 [CLIENT] [INFO] Setting user: Player812
+2024-01-30 23:25:25 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:25:33 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:25:33 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:26:50 [CLIENT] [INFO] Stopping!
+2024-01-30 23:30:33 [CLIENT] [INFO] Setting user: Player515
+2024-01-30 23:30:33 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:30:46 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:30:46 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:31:26 [CLIENT] [INFO] Stopping!
+2024-01-30 23:33:18 [CLIENT] [INFO] Setting user: Player156
+2024-01-30 23:33:18 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:33:28 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:33:28 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:34:36 [CLIENT] [INFO] Stopping!
+2024-01-30 23:35:43 [CLIENT] [INFO] Setting user: Player250
+2024-01-30 23:35:43 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:37:52 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:37:52 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:39:49 [CLIENT] [INFO] Stopping!
+2024-01-30 23:42:02 [CLIENT] [INFO] Setting user: Player218
+2024-01-30 23:42:02 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:42:14 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:42:14 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:42:55 [CLIENT] [INFO] Stopping!
+2024-01-30 23:44:03 [CLIENT] [INFO] Setting user: Player671
+2024-01-30 23:44:03 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:44:14 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:44:14 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:44:43 [CLIENT] [INFO] Stopping!
+2024-01-30 23:45:32 [CLIENT] [INFO] Setting user: Player703
+2024-01-30 23:45:32 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:45:40 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:45:40 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:47:18 [CLIENT] [INFO] Stopping!
+2024-01-30 23:48:26 [CLIENT] [INFO] Setting user: Player203
+2024-01-30 23:48:26 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:48:56 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:48:56 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:49:34 [CLIENT] [INFO] Stopping!
+2024-01-30 23:49:55 [CLIENT] [INFO] Setting user: Player578
+2024-01-30 23:49:55 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:50:03 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:50:03 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:50:33 [CLIENT] [INFO] Stopping!
+2024-01-30 23:53:28 [CLIENT] [INFO] Setting user: Player875
+2024-01-30 23:53:28 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-30 23:53:38 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-30 23:53:38 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-30 23:56:36 [CLIENT] [INFO] Stopping!
+2024-01-31 00:02:47 [CLIENT] [INFO] Setting user: Player984
+2024-01-31 00:02:47 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 00:02:58 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 00:02:58 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 00:03:37 [CLIENT] [INFO] Stopping!
+2024-01-31 00:11:07 [CLIENT] [INFO] Setting user: Player671
+2024-01-31 00:11:07 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 00:11:16 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 00:11:16 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 00:12:39 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-31 00:13:02 [CLIENT] [INFO] Stopping!
+2024-01-31 00:14:22 [CLIENT] [INFO] Setting user: Player640
+2024-01-31 00:14:22 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 00:14:29 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 00:14:29 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 00:15:08 [CLIENT] [INFO] Stopping!
+2024-01-31 00:16:00 [CLIENT] [INFO] Setting user: Player390
+2024-01-31 00:16:00 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 00:16:07 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 00:16:07 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 00:16:40 [CLIENT] [INFO] Stopping!
+2024-01-31 07:37:12 [CLIENT] [INFO] Setting user: Player593
+2024-01-31 07:37:12 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 07:37:21 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 07:37:21 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 07:37:30 [CLIENT] [INFO] Stopping!
+2024-01-31 07:59:00 [CLIENT] [INFO] Setting user: Player78
+2024-01-31 07:59:00 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 07:59:12 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 07:59:12 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 11:42:49 [CLIENT] [INFO] Setting user: Player46
+2024-01-31 11:42:49 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 11:43:07 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 11:43:07 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 11:51:16 [CLIENT] [INFO] Setting user: Player265
+2024-01-31 11:51:16 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 11:51:24 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 11:51:24 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 11:52:30 [CLIENT] [INFO] Stopping!
+2024-01-31 11:52:40 [CLIENT] [INFO] Setting user: Player531
+2024-01-31 11:52:40 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 11:52:47 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 11:52:47 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 11:53:01 [CLIENT] [INFO] Stopping!
+2024-01-31 11:53:10 [CLIENT] [INFO] Setting user: Player375
+2024-01-31 11:53:10 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 11:53:18 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 11:53:18 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 11:55:42 [CLIENT] [INFO] Stopping!
+2024-01-31 11:58:30 [CLIENT] [INFO] Setting user: Player562
+2024-01-31 11:58:30 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 11:58:39 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 11:58:39 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 11:59:45 [CLIENT] [INFO] Stopping!
+2024-01-31 12:02:40 [CLIENT] [INFO] Setting user: Player281
+2024-01-31 12:02:40 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:03:00 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:03:00 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:03:31 [CLIENT] [INFO] Stopping!
+2024-01-31 12:10:08 [CLIENT] [INFO] Setting user: Player109
+2024-01-31 12:10:08 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:10:18 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:10:18 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:17:30 [CLIENT] [INFO] Stopping!
+2024-01-31 12:26:29 [CLIENT] [INFO] Setting user: Player421
+2024-01-31 12:26:29 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:26:38 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:26:38 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:26:47 [CLIENT] [INFO] Stopping!
+2024-01-31 12:27:28 [CLIENT] [INFO] Setting user: Player265
+2024-01-31 12:27:28 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:27:37 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:27:37 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:28:50 [CLIENT] [INFO] Stopping!
+2024-01-31 12:31:24 [CLIENT] [INFO] Setting user: Player937
+2024-01-31 12:31:24 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:31:32 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:31:32 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:32:57 [CLIENT] [INFO] Stopping!
+2024-01-31 12:33:10 [CLIENT] [INFO] Setting user: Player421
+2024-01-31 12:33:10 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:33:21 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:33:21 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:34:03 [CLIENT] [INFO] Stopping!
+2024-01-31 12:34:25 [CLIENT] [INFO] Setting user: Player31
+2024-01-31 12:34:25 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:34:33 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:34:33 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:34:50 [CLIENT] [INFO] Stopping!
+2024-01-31 12:36:24 [CLIENT] [INFO] Setting user: Player437
+2024-01-31 12:36:24 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:36:33 [CLIENT] [WARNING] Failed to add pack.mcmeta in resources
+2024-01-31 12:36:33 [CLIENT] [WARNING] Failed to add READ_ME_I_AM_VERY_IMPORTANT in resources
+2024-01-31 12:36:35 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:36:35 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:36:45 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-31 12:37:16 [CLIENT] [INFO] Stopping!
+2024-01-31 12:37:29 [CLIENT] [INFO] Setting user: Player125
+2024-01-31 12:37:29 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:37:38 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:37:38 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:38:36 [CLIENT] [INFO] Stopping!
+2024-01-31 12:39:07 [CLIENT] [INFO] Setting user: Player890
+2024-01-31 12:39:07 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:39:12 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:39:12 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:39:41 [CLIENT] [INFO] Stopping!
+2024-01-31 12:40:02 [CLIENT] [INFO] Setting user: Player296
+2024-01-31 12:40:02 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:40:09 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:40:09 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:40:45 [CLIENT] [INFO] Stopping!
+2024-01-31 12:42:02 [CLIENT] [INFO] Setting user: Player843
+2024-01-31 12:42:02 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:42:09 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:42:09 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:42:34 [CLIENT] [INFO] Stopping!
+2024-01-31 12:43:44 [CLIENT] [INFO] Setting user: Player453
+2024-01-31 12:43:44 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:43:53 [CLIENT] [WARNING] Failed to add pack.mcmeta in resources
+2024-01-31 12:43:53 [CLIENT] [WARNING] Failed to add READ_ME_I_AM_VERY_IMPORTANT in resources
+2024-01-31 12:43:54 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:43:54 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:44:32 [CLIENT] [INFO] Stopping!
+2024-01-31 12:45:24 [CLIENT] [INFO] Setting user: Player687
+2024-01-31 12:45:24 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:45:36 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:45:36 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 12:46:01 [CLIENT] [INFO] Stopping!
+2024-01-31 12:59:36 [CLIENT] [INFO] Setting user: Player359
+2024-01-31 12:59:36 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 12:59:47 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 12:59:47 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 13:00:32 [CLIENT] [INFO] Stopping!
+2024-01-31 17:06:11 [CLIENT] [INFO] Setting user: Player312
+2024-01-31 17:06:11 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 17:06:22 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 17:06:22 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 17:07:12 [CLIENT] [INFO] Stopping!
+2024-01-31 17:33:45 [CLIENT] [INFO] Setting user: Player31
+2024-01-31 17:33:45 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 17:33:59 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 17:33:59 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 17:34:32 [CLIENT] [INFO] Stopping!
+2024-01-31 17:36:24 [CLIENT] [INFO] Setting user: Player437
+2024-01-31 17:36:24 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 17:36:32 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 17:36:32 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 17:37:16 [CLIENT] [INFO] Stopping!
+2024-01-31 17:42:56 [CLIENT] [INFO] Setting user: Player546
+2024-01-31 17:42:56 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 17:43:09 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 17:43:09 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 17:44:02 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-31 17:44:05 [CLIENT] [INFO] [CHAT] Changing to clear weather
+2024-01-31 17:44:13 [CLIENT] [INFO] Stopping!
+2024-01-31 18:03:03 [CLIENT] [INFO] Setting user: Player515
+2024-01-31 18:03:03 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 18:03:11 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 18:03:11 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 18:04:13 [CLIENT] [INFO] Stopping!
+2024-01-31 18:06:09 [CLIENT] [INFO] Setting user: Player156
+2024-01-31 18:06:09 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 18:06:19 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 18:06:19 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 18:07:01 [CLIENT] [INFO] Stopping!
+2024-01-31 18:07:30 [CLIENT] [INFO] Setting user: Player500
+2024-01-31 18:07:30 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 18:07:39 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 18:07:39 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 18:08:18 [CLIENT] [INFO] Stopping!
+2024-01-31 18:44:39 [CLIENT] [INFO] Setting user: Player203
+2024-01-31 18:44:39 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 18:45:11 [CLIENT] [INFO] Stopping!
+2024-01-31 18:46:01 [CLIENT] [INFO] Setting user: Player125
+2024-01-31 18:46:01 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 18:46:25 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 18:46:25 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 18:47:13 [CLIENT] [INFO] Stopping!
+2024-01-31 19:11:55 [CLIENT] [INFO] Setting user: Player859
+2024-01-31 19:11:55 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 19:12:21 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 19:12:21 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 19:13:00 [CLIENT] [INFO] Stopping!
+2024-01-31 19:14:04 [CLIENT] [INFO] Setting user: Player859
+2024-01-31 19:14:04 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 19:14:20 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 19:14:20 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 19:15:59 [CLIENT] [INFO] Setting user: Player843
+2024-01-31 19:15:59 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 19:16:06 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 19:16:06 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 19:17:35 [CLIENT] [INFO] Stopping!
+2024-01-31 19:18:14 [CLIENT] [INFO] Setting user: Player671
+2024-01-31 19:18:14 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 19:18:25 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 19:18:25 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 19:19:08 [CLIENT] [INFO] Stopping!
+2024-01-31 19:26:00 [CLIENT] [INFO] Setting user: Player609
+2024-01-31 19:26:00 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 19:26:07 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 19:26:07 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 19:26:51 [CLIENT] [INFO] Stopping!
+2024-01-31 19:28:07 [CLIENT] [INFO] Setting user: Player328
+2024-01-31 19:28:07 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 19:28:23 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 19:28:23 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 19:29:13 [CLIENT] [INFO] Stopping!
+2024-01-31 19:33:37 [CLIENT] [INFO] Setting user: Player453
+2024-01-31 19:33:37 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 19:33:53 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 19:33:53 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 19:34:36 [CLIENT] [INFO] Stopping!
+2024-01-31 21:12:13 [CLIENT] [INFO] Setting user: Player62
+2024-01-31 21:12:13 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 21:12:22 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 21:12:22 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 21:13:19 [CLIENT] [INFO] Stopping!
+2024-01-31 21:18:25 [CLIENT] [INFO] Setting user: Player15
+2024-01-31 21:18:25 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 21:18:31 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 21:18:31 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 21:19:30 [CLIENT] [INFO] Stopping!
+2024-01-31 21:22:38 [CLIENT] [INFO] Setting user: Player281
+2024-01-31 21:22:38 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 21:22:45 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 21:22:45 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 21:23:59 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-31 21:24:02 [CLIENT] [INFO] [CHAT] Changing to clear weather
+2024-01-31 21:25:36 [CLIENT] [INFO] Stopping!
+2024-01-31 21:27:23 [CLIENT] [INFO] Setting user: Player156
+2024-01-31 21:27:23 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 21:27:37 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 21:27:37 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 21:29:53 [CLIENT] [INFO] Stopping!
+2024-01-31 21:39:38 [CLIENT] [INFO] Setting user: Player515
+2024-01-31 21:39:38 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 21:39:48 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 21:39:48 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 21:41:18 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 21:41:18 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 21:42:48 [CLIENT] [INFO] Stopping!
+2024-01-31 21:47:47 [CLIENT] [INFO] Setting user: Player265
+2024-01-31 21:47:47 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 21:47:56 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 21:47:56 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 21:49:02 [CLIENT] [INFO] Stopping!
+2024-01-31 21:49:58 [CLIENT] [INFO] Setting user: Player968
+2024-01-31 21:49:58 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 21:51:34 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 21:51:34 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 21:57:26 [CLIENT] [INFO] Setting user: Player46
+2024-01-31 21:57:26 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 21:57:36 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 21:57:36 [CLIENT] [INFO] [CHAT] §fMap Markers V2.1.0
+2024-01-31 21:58:43 [CLIENT] [INFO] Stopping!
+2024-01-31 22:37:31 [CLIENT] [INFO] Setting user: Player437
+2024-01-31 22:37:31 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 22:37:38 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 22:37:38 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-01-31 22:37:48 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-31 22:39:02 [CLIENT] [INFO] [CHAT] Changing to clear weather
+2024-01-31 22:43:55 [CLIENT] [INFO] Stopping!
+2024-01-31 22:53:19 [CLIENT] [INFO] Setting user: Player31
+2024-01-31 22:53:19 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 22:53:36 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 22:53:36 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-01-31 22:55:13 [CLIENT] [INFO] Stopping!
+2024-01-31 23:15:11 [CLIENT] [INFO] Setting user: Player562
+2024-01-31 23:15:11 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 23:15:29 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 23:15:29 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-01-31 23:17:53 [CLIENT] [INFO] Stopping!
+2024-01-31 23:19:44 [CLIENT] [INFO] Setting user: Player875
+2024-01-31 23:19:44 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 23:20:00 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 23:20:00 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-01-31 23:21:03 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-31 23:22:26 [CLIENT] [INFO] Stopping!
+2024-01-31 23:40:33 [CLIENT] [INFO] Setting user: Player453
+2024-01-31 23:40:33 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-01-31 23:40:43 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-01-31 23:40:43 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-01-31 23:40:54 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-01-31 23:40:57 [CLIENT] [INFO] [CHAT] Changing to clear weather
+2024-01-31 23:55:33 [CLIENT] [INFO] Stopping!
+2024-02-01 00:14:43 [CLIENT] [INFO] Setting user: Player718
+2024-02-01 00:14:43 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 00:14:51 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 00:14:51 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 00:15:40 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-02-01 00:18:40 [CLIENT] [INFO] Stopping!
+2024-02-01 07:52:34 [CLIENT] [INFO] Setting user: Player109
+2024-02-01 07:52:34 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 07:52:52 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 07:52:52 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 07:53:17 [CLIENT] [INFO] [CHAT] Changing to clear weather
+2024-02-01 07:53:50 [CLIENT] [INFO] Stopping!
+2024-02-01 07:59:47 [CLIENT] [INFO] Setting user: Player203
+2024-02-01 07:59:47 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 07:59:54 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 07:59:54 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 08:00:09 [CLIENT] [INFO] Stopping!
+2024-02-01 08:01:46 [CLIENT] [INFO] Setting user: Player968
+2024-02-01 08:01:46 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 08:01:57 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 08:01:57 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 08:02:44 [CLIENT] [INFO] Stopping!
+2024-02-01 08:08:55 [CLIENT] [INFO] Setting user: Player484
+2024-02-01 08:08:55 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 08:09:02 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 08:09:02 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 08:09:26 [CLIENT] [INFO] Stopping!
+2024-02-01 08:19:43 [CLIENT] [INFO] Setting user: Player937
+2024-02-01 08:19:43 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 08:19:50 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 08:19:50 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 08:20:15 [CLIENT] [INFO] Stopping!
+2024-02-01 08:20:44 [CLIENT] [INFO] Setting user: Player343
+2024-02-01 08:20:44 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 08:20:51 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 08:20:51 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 08:22:00 [CLIENT] [INFO] Stopping!
+2024-02-01 08:22:14 [CLIENT] [INFO] Setting user: Player812
+2024-02-01 08:22:14 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 08:22:20 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 08:22:20 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 08:23:01 [CLIENT] [INFO] Stopping!
+2024-02-01 08:25:43 [CLIENT] [INFO] Setting user: Player843
+2024-02-01 08:25:43 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 08:25:49 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 08:25:49 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 08:26:15 [CLIENT] [INFO] Stopping!
+2024-02-01 08:27:54 [CLIENT] [INFO] Setting user: Player46
+2024-02-01 08:27:54 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 08:28:05 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 08:28:05 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 08:28:25 [CLIENT] [INFO] Stopping!
+2024-02-01 11:53:16 [CLIENT] [INFO] Setting user: Player843
+2024-02-01 11:53:16 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 11:53:27 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 11:53:27 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 11:54:25 [CLIENT] [INFO] Stopping!
+2024-02-01 12:01:19 [CLIENT] [INFO] Setting user: Player171
+2024-02-01 12:01:19 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 12:01:28 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 12:01:28 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 12:02:20 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-02-01 12:02:32 [CLIENT] [INFO] Stopping!
+2024-02-01 12:05:20 [CLIENT] [INFO] Setting user: Player546
+2024-02-01 12:05:20 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 12:05:27 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 12:05:27 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 12:06:30 [CLIENT] [INFO] Stopping!
+2024-02-01 12:07:15 [CLIENT] [INFO] Setting user: Player515
+2024-02-01 12:07:15 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 12:07:23 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 12:07:23 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 12:08:31 [CLIENT] [INFO] Stopping!
+2024-02-01 12:20:06 [CLIENT] [INFO] Setting user: Player906
+2024-02-01 12:20:06 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 12:20:29 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 12:20:29 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 12:21:30 [CLIENT] [INFO] Stopping!
+2024-02-01 12:32:37 [CLIENT] [INFO] Setting user: Player984
+2024-02-01 12:32:37 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 12:32:45 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 12:32:45 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 12:34:24 [CLIENT] [INFO] Stopping!
+2024-02-01 12:38:36 [CLIENT] [INFO] Setting user: Player562
+2024-02-01 12:38:36 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 12:38:44 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 12:38:44 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 12:40:05 [CLIENT] [INFO] Stopping!
+2024-02-01 12:48:51 [CLIENT] [INFO] Setting user: Player31
+2024-02-01 12:48:51 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 12:48:59 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 12:48:59 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 12:49:11 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-02-01 12:51:11 [CLIENT] [INFO] Stopping!
+2024-02-01 12:55:50 [CLIENT] [INFO] Setting user: Player593
+2024-02-01 12:55:50 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 12:56:01 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 12:56:01 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 12:56:26 [CLIENT] [INFO] Stopping!
+2024-02-01 12:57:00 [CLIENT] [INFO] Setting user: Player796
+2024-02-01 12:57:00 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 12:57:08 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 12:57:08 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 12:57:22 [CLIENT] [INFO] Stopping!
+2024-02-01 12:57:58 [CLIENT] [INFO] Setting user: Player359
+2024-02-01 12:57:58 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 12:58:06 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 12:58:06 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 12:59:25 [CLIENT] [INFO] Stopping!
+2024-02-01 13:00:13 [CLIENT] [INFO] Setting user: Player93
+2024-02-01 13:00:13 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 13:00:19 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 13:00:19 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 13:01:05 [CLIENT] [INFO] Stopping!
+2024-02-01 13:01:55 [CLIENT] [INFO] Setting user: Player343
+2024-02-01 13:01:55 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 13:02:02 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 13:02:02 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 13:02:44 [CLIENT] [INFO] Stopping!
+2024-02-01 13:03:05 [CLIENT] [INFO] Setting user: Player500
+2024-02-01 13:03:05 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 13:03:13 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 13:03:13 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 13:03:25 [CLIENT] [INFO] Stopping!
+2024-02-01 13:04:26 [CLIENT] [INFO] Setting user: Player875
+2024-02-01 13:04:26 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 13:04:34 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 13:04:34 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 13:05:26 [CLIENT] [INFO] Stopping!
+2024-02-01 13:06:15 [CLIENT] [INFO] Setting user: Player265
+2024-02-01 13:06:15 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 13:06:22 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 13:06:22 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 13:07:08 [CLIENT] [INFO] Stopping!
+2024-02-01 13:09:01 [CLIENT] [INFO] Setting user: Player265
+2024-02-01 13:09:01 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 13:09:09 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 13:09:09 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 13:09:27 [CLIENT] [INFO] Stopping!
+2024-02-01 19:42:23 [CLIENT] [INFO] Setting user: Player656
+2024-02-01 19:42:23 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 19:42:35 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 19:42:35 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 19:44:39 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-02-01 19:45:14 [CLIENT] [INFO] Stopping!
+2024-02-01 19:45:59 [CLIENT] [INFO] Setting user: Player312
+2024-02-01 19:45:59 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 19:46:07 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 19:46:07 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 19:47:07 [CLIENT] [INFO] Stopping!
+2024-02-01 19:47:33 [CLIENT] [INFO] Setting user: Player906
+2024-02-01 19:47:33 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 19:47:40 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 19:47:40 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 19:48:22 [CLIENT] [INFO] Stopping!
+2024-02-01 20:02:00 [CLIENT] [INFO] Setting user: Player875
+2024-02-01 20:02:00 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:02:10 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:02:10 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:03:33 [CLIENT] [INFO] Stopping!
+2024-02-01 20:04:03 [CLIENT] [INFO] Setting user: Player468
+2024-02-01 20:04:03 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:04:11 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:04:11 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:04:39 [CLIENT] [INFO] Stopping!
+2024-02-01 20:13:38 [CLIENT] [INFO] Setting user: Player343
+2024-02-01 20:13:38 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:13:45 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:13:45 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:15:15 [CLIENT] [INFO] Stopping!
+2024-02-01 20:17:17 [CLIENT] [INFO] Setting user: Player546
+2024-02-01 20:17:17 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:17:34 [CLIENT] [INFO] Setting user: Player312
+2024-02-01 20:17:34 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:17:40 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:17:40 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:18:28 [CLIENT] [INFO] Stopping!
+2024-02-01 20:20:51 [CLIENT] [INFO] Setting user: Player515
+2024-02-01 20:20:51 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:21:01 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:21:01 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:22:30 [CLIENT] [INFO] Stopping!
+2024-02-01 20:23:22 [CLIENT] [INFO] Setting user: Player78
+2024-02-01 20:23:22 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:23:28 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:23:28 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:23:47 [CLIENT] [INFO] Stopping!
+2024-02-01 20:28:11 [CLIENT] [INFO] Setting user: Player140
+2024-02-01 20:28:11 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:28:21 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:28:21 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:30:06 [CLIENT] [INFO] Stopping!
+2024-02-01 20:34:46 [CLIENT] [INFO] Setting user: Player985
+2024-02-01 20:34:46 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:34:53 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:34:53 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:35:57 [CLIENT] [INFO] Stopping!
+2024-02-01 20:38:03 [CLIENT] [INFO] Setting user: Player843
+2024-02-01 20:38:03 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:38:10 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:38:10 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:39:26 [CLIENT] [INFO] Stopping!
+2024-02-01 20:45:09 [CLIENT] [INFO] Setting user: Player781
+2024-02-01 20:45:10 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:45:26 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:45:26 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:45:35 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-02-01 20:47:09 [CLIENT] [INFO] Stopping!
+2024-02-01 20:49:18 [CLIENT] [INFO] Setting user: Player703
+2024-02-01 20:49:18 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:49:26 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:49:26 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:50:16 [CLIENT] [INFO] Stopping!
+2024-02-01 20:50:43 [CLIENT] [INFO] Setting user: Player640
+2024-02-01 20:50:43 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:50:56 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:50:56 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:51:36 [CLIENT] [INFO] Stopping!
+2024-02-01 20:53:36 [CLIENT] [INFO] Setting user: Player828
+2024-02-01 20:53:36 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:53:52 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:53:52 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:55:19 [CLIENT] [INFO] Stopping!
+2024-02-01 20:57:45 [CLIENT] [INFO] Setting user: Player296
+2024-02-01 20:57:45 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:57:59 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:57:59 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 20:58:54 [CLIENT] [INFO] Stopping!
+2024-02-01 20:59:21 [CLIENT] [INFO] Setting user: Player31
+2024-02-01 20:59:21 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-01 20:59:29 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-01 20:59:29 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-01 21:00:41 [CLIENT] [INFO] Stopping!
+2024-02-02 07:45:04 [CLIENT] [INFO] Setting user: Player812
+2024-02-02 07:45:04 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 07:45:20 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 07:45:20 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 07:45:28 [CLIENT] [INFO] Stopping!
+2024-02-02 08:46:59 [CLIENT] [INFO] Setting user: Player984
+2024-02-02 08:46:59 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 08:47:07 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 08:47:07 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 08:48:29 [CLIENT] [INFO] Stopping!
+2024-02-02 08:49:38 [CLIENT] [INFO] Setting user: Player734
+2024-02-02 08:49:38 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 08:49:46 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 08:49:46 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 08:50:25 [CLIENT] [INFO] Stopping!
+2024-02-02 08:51:56 [CLIENT] [INFO] Setting user: Player187
+2024-02-02 08:51:56 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 08:52:05 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 08:52:05 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 08:54:12 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-02-02 08:54:17 [CLIENT] [INFO] Stopping!
+2024-02-02 09:01:16 [CLIENT] [INFO] Setting user: Player343
+2024-02-02 09:01:16 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 09:01:25 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 09:01:25 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 09:02:31 [CLIENT] [INFO] Stopping!
+2024-02-02 09:04:12 [CLIENT] [INFO] Setting user: Player390
+2024-02-02 09:04:12 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 09:04:19 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 09:04:19 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 09:04:58 [CLIENT] [INFO] Stopping!
+2024-02-02 09:10:45 [CLIENT] [INFO] Setting user: Player437
+2024-02-02 09:10:45 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 09:10:53 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 09:10:53 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 09:12:05 [CLIENT] [INFO] Stopping!
+2024-02-02 09:13:21 [CLIENT] [INFO] Setting user: Player546
+2024-02-02 09:13:21 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 09:13:29 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 09:13:29 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 09:14:34 [CLIENT] [INFO] Stopping!
+2024-02-02 09:15:38 [CLIENT] [INFO] Setting user: Player953
+2024-02-02 09:15:38 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 09:15:44 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 09:15:44 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 09:16:02 [CLIENT] [INFO] Stopping!
+2024-02-02 09:17:41 [CLIENT] [INFO] Setting user: Player156
+2024-02-02 09:17:41 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 09:17:50 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 09:17:50 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 09:18:15 [CLIENT] [INFO] Stopping!
+2024-02-02 09:19:54 [CLIENT] [INFO] Setting user: Player671
+2024-02-02 09:19:54 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 09:20:02 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 09:20:02 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 09:20:30 [CLIENT] [INFO] Stopping!
+2024-02-02 09:23:22 [CLIENT] [INFO] Setting user: Player421
+2024-02-02 09:23:22 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 09:23:25 [CLIENT] [WARNING] TextureManager.createTexture called for file textures/items/smmItemMapMarker_4.png, but that file does not exist. Ignoring.
+2024-02-02 09:23:30 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 09:23:30 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 09:24:26 [CLIENT] [INFO] Stopping!
+2024-02-02 09:25:46 [CLIENT] [INFO] Setting user: Player562
+2024-02-02 09:25:46 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 09:25:54 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 09:25:54 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 09:26:27 [CLIENT] [INFO] Stopping!
+2024-02-02 11:45:34 [CLIENT] [INFO] Setting user: Player484
+2024-02-02 11:45:34 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 11:45:57 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 11:45:57 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 11:46:20 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 11:46:20 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 11:47:07 [CLIENT] [INFO] Stopping!
+2024-02-02 11:47:37 [CLIENT] [INFO] Setting user: Player859
+2024-02-02 11:47:37 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 11:47:46 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 11:47:46 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 11:48:15 [CLIENT] [INFO] Stopping!
+2024-02-02 12:03:48 [CLIENT] [INFO] Setting user: Player875
+2024-02-02 12:03:49 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:03:59 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:03:59 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:05:02 [CLIENT] [INFO] Stopping!
+2024-02-02 12:05:15 [CLIENT] [INFO] Setting user: Player625
+2024-02-02 12:05:15 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:05:30 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:05:30 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:06:06 [CLIENT] [INFO] Stopping!
+2024-02-02 12:08:26 [CLIENT] [INFO] Setting user: Player593
+2024-02-02 12:08:26 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:08:34 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:08:34 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:09:00 [CLIENT] [INFO] Stopping!
+2024-02-02 12:11:08 [CLIENT] [INFO] Setting user: Player828
+2024-02-02 12:11:08 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:14:49 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:14:49 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:15:29 [CLIENT] [INFO] Stopping!
+2024-02-02 12:16:45 [CLIENT] [INFO] Setting user: Player109
+2024-02-02 12:16:45 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:17:20 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:17:20 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:17:57 [CLIENT] [INFO] Stopping!
+2024-02-02 12:18:11 [CLIENT] [INFO] Setting user: Player0
+2024-02-02 12:18:11 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:18:27 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:18:27 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:22:28 [CLIENT] [INFO] Stopping!
+2024-02-02 12:25:15 [CLIENT] [INFO] Setting user: Player734
+2024-02-02 12:25:15 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:25:27 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:25:27 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:26:50 [CLIENT] [INFO] Stopping!
+2024-02-02 12:31:12 [CLIENT] [INFO] Setting user: Player484
+2024-02-02 12:31:12 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:31:19 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:31:19 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:33:13 [CLIENT] [INFO] Stopping!
+2024-02-02 12:33:23 [CLIENT] [INFO] Setting user: Player328
+2024-02-02 12:33:23 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:33:32 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:33:32 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:33:44 [CLIENT] [INFO] Stopping!
+2024-02-02 12:38:23 [CLIENT] [INFO] Setting user: Player281
+2024-02-02 12:38:23 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:38:43 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:38:43 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:39:24 [CLIENT] [INFO] Stopping!
+2024-02-02 12:39:35 [CLIENT] [INFO] Setting user: Player250
+2024-02-02 12:39:35 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:39:52 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:39:52 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:40:38 [CLIENT] [INFO] [CHAT] Set the time to 0
+2024-02-02 12:41:02 [CLIENT] [INFO] Stopping!
+2024-02-02 12:55:24 [CLIENT] [INFO] Setting user: Player579
+2024-02-02 12:55:24 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 12:55:42 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 12:55:42 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 12:57:08 [CLIENT] [INFO] Stopping!
+2024-02-02 19:22:17 [CLIENT] [INFO] Setting user: Player625
+2024-02-02 19:22:17 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 19:22:48 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 19:22:48 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 19:23:51 [CLIENT] [INFO] Stopping!
+2024-02-02 19:24:42 [CLIENT] [INFO] Setting user: Player859
+2024-02-02 19:24:42 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 19:24:49 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 19:24:49 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 19:25:18 [CLIENT] [INFO] Stopping!
+2024-02-02 19:25:42 [CLIENT] [INFO] Setting user: Player46
+2024-02-02 19:25:42 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 19:25:49 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 19:25:49 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 19:26:12 [CLIENT] [INFO] Stopping!
+2024-02-02 19:28:24 [CLIENT] [INFO] Setting user: Player46
+2024-02-02 19:28:24 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 19:28:31 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 19:28:31 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 19:29:08 [CLIENT] [INFO] Stopping!
+2024-02-02 19:29:51 [CLIENT] [INFO] Setting user: Player859
+2024-02-02 19:29:52 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 19:30:23 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 19:30:23 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 19:30:49 [CLIENT] [INFO] Stopping!
+2024-02-02 19:59:07 [CLIENT] [INFO] Setting user: Player937
+2024-02-02 19:59:07 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 19:59:21 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 19:59:21 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 20:01:15 [CLIENT] [INFO] Stopping!
+2024-02-02 20:01:26 [CLIENT] [INFO] Setting user: Player171
+2024-02-02 20:01:26 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 20:01:39 [CLIENT] [INFO] [CHAT] §fBetter Than Wolves CE V2.1.4
+2024-02-02 20:01:39 [CLIENT] [INFO] [CHAT] §fMap Markers V2.2.0
+2024-02-02 20:03:39 [CLIENT] [INFO] Stopping!
+2024-02-02 20:09:53 [CLIENT] [INFO] Setting user: Player781
+2024-02-02 20:09:53 [CLIENT] [INFO] LWJGL Version: 2.9.0
+2024-02-02 20:09:58 [CLIENT] [INFO] Stopping!

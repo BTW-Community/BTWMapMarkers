@@ -1,0 +1,30 @@
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: ...Add-On Handler Initializing...
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: Classloader: net.fabricmc.loader.launch.knot.KnotClassLoader
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: Minecraft jar found: jar:file:/C:/Repos/BTWSledgeMapMarkers/build/dev_run/dev.jar!/
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: Found Add-on: BTWAddon
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: Found Add-on: BTWMod
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: Found Add-on: MapMarkersAddon
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: Better Than Wolves Community Edition Version 2.1.4 Initializing...
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: Better Than Wolves Initialization Complete.
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: Map Markers Version 2.2.0 Initializing...
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: Map Markers Initialized
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: ...Add-On Handler Loading Custom Language File With Prefix: BTW...
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: ...Add-On Handler Loading Custom Language File With Prefix: SMM...
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: ...Add-On Handler Loading Custom Language File With Prefix: BTW...
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: ...Add-On Handler Loading Custom Language File With Prefix: SMM...
+Feb 02, 2024 8:09:53 PM btw.AddonHandler logMessage
+FINE: ...Add-On Handler Initialization Complete...

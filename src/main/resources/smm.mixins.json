@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "btw.community.sledge.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "MapDataMixin",
+    "RenderMapItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

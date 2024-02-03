@@ -1,0 +1,43 @@
+---- Minecraft Crash Report ----
+// I blame Dinnerbone.
+
+Time: 1/31/24 9:54 PM
+Description: Ticking memory connection
+
+java.lang.ClassCastException: btw.item.items.EmptyMapItem cannot be cast to btw.item.items.MapItem
+	at btw.community.sledge.MapMarkerTileEntity.isLocationOnMap(MapMarkerTileEntity.java:141)
+	at btw.community.sledge.MapMarkerTileEntity.attemptActivate(MapMarkerTileEntity.java:130)
+	at btw.community.sledge.MapMarkerBlock.onBlockActivated(MapMarkerBlock.java:193)
+	at net.minecraft.src.ItemInWorldManager.activateBlockOrUseItem(ItemInWorldManager.java:307)
+	at net.minecraft.src.NetServerHandler.handlePlace(NetServerHandler.java:476)
+	at net.minecraft.src.Packet15Place.processPacket(Packet15Place.java:79)
+	at net.minecraft.src.MemoryConnection.processReadPackets(MemoryConnection.java:81)
+	at net.minecraft.src.NetServerHandler.networkTick(NetServerHandler.java:82)
+	at net.minecraft.src.NetworkListenThread.networkTick(NetworkListenThread.java:48)
+	at net.minecraft.src.IntegratedServerListenThread.networkTick(IntegratedServerListenThread.java:103)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:703)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:606)
+	at net.minecraft.src.IntegratedServer.tick(IntegratedServer.java:130)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:502)
+	at net.minecraft.src.ThreadMinecraftServer.run(ThreadMinecraftServer.java:18)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.5.2
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_402, Temurin
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Temurin
+	Memory: 581678416 bytes (554 MB) / 913833984 bytes (871 MB) up to 5585240064 bytes (5326 MB)
+	JVM Flags: 1 total; -Xverify:none
+	AABB Pool Size: 5907 (330792 bytes; 0 MB) allocated, 3878 (217168 bytes; 0 MB) used
+	Suspicious classes: [btw.AddonHandler, AddonFinder, BTWAddon, ...], [btw.block.BTWBlocks, MechanicalBlock, FluidSource, ...], [btw.block.blocks.FullBlock, StoneBlock, GrassBlock, ...], [btw.block.blocks.legacy.LegacySaplingBlock, LegacyWheatBlock, LegacyFarmlandBlockBase, ...], [btw.block.material.CementMaterial, SoulforgedSteelMaterial, NetherGrothMaterial], [btw.block.model.BlockModel, FenceModel, AnvilModel, ...], [btw.block.stepsound.SquishStepSound], [btw.block.tileentity.AnvilTileEntity, TileEntityDataPacketHandler, ArcaneVesselTileEntity, ...], [btw.block.tileentity.beacon.BeaconEffect, AmbientBeaconEffect, BeaconEffectDescriptor, ...], [btw.block.tileentity.dispenser.BlockDispenserTileEntity, BroadheadArrowDispenserBehavior, BTWDispenserBehaviorManager, ...], [btw.block.util.Flammability, BlockState, MechPowerUtils, ...], [btw.client.SoundTrackerEntry], [btw.client.fx.BTWEffectManager, Effect, EffectHandler], [btw.client.fx.particles.CindersFX, SmallFlameFX, WhiteSmokeFX, ...], [btw.client.gui.BlockDispenserGui, CookingVesselGui, CraftingGuiWorkbench, ...], [btw.client.network.packet.handler.BTWDifficultyPacketHandler, BTWOptionsPacketHandler, EntityPacketHandlerEntry, ...], [btw.client.render.BTWRenderMapper], [btw.client.render.entity.BlockLiftedByPlatformRenderer, BroadheadArrowRenderer, CanvasRenderer, ...], [btw.client.render.tileentity.BasketRenderer, CampfireRenderer, OvenRenderer, ...], [btw.client.render.util.RenderUtils], [btw.client.texture.ArcaneVesselXPTexture, FireAnimation, FireTexture, ...], [btw.command.ServerLocCommand], [btw.community.sledge.MapMarkerBlock, MapMarkerData, MapMarkersAddon, ...], [btw.crafting.manager.BulkCraftingManager, CampfireCraftingManager, CauldronCraftingManager, ...], [btw.crafting.recipe.CauldronRecipeList, CraftingRecipeList, CrucibleRecipeList, ...], [btw.crafting.recipe.types.BulkRecipe, HopperFilterRecipe, KilnRecipe, ...], [btw.crafting.recipe.types.customcrafting.FishingRodBaitingRecipe, KnittingRecipe, LegacyLogChoppingRecipe, ...], [btw.crafting.util.FurnaceBurnTime], [btw.entity.EntityWithCustomPacket, BroadheadArrowEntity, BTWEntityMapper, ...], [btw.entity.item.BloodWoodSaplingItemEntity, FloatingItemEntity], [btw.entity.mechanical.platform.BlockLiftedByPlatformEntity, MovingAnchorEntity, MovingPlatformEntity], [btw.entity.mechanical.source.MechanicalPowerSourceEntity, MechanicalPowerSourceEntityHorizontal, VerticalWindMillEntity, ...], [btw.entity.mob.BatEntity, BlazeEntity, SpiderEntity, ...], [btw.entity.mob.behavior.AnimalFleeBehavior, CreeperSwellBehavior, DireWolfHowlBehavior, ...], [btw.entity.mob.villager.VillagerEntity, BlacksmithVillagerEntity, ButcherVillagerEntity, ...], [btw.entity.model.ChickenModel, CowUdderModel, DireWolfModel, ...], [btw.entity.util.CanvasArt, ClosestEntityInfo, ClosestEntitySelectionCriteria, ...], [btw.inventory.BTWContainers], [btw.inventory.container.BlockDispenserContainer, InventoryContainer, CookingVesselContainer, ...], [btw.inventory.inventories.InfernalEnchanterInventory], [btw.inventory.util.InventoryUtils], [btw.item.PlaceableAsItem, BTWItems, ItemTemplate], [btw.item.blockitems.AestheticEarthBlockItem, AestheticNonOpaqueBlockItem, AestheticOpaqueBlockItem, ...], [btw.item.blockitems.legacy.LegacySaplingBlockItem, LegacyCornerBlockItem, LegacySidingBlockItem, ...], [btw.item.items.ToolItem, ShovelItem, PickaxeItem, ...], [btw.item.items.legacy.LegacyWheatItem, LegacyCandleItem, LegacyGrateItem, ...], [btw.item.util.ItemUtils, RandomItemStack], [btw.network.packet.BTWPacketManager, HardcoreSpawnPacket, PlayerSyncPacket, ...], [btw.network.packet.handler.CustomPacketHandler], [btw.util.PrimitiveGeometric, ColorUtils, CustomDamageSource, ...], [btw.util.hardcorespawn.HardcoreSpawnUtils, SpawnLocation, SpawnLocationList], [btw.util.status.StatusCategory, BTWStatusCategory, PlayerStatusEffects, ...], [btw.world.biome.BiomeDecoratorBase, DesertBiome, EndBiome, ...], [btw.world.chunk.ChunkTracker, ChunkTrackerEntry], [btw.world.feature.trees.BigTreeGenerator, BonusBasketGenerator, JungleTreeGenerator, ...], [btw.world.feature.trees.grower.AbstractTreeGrower, BigTreeGrower, BushGrower, ...], [btw.world.structure.NetherBridgeMapGen], [btw.world.util.WorldData, BTWWorldData, BlockPos, ...], [btw.world.util.difficulty.Difficulties, Difficulty, RelaxedDifficulty], [com.prupe.mcpatcher.MCPatcherUtils, Config, MCLogger, ...], [com.prupe.mcpatcher.cc.ColorizeItem, Colorizer, ColorizeBlock, ...], [com.prupe.mcpatcher.cit.CITUtils, OverrideBase, Enchantment, ...], [com.prupe.mcpatcher.ctm.CTMUtils, TileOverrideIterator, IJK, ...], [com.prupe.mcpatcher.hd.AAHelper, Wrapper15, MipmapHelper, ...], [com.prupe.mcpatcher.mal.biome.IColorMap, ColorMap, ColorUtils, ...], [com.prupe.mcpatcher.mal.block.RenderBlocksUtils, BlockAPI, RenderPassAPI, ...], [com.prupe.mcpatcher.mal.item.ItemAPI], [com.prupe.mcpatcher.mal.resource.FakeResourceLocation, GLAPI, TexturePackAPI, ...], [com.prupe.mcpatcher.mal.tile.TileLoader, IconAPI], [com.prupe.mcpatcher.mal.util.InputHandler], [com.prupe.mcpatcher.mob.MobRandomizer, MobRuleList, MobOverlay, ...], [com.prupe.mcpatcher.renderpass.RenderPass, RenderPassMap], [com.prupe.mcpatcher.sky.SkyRenderer, WorldEntry, Layer, ...], [net.minecraft.client.main.Main], [net.minecraft.src.IPlayerUsage, EnumOS, Timer, ...]
+	IntCache: cache: 0, tcache: 0, allocated: 3, tallocated: 63
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 958 (53648 bytes; 0 MB) allocated, 739 (41384 bytes; 0 MB) used
+	Player Count: 1 / 8; [EntityPlayerMP['Player968'/351, l='Test', x=-31.33, y=63.00, z=180.00]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fabric'

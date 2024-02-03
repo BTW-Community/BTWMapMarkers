@@ -1,0 +1,7 @@
+[20:09:52] [main/INFO] (FabricLoader) Loading for game Minecraft 1.5.2
+[20:09:52] [main/INFO] (Fabric|Loader) [FabricLoaderImpl] Loading 4 mods: minecraft@1.5.2, smm@2.2.0, java@8, fabricloader@1.0.0
+[20:09:52] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.2 Source=file:/C:/Users/psych/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.9.2+mixin.0.8.2/12c437eebf031967eaa7daad861e115932772cc7/sponge-mixin-0.9.2+mixin.0.8.2.jar Service=Knot/Fabric Env=CLIENT
+[20:09:52] [main/INFO] (Fabric|MixinBootstrap) Loaded Fabric development mappings for mixin remapper!
+[20:09:54] [Minecraft main thread/WARN] (mixin) Injection warning: LVT in net/minecraft/src/MapItemRenderer::renderMap(Lnet/minecraft/src/EntityPlayer;Lnet/minecraft/src/RenderEngine;Lnet/minecraft/src/MapData;)V has incompatible changes at opcode 598 in callback net/minecraft/src/MapItemRenderer::addVertexesRelease.
+Expected: [I, I, Lnet/minecraft/src/Tessellator;, F, I, Ljava/util/Iterator;, Lnet/minecraft/src/MapCoord;]
+   Found: [B, B, Lnet/minecraft/src/Tessellator;, F, I, Ljava/util/Iterator;, Lnet/minecraft/src/MapCoord;]

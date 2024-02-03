@@ -1,0 +1,65 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 1/31/24 7:14 PM
+Description: Unexpected error
+
+java.lang.NoSuchMethodError: btw.community.sledge.MapMarkerTileEntity.SetIconIndex(I)V
+	at btw.community.sledge.MapMarkerBlock.onBlockActivated(MapMarkerBlock.java:188)
+	at net.minecraft.src.PlayerControllerMP.onPlayerRightClick(PlayerControllerMP.java:386)
+	at net.minecraft.client.Minecraft.clickMouse(Minecraft.java:1423)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1903)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:944)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:872)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at btw.community.sledge.MapMarkerBlock.onBlockActivated(MapMarkerBlock.java:188)
+	at net.minecraft.src.PlayerControllerMP.onPlayerRightClick(PlayerControllerMP.java:386)
+	at net.minecraft.client.Minecraft.clickMouse(Minecraft.java:1423)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player859'/337, l='MpServer', x=-31.44, y=64.62, z=179.48]]
+	Chunk stats: MultiplayerChunkCache: 441
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (64,64,248), Chunk: (at 0,4,8 in 4,15; contains blocks 64,0,240 to 79,255,255), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 153671 game time, 4376 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 64 total; [SkeletonEntity['Skeleton'/407, l='MpServer', x=-40.50, y=22.00, z=101.50], SkeletonEntity['Skeleton'/408, l='MpServer', x=-45.50, y=21.00, z=108.04], ZombieEntity['Zombie'/412, l='MpServer', x=-11.50, y=25.00, z=121.50], ZombieEntity['Zombie'/34, l='MpServer', x=-62.47, y=27.00, z=139.16], SkeletonEntity['Skeleton'/35, l='MpServer', x=-59.53, y=26.00, z=131.69], ZombieEntity['Zombie'/36, l='MpServer', x=-53.66, y=24.00, z=129.69], ZombieEntity['Zombie'/37, l='MpServer', x=-54.53, y=40.00, z=181.69], CreeperEntity['Creeper'/38, l='MpServer', x=-50.31, y=41.96, z=179.69], SkeletonEntity['Skeleton'/39, l='MpServer', x=-51.31, y=40.96, z=180.67], SkeletonEntity['Skeleton'/40, l='MpServer', x=-55.46, y=37.00, z=185.78], SkeletonEntity['Skeleton'/41, l='MpServer', x=-51.31, y=40.00, z=179.72], CreeperEntity['Creeper'/42, l='MpServer', x=-52.50, y=40.00, z=179.50], SquidEntity['Squid'/44, l='MpServer', x=-48.00, y=56.28, z=177.48], SkeletonEntity['Skeleton'/53, l='MpServer', x=-17.16, y=23.00, z=122.31], SquidEntity['Squid'/54, l='MpServer', x=-21.21, y=56.28, z=118.56], SquidEntity['Squid'/55, l='MpServer', x=-22.16, y=56.00, z=122.85], SquidEntity['Squid'/56, l='MpServer', x=-21.71, y=56.70, z=121.75], SquidEntity['Squid'/57, l='MpServer', x=-18.97, y=56.28, z=126.79], CreeperEntity['Creeper'/58, l='MpServer', x=-31.50, y=27.00, z=207.50], SquidEntity['Squid'/59, l='MpServer', x=-21.38, y=56.00, z=192.47], SquidEntity['Squid'/60, l='MpServer', x=-28.78, y=56.51, z=192.48], ZombieEntity['Zombie'/61, l='MpServer', x=-29.70, y=11.00, z=219.50], SkeletonEntity['Skeleton'/62, l='MpServer', x=-28.70, y=11.00, z=221.70], EntityItem['item.item.rottenFlesh'/63, l='MpServer', x=-25.75, y=11.13, z=218.28], EntityXPOrb['Experience Orb'/64, l='MpServer', x=-28.88, y=11.13, z=217.13], EntityXPOrb['Experience Orb'/65, l='MpServer', x=-16.44, y=24.13, z=213.56], SkeletonEntity['Skeleton'/66, l='MpServer', x=-39.50, y=32.00, z=221.14], ZombieEntity['Zombie'/67, l='MpServer', x=-20.50, y=27.00, z=236.50], PigEntity['Pig'/68, l='MpServer', x=-21.50, y=67.00, z=250.66], ZombieEntity['Zombie'/72, l='MpServer', x=-13.50, y=27.00, z=115.78], ZombieEntity['Zombie'/73, l='MpServer', x=-11.31, y=25.00, z=122.69], SquidEntity['Squid'/74, l='MpServer', x=-13.78, y=56.50, z=140.72], SquidEntity['Squid'/75, l='MpServer', x=-15.50, y=56.00, z=150.88], CreeperEntity['Creeper'/76, l='MpServer', x=-9.50, y=50.00, z=175.91], CreeperEntity['Creeper'/77, l='MpServer', x=-7.63, y=53.00, z=179.44], SkeletonEntity['Skeleton'/78, l='MpServer', x=-2.60, y=48.17, z=182.45], SkeletonEntity['Skeleton'/79, l='MpServer', x=-9.34, y=48.00, z=187.66], CreeperEntity['Creeper'/80, l='MpServer', x=-4.47, y=54.00, z=176.59], CreeperEntity['Creeper'/81, l='MpServer', x=-3.52, y=20.24, z=195.19], CreeperEntity['Creeper'/82, l='MpServer', x=-14.50, y=23.00, z=202.22], SkeletonEntity['Skeleton'/83, l='MpServer', x=-15.38, y=12.00, z=217.50], WolfEntity['Wolf'/84, l='MpServer', x=-14.06, y=65.00, z=250.41], BatEntity['Bat'/91, l='MpServer', x=11.50, y=55.10, z=143.50], EntityXPOrb['Experience Orb'/92, l='MpServer', x=8.13, y=35.13, z=188.63], EntityItem['item.item.slimeball'/93, l='MpServer', x=9.88, y=36.13, z=187.50], EntityXPOrb['Experience Orb'/94, l='MpServer', x=11.72, y=36.13, z=184.13], EntityXPOrb['Experience Orb'/95, l='MpServer', x=10.13, y=36.13, z=184.13], EntityXPOrb['Experience Orb'/96, l='MpServer', x=8.47, y=36.13, z=185.13], CreeperEntity['Creeper'/97, l='MpServer', x=12.84, y=35.00, z=184.47], CreeperEntity['Creeper'/98, l='MpServer', x=7.80, y=35.00, z=187.56], ZombieEntity['Zombie'/99, l='MpServer', x=8.50, y=42.00, z=209.03], EntityXPOrb['Experience Orb'/356, l='MpServer', x=-154.63, y=28.13, z=225.66], SquidEntity['Squid'/101, l='MpServer', x=28.00, y=56.00, z=170.00], CreeperEntity['Creeper'/102, l='MpServer', x=17.63, y=17.00, z=198.41], ZombieEntity['Zombie'/103, l='MpServer', x=27.72, y=17.00, z=194.28], CreeperEntity['Creeper'/104, l='MpServer', x=29.16, y=21.00, z=221.50], CreeperEntity['Creeper'/105, l='MpServer', x=27.56, y=18.00, z=209.88], CreeperEntity['Creeper'/110, l='MpServer', x=42.78, y=20.00, z=209.47], ZombieEntity['Zombie'/111, l='MpServer', x=32.50, y=20.00, z=215.25], CowEntity['Cow'/112, l='MpServer', x=41.25, y=70.00, z=211.16], SkeletonEntity['Skeleton'/369, l='MpServer', x=-110.50, y=15.00, z=147.50], SheepEntity['Sheep'/370, l='MpServer', x=-109.47, y=71.00, z=198.91], EntityXPOrb['Experience Orb'/372, l='MpServer', x=-111.88, y=71.13, z=201.41], EntityClientPlayerMP['Player859'/337, l='MpServer', x=-31.44, y=64.62, z=179.48]]
+	Retry entities: 0 total; []
+Stacktrace:
+	at net.minecraft.src.WorldClient.addWorldInfoToCrashReport(WorldClient.java:445)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2587)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:895)
+	at java.lang.Thread.run(Thread.java:750)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.5.2
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 1.8.0_402, Temurin
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Temurin
+	Memory: 459104680 bytes (437 MB) / 727711744 bytes (694 MB) up to 5585240064 bytes (5326 MB)
+	JVM Flags: 1 total; -Xverify:none
+	AABB Pool Size: 17453 (977368 bytes; 0 MB) allocated, 6 (336 bytes; 0 MB) used
+	Suspicious classes: [btw.AddonHandler, AddonFinder, BTWAddon, ...], [btw.block.BTWBlocks, MechanicalBlock, FluidSource, ...], [btw.block.blocks.FullBlock, StoneBlock, GrassBlock, ...], [btw.block.blocks.legacy.LegacySaplingBlock, LegacyWheatBlock, LegacyFarmlandBlockBase, ...], [btw.block.material.CementMaterial, SoulforgedSteelMaterial, NetherGrothMaterial], [btw.block.model.BlockModel, FenceModel, AnvilModel, ...], [btw.block.stepsound.SquishStepSound], [btw.block.tileentity.AnvilTileEntity, TileEntityDataPacketHandler, ArcaneVesselTileEntity, ...], [btw.block.tileentity.beacon.BeaconEffect, AmbientBeaconEffect, BeaconEffectDescriptor, ...], [btw.block.tileentity.dispenser.BlockDispenserTileEntity, BroadheadArrowDispenserBehavior, BTWDispenserBehaviorManager, ...], [btw.block.util.Flammability, BlockState, MechPowerUtils, ...], [btw.client.SoundTrackerEntry], [btw.client.fx.BTWEffectManager, Effect, EffectHandler], [btw.client.fx.particles.CindersFX, SmallFlameFX, WhiteSmokeFX, ...], [btw.client.gui.BlockDispenserGui, CookingVesselGui, CraftingGuiWorkbench, ...], [btw.client.network.packet.handler.BTWDifficultyPacketHandler, BTWOptionsPacketHandler, EntityPacketHandlerEntry, ...], [btw.client.render.BTWRenderMapper], [btw.client.render.entity.BlockLiftedByPlatformRenderer, BroadheadArrowRenderer, CanvasRenderer, ...], [btw.client.render.tileentity.BasketRenderer, CampfireRenderer, OvenRenderer, ...], [btw.client.render.util.RenderUtils], [btw.client.texture.ArcaneVesselXPTexture, FireAnimation, FireTexture, ...], [btw.command.ServerLocCommand], [btw.community.sledge.MapMarkerBlock, MapMarkerData, MapMarkersAddon, ...], [btw.crafting.manager.BulkCraftingManager, CampfireCraftingManager, CauldronCraftingManager, ...], [btw.crafting.recipe.CauldronRecipeList, CraftingRecipeList, CrucibleRecipeList, ...], [btw.crafting.recipe.types.BulkRecipe, HopperFilterRecipe, KilnRecipe, ...], [btw.crafting.recipe.types.customcrafting.FishingRodBaitingRecipe, KnittingRecipe, LegacyLogChoppingRecipe, ...], [btw.crafting.util.FurnaceBurnTime], [btw.entity.EntityWithCustomPacket, BroadheadArrowEntity, BTWEntityMapper, ...], [btw.entity.item.BloodWoodSaplingItemEntity, FloatingItemEntity], [btw.entity.mechanical.platform.BlockLiftedByPlatformEntity, MovingAnchorEntity, MovingPlatformEntity], [btw.entity.mechanical.source.MechanicalPowerSourceEntity, MechanicalPowerSourceEntityHorizontal, VerticalWindMillEntity, ...], [btw.entity.mob.BatEntity, BlazeEntity, SpiderEntity, ...], [btw.entity.mob.behavior.AnimalFleeBehavior, CreeperSwellBehavior, DireWolfHowlBehavior, ...], [btw.entity.mob.villager.VillagerEntity, BlacksmithVillagerEntity, ButcherVillagerEntity, ...], [btw.entity.model.ChickenModel, CowUdderModel, DireWolfModel, ...], [btw.entity.util.CanvasArt, ClosestEntityInfo, ClosestEntitySelectionCriteria, ...], [btw.inventory.BTWContainers], [btw.inventory.container.BlockDispenserContainer, InventoryContainer, CookingVesselContainer, ...], [btw.inventory.inventories.InfernalEnchanterInventory], [btw.inventory.util.InventoryUtils], [btw.item.PlaceableAsItem, BTWItems, ItemTemplate], [btw.item.blockitems.AestheticEarthBlockItem, AestheticNonOpaqueBlockItem, AestheticOpaqueBlockItem, ...], [btw.item.blockitems.legacy.LegacySaplingBlockItem, LegacyCornerBlockItem, LegacySidingBlockItem, ...], [btw.item.items.ToolItem, ShovelItem, PickaxeItem, ...], [btw.item.items.legacy.LegacyWheatItem, LegacyCandleItem, LegacyGrateItem, ...], [btw.item.util.ItemUtils, RandomItemStack], [btw.network.packet.BTWPacketManager, HardcoreSpawnPacket, PlayerSyncPacket, ...], [btw.network.packet.handler.CustomPacketHandler], [btw.util.PrimitiveGeometric, ColorUtils, CustomDamageSource, ...], [btw.util.hardcorespawn.HardcoreSpawnUtils, SpawnLocation, SpawnLocationList], [btw.util.status.StatusCategory, BTWStatusCategory, PlayerStatusEffects, ...], [btw.world.biome.BiomeDecoratorBase, DesertBiome, EndBiome, ...], [btw.world.chunk.ChunkTracker, ChunkTrackerEntry], [btw.world.feature.trees.BigTreeGenerator, BonusBasketGenerator, JungleTreeGenerator, ...], [btw.world.feature.trees.grower.AbstractTreeGrower, BigTreeGrower, BushGrower, ...], [btw.world.structure.NetherBridgeMapGen], [btw.world.util.WorldData, BTWWorldData, BlockPos, ...], [btw.world.util.difficulty.Difficulties, Difficulty, RelaxedDifficulty], [com.prupe.mcpatcher.MCPatcherUtils, Config, MCLogger, ...], [com.prupe.mcpatcher.cc.ColorizeItem, Colorizer, ColorizeBlock, ...], [com.prupe.mcpatcher.cit.CITUtils, OverrideBase, Enchantment, ...], [com.prupe.mcpatcher.ctm.CTMUtils, TileOverrideIterator, IJK, ...], [com.prupe.mcpatcher.hd.AAHelper, Wrapper15, MipmapHelper, ...], [com.prupe.mcpatcher.mal.biome.IColorMap, ColorMap, ColorUtils, ...], [com.prupe.mcpatcher.mal.block.RenderBlocksUtils, BlockAPI, RenderPassAPI, ...], [com.prupe.mcpatcher.mal.item.ItemAPI], [com.prupe.mcpatcher.mal.resource.FakeResourceLocation, GLAPI, TexturePackAPI, ...], [com.prupe.mcpatcher.mal.tile.TileLoader, IconAPI], [com.prupe.mcpatcher.mal.util.InputHandler], [com.prupe.mcpatcher.mob.MobRandomizer, MobRuleList, MobOverlay, ...], [com.prupe.mcpatcher.renderpass.RenderPass, RenderPassMap], [com.prupe.mcpatcher.sky.SkyRenderer, WorldEntry, Layer, ...], [net.minecraft.client.main.Main], [net.minecraft.src.IPlayerUsage, EnumOS, Timer, ...]
+	IntCache: cache: 0, tcache: 0, allocated: 3, tallocated: 63
+	LWJGL: 2.9.0
+	OpenGL: AMD Radeon(TM) Graphics GL version 4.6.0 Compatibility Profile Context 22.20.14.220712, ATI Technologies Inc.
+	Is Modded: Definitely; Client brand changed to 'fabric'
+	Type: Client (map_client.txt)
+	Texture Pack: Default
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 3465 (194040 bytes; 0 MB) allocated, 22 (1232 bytes; 0 MB) used
