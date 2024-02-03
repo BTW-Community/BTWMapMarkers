@@ -4,9 +4,9 @@
   "package": "btw.community.sledge.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MapDataMixin"
   ],
   "client": [
-    "MapDataMixin",
     "RenderMapItemMixin"
   ],
   "injectors": {

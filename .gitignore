@@ -21,6 +21,6 @@
 .idea/libraries
 .idea/jarRepositories.xml
 /.idea/
-/release/
-/reobfuscated/
-/run/
+**/release/
+**/reobfuscated/
+**/run/
