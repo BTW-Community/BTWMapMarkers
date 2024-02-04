@@ -32,7 +32,7 @@ public class MapMarkerItem extends ItemReed {
 
     @Override
     public void registerIcons(IconRegister register) {
-
+        flagIcons[0] = register.registerIcon(name + "_0");
         flagIcons[4] = register.registerIcon(name + "_4");
         flagIcons[5] = register.registerIcon(name + "_5");
         flagIcons[7] = register.registerIcon(name + "_7");

@@ -16,7 +16,7 @@ import static btw.crafting.recipe.RecipeManager.addShapelessRecipe;
 public class MapMarkersAddon extends BTWAddon {
 
     private MapMarkersAddon() {
-        super("Map Markers", "2.2.1", "SMM");
+        super("Map Markers", "2.2.2", "SMM");
     }
 
     private static final int id_mapMarker = 2900;
@@ -43,7 +43,6 @@ public class MapMarkersAddon extends BTWAddon {
     private static void AddDefinitions()
     {
         mapMarker = new MapMarkerBlock(id_mapMarker);
-        //Item.itemsList[mapMarker.blockID] = new ItemBlock(mapMarker.blockID - 256);
 
         mapMarkerItem = (new MapMarkerItem(id_mapMarkerItem - 256, mapMarker,
                 "smmItemMapMarker")).
@@ -78,12 +77,12 @@ public class MapMarkersAddon extends BTWAddon {
         };
 
         //Default, aka white marker
-        addShapelessRecipe( new ItemStack( mapMarkerItem, 1 ), new Object[] {
+        addShapelessRecipe( new ItemStack( mapMarkerItem, 1, markers[0] ), new Object[] {
                 new ItemStack( BTWItems.woodMouldingStubID, 1, InventoryUtils.IGNORE_METADATA),
                 new ItemStack( Item.paper )
         } );
 
-        addShapelessRecipe( new ItemStack( mapMarkerItem, 1 ), new Object[] {
+        addShapelessRecipe( new ItemStack( mapMarkerItem, 1, markers[0] ), new Object[] {
                 new ItemStack( Item.stick ),
                 new ItemStack( Item.paper )
         } );
