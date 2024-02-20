@@ -53,6 +53,6 @@ public class WorldDataUtils extends BTWWorldData {
 
     @Override
     public String getFilename() {
-        return null;
+        return "MapMarkers";
     }
 }
