@@ -74,6 +74,12 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         updateWorldMapMarkers();
     }
 
+    @Override
+    public void updateEntity(){
+        super.updateEntity();
+        updateWorldMapMarkers();
+    }
+
     private void removeNearbyBadMarkers() {
         ArrayList<String> badMarkerIds = new ArrayList<>();
         for (MapMarkerData existingMarker : WorldMapMarkers.values()) {
