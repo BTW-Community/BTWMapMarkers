@@ -16,7 +16,7 @@ import static btw.crafting.recipe.RecipeManager.addShapelessRecipe;
 public class MapMarkersAddon extends BTWAddon {
 
     private MapMarkersAddon() {
-        super("Map Markers", "2.2.2", "SMM");
+        super("Map Markers", "2.2.4", "SMM");
     }
 
     private static final int id_mapMarker = 2900;
