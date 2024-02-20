@@ -19,6 +19,12 @@ public abstract class RenderMapItemMixin {
 
     }
 
+    @Redirect(method = "renderMap",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/src/RenderEngine;bindTexture(Ljava/lang/String;)V"))
+    private void getCustomMapIconPath(RenderEngine renderEngine, String par1Str){
+        renderEngine.bindTexture("/misc/mapmarkericons.png");
+    }
+
     @Group(name = "addVertexes", min = 1, max = 1)
     @Inject(method = "renderMap",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/src/Tessellator;draw()I", ordinal = 1, shift = At.Shift.BEFORE),
