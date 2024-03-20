@@ -115,7 +115,8 @@ public class MapMarkerBlock extends BlockContainer {
     public boolean hasSmallCenterHardPointToFacing(IBlockAccess blockAccess, int x, int y, int z, int facing, boolean ignoreTransparency)
     {
         // only has upwards facing hard point for torches
-        return facing == 1 && getFacing( blockAccess, x, y, z ) == 0;
+        int blockFacing = getFacing(blockAccess, x, y, z);
+        return facing == 1 && blockFacing == 1;
     }
 
     public boolean canBeCrushedByFallingEntity(World world, int x, int y, int z, EntityFallingSand entity) {
