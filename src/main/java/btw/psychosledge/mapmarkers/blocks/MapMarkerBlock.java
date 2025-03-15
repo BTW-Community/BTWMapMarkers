@@ -211,7 +211,6 @@ public class MapMarkerBlock extends BlockContainer {
         iconFlags = new Icon[16];
 
         for (int i = 0; i < iconFlags.length; ++i) {
-            //iconFlags[i] = register.registerIcon("wool_colored_" + ItemDye.dyeItemNames[~i & 0xF]);
             iconFlags[i] = register.registerIcon("wool_colored_" + ItemDye.dyeItemNames[i]);
         }
     }
