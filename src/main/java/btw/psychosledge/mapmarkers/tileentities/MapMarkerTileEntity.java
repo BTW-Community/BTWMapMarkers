@@ -10,7 +10,7 @@ import static btw.psychosledge.mapmarkers.MapMarkersAddon.MAP_MARKER_DATA;
 import static btw.psychosledge.mapmarkers.MapMarkersAddon.mapMarker;
 
 public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPacketHandler {
-    private int _iconIndex = 4;
+    private int _iconIndex = 0;
     private int rotation = 0;
     private boolean hidden = false;
 
@@ -145,14 +145,6 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
 
     public int getIconIndex() { return _iconIndex; }
     public void setIconIndex(int iconIndex) {
-//        // start at 4 to skip default player icons
-//        if (iconIndex < 4) iconIndex = 4;
-//        // skip 6 (default "off map" icon)
-//        if (iconIndex == 6) iconIndex = 7;
-//        // skip 9 thru 11 for now
-//        if (iconIndex == 9) iconIndex = 12;
-//        // numbering starts back at 4 to skip default player icons
-//        if (iconIndex > 15) iconIndex = 4;
         this._iconIndex = iconIndex;
 
         updateWorldMapMarkers();
@@ -160,8 +152,6 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
     }
 
     public int GetIconFileIndex() {
-        //int[] valueMap = {0, 0, 0, 0, 0, 5, 0, 14, 11, 0, 0, 0, 7, 4, 1, 10};
-        //return valueMap[_iconIndex];
         return _iconIndex;
     }
 }
