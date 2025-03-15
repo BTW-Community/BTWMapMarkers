@@ -1,0 +1,17 @@
+item.MapMarkerItem.name=Map Markers
+item.MapMarkerItem_black.name=Black Map Marker
+item.MapMarkerItem_red.name=Red Map Marker
+item.MapMarkerItem_green.name=Green Map Marker
+item.MapMarkerItem_brown.name=Brown Map Marker
+item.MapMarkerItem_blue.name=Blue Map Marker
+item.MapMarkerItem_purple.name=Purple Map Marker
+item.MapMarkerItem_cyan.name=Cyan Map Marker
+item.MapMarkerItem_lightGray.name=Light Gray Map Marker
+item.MapMarkerItem_gray.name=Gray Map Marker
+item.MapMarkerItem_pink.name=Pink Map Marker
+item.MapMarkerItem_lime.name=Lime Map Marker
+item.MapMarkerItem_yellow.name=Yellow Map Marker
+item.MapMarkerItem_lightBlue.name=Light Blue Map Marker
+item.MapMarkerItem_magenta.name=Magenta Map Marker
+item.MapMarkerItem_orange.name=Orange Map Marker
+item.MapMarkerItem_white.name=White Map Marker

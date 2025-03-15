@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "mapmarkers",
+  "version": "${version}",
+  "name": "Map Markers",
+  "description": "Map Markers adds the ability to place little colored flags as blocks in the world that will show on maps!",
+  "authors": [
+    "PsychoSledge"
+  ],
+  "contact": {
+    "homepage": "https://github.com/BTW-Community/Map-Markers-Addon",
+    "sources": "https://github.com/BTW-Community/Map-Markers-Addon"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/mapmarkers/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "btw:addon": [
+      "btw.psychosledge.mapmarkers.MapMarkersAddon"
+    ]
+  },
+  "custom": {
+    "btw:addon_prefix": "SMM"
+  },
+  "mixins": [
+    "mapmarkers.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "minecraft": "1.6.4"
+  }
+}
