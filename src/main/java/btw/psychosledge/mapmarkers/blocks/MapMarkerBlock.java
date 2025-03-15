@@ -3,6 +3,8 @@ package btw.psychosledge.mapmarkers.blocks;
 import btw.psychosledge.mapmarkers.tileentities.MapMarkerTileEntity;
 import btw.world.util.BlockPos;
 import btw.world.util.WorldUtils;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
 import static btw.psychosledge.mapmarkers.MapMarkersAddon.MAP_MARKER_DATA;
@@ -222,9 +224,9 @@ public class MapMarkerBlock extends BlockContainer {
     }
 
     @Override
+    @Environment(value= EnvType.CLIENT)
     public int idPicked(World world, int x, int y, int z) {
-        int iconIndex = ((MapMarkerTileEntity) world.getBlockTileEntity(x, y, z)).getIconIndex();
-        return idDropped( iconIndex, world.rand, 0);
+        return mapMarkerItem.itemID;
     }
 
     @Override
