@@ -12,7 +12,7 @@
     "sources": "https://github.com/BTW-Community/Map-Markers-Addon"
   },
   "license": "CC0-1.0",
-  "icon": "assets/mapmarkers/icon.png",
+  "icon": "assets/mapmarkers/textures/items/MapMarkerItem_White.png",
   "environment": "*",
   "entrypoints": {
     "btw:addon": [
