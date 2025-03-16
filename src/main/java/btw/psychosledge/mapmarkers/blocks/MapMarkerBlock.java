@@ -93,9 +93,14 @@ public class MapMarkerBlock extends BlockContainer {
 
     private void dropAsItem(World world, int x, int y, int z) {
         int itemID = mapMarkerItem.itemID;
-        int iconIndex = ((MapMarkerTileEntity) world.getBlockTileEntity(x, y, z)).getIconIndex();
-        ItemStack stackDropped = new ItemStack(itemID, 1, iconIndex);
-        dropBlockAsItem_do(world, x, y, z, stackDropped);
+        MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
+        if (tile != null) {
+            world.getData(MAP_MARKER_DATA).removeMarkerById(tile.GetMarkerId());
+            int iconIndex = tile.getIconIndex();
+            ItemStack stackDropped = new ItemStack(itemID, 1, iconIndex);
+            dropBlockAsItem_do(world, x, y, z, stackDropped);
+        }
+        world.removeBlockTileEntity(x, y, z);
         world.setBlockToAir(x, y, z);
     }
 

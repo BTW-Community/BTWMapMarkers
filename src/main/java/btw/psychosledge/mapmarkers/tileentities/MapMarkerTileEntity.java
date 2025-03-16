@@ -100,10 +100,10 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
     private void updateWorldMapMarkers() {
         if (this.worldObj != null && !this.worldObj.isRemote) {
 
-            MapMarkerData markerData = new MapMarkerData(this.GetMarkerId(), this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
             if (hidden) {
                 worldObj.getData(MAP_MARKER_DATA).removeMarkerById(this.GetMarkerId());
             } else {
+                MapMarkerData markerData = new MapMarkerData(this.GetMarkerId(), this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
                 worldObj.getData(MAP_MARKER_DATA).addMarker(markerData);
             }
        }
