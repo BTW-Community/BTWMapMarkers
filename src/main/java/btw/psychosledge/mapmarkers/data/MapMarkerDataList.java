@@ -45,12 +45,4 @@ public class MapMarkerDataList {
     public void addMarker(MapMarkerData markerData) {
         mapMarkers.add(markerData);
     }
-
-    public MapMarkerData getMarkerAtLocation(int xPos, int yPos, int zPos) {
-        for (MapMarkerData tempMarker : mapMarkers) {
-            if (tempMarker.XPos != xPos || tempMarker.ZPos != zPos || tempMarker.YPos != yPos) continue;
-            return tempMarker;
-        }
-        return null;
-    }
 }
