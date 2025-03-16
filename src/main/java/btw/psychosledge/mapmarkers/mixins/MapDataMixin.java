@@ -15,7 +15,6 @@ import static btw.psychosledge.mapmarkers.MapMarkersAddon.MAP_MARKER_DATA;
 
 @Mixin(MapData.class)
 public abstract class MapDataMixin {
-
     @Shadow public int xCenter;
     @Shadow public int zCenter;
     @Shadow public byte scale;

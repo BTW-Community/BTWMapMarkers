@@ -19,11 +19,11 @@ public abstract class RenderMapItemMixin {
 
     }
 
-//    @Redirect(method = "renderMap",
-//            at = @At(value = "FIELD", target = "Lnet/minecraft/src/MapItemRenderer;field_111277_a:Lnet/minecraft/src/ResourceLocation;"))
-//    private ResourceLocation getCustomMapIconPath(){
-//        return new ResourceLocation("/misc/mapmarkericons.png");
-//    }
+    @Redirect(method = "renderMap",
+            at = @At(value = "FIELD", target = "Lnet/minecraft/src/MapItemRenderer;field_111277_a:Lnet/minecraft/src/ResourceLocation;"))
+    private ResourceLocation getCustomMapIconPath(){
+        return new ResourceLocation("mapmarkers:/misc/mapmarkericons.png");
+    }
 
     @Group(name = "addVertexes", min = 1, max = 1)
     @Inject(method = "renderMap",
