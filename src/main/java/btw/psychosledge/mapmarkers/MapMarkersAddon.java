@@ -13,6 +13,8 @@ import btw.world.util.data.DataEntry;
 import btw.world.util.data.DataProvider;
 import net.minecraft.src.*;
 
+import java.util.TreeMap;
+
 import static btw.crafting.recipe.RecipeManager.addCauldronRecipe;
 import static btw.crafting.recipe.RecipeManager.addShapelessRecipe;
 
@@ -41,6 +43,8 @@ public class MapMarkersAddon extends BTWAddon {
             })
             .writeNBT((tag, markerList) -> tag.setTag(SLEDGE_MAP_MARKERS_NAME, markerList.saveToNBT()))
             .build();
+
+    public static final TreeMap<String, MapCoord> MAPDATA_MARKER_CACHE = new TreeMap<>();
 
     @Override
     public void initialize() {
