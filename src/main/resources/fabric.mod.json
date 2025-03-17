@@ -25,6 +25,7 @@
   "mixins": [
     "mapmarkers.mixins.json"
   ],
+  "accessWidener": "mapmarkers.accesswidener",
   "depends": {
     "fabricloader": ">=0.14.19",
     "minecraft": "1.6.4"

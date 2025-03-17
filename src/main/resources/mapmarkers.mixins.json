@@ -7,7 +7,8 @@
     "MapDataMixin"
   ],
   "client": [
-    "RenderMapItemMixin"
+    "RenderMapItemMixin",
+    "RenderItemFrameMixin"
   ],
   "injectors": {
     "defaultRequire": 1
