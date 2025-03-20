@@ -3,13 +3,11 @@ package btw.psychosledge.mapmarkers.data;
 import btw.AddonHandler;
 import net.minecraft.src.NBTTagCompound;
 import net.minecraft.src.NBTTagList;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class MapMarkerDataList {
-    public List<MapMarkerData> mapMarkers = new ArrayList<>();
+    public HashMap<String, MapMarkerData> mapMarkers = new HashMap<>();
 
     public MapMarkerDataList() {
 
@@ -28,7 +26,7 @@ public class MapMarkerDataList {
             try {
                 MapMarkerData newMarker = new MapMarkerData(tempCompound);
                 if (Objects.equals(newMarker.MarkerId, "")) continue;
-                mapMarkers.add(newMarker);
+                mapMarkers.putIfAbsent(newMarker.MarkerId, newMarker);
             } catch (Exception e) {
                 AddonHandler.logMessage("bad marker data: " + tempCompound);
             }
@@ -39,7 +37,7 @@ public class MapMarkerDataList {
     public NBTTagList saveToNBT() {
         NBTTagList tagList = new NBTTagList("MapMarkers");
         AddonHandler.logMessage("Saving marker data...");
-        for (MapMarkerData mapMarker : mapMarkers) {
+        for (MapMarkerData mapMarker : mapMarkers.values()) {
             NBTTagCompound tempTagCompound = new NBTTagCompound();
             mapMarker.writeToNBT(tempTagCompound);
             tagList.appendTag(tempTagCompound);
@@ -49,10 +47,10 @@ public class MapMarkerDataList {
 
     public void removeMarkerById(String markerId) {
         AddonHandler.logMessage("Removing bad marker: " + markerId);
-        mapMarkers.removeIf(mapMarkerData -> Objects.equals(mapMarkerData.MarkerId, markerId));
+        mapMarkers.remove(markerId);
     }
 
     public void addMarker(MapMarkerData markerData) {
-        mapMarkers.add(markerData);
+        mapMarkers.putIfAbsent(markerData.MarkerId, markerData);
     }
 }

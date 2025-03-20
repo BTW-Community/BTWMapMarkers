@@ -83,7 +83,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
     private void removeNearbyBadMarkers() {
         ArrayList<String> badMarkerIds = new ArrayList<>();
         var markers = worldObj.getData(MAP_MARKER_DATA);
-        for (MapMarkerData existingMarker : markers.mapMarkers) {
+        for (MapMarkerData existingMarker : markers.mapMarkers.values()) {
             if (existingMarker.XPos >= this.xCoord - 64
                     && existingMarker.XPos <= this.xCoord + 64
                     && existingMarker.ZPos >= this.zCoord - 64

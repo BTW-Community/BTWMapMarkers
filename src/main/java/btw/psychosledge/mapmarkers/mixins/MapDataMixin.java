@@ -40,7 +40,7 @@ public abstract class MapDataMixin extends WorldSavedData implements IMarkerCach
         HashMap<String, MapCoord> markerList = _markers.getOrDefault(this.mapName, new HashMap<>());
         markerList.clear();
         _markers.putIfAbsent(this.mapName, markerList);
-        for (MapMarkerData markerData : player.worldObj.getData(MAP_MARKER_DATA).mapMarkers) {
+        for (MapMarkerData markerData : player.worldObj.getData(MAP_MARKER_DATA).mapMarkers.values()) {
             if (IsLocationInMap(markerData.XPos, markerData.ZPos)) {
                 func_82567_a(markerData.IconIndex, player.worldObj, markerData.MarkerId, markerData.XPos, markerData.ZPos, 1);
             }
