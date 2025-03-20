@@ -27,7 +27,7 @@ public class MapMarkerData {
         return "MarkerId: " + MarkerId + ", XPos: " + XPos + ", YPos: " + YPos + ", ZPos: " + ZPos + ", IconIndex: " + IconIndex;
     }
 
-    public void loadFromNBT(NBTTagCompound tagCompound){
+    public void writeToNBT(NBTTagCompound tagCompound){
         tagCompound.setString("MarkerId", MarkerId);
         tagCompound.setInteger("XPos", XPos);
         tagCompound.setInteger("YPos", YPos);
@@ -35,7 +35,7 @@ public class MapMarkerData {
         tagCompound.setInteger("IconIndex", IconIndex);
     }
 
-    public void writeToNBT(NBTTagCompound tagCompound){
+    public void loadFromNBT(NBTTagCompound tagCompound){
         MarkerId = tagCompound.getString("MarkerId");
         XPos = tagCompound.getInteger("XPos");
         YPos = tagCompound.getInteger("YPos");

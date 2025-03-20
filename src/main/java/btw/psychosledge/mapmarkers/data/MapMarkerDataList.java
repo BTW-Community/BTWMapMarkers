@@ -1,6 +1,6 @@
 package btw.psychosledge.mapmarkers.data;
 
-import btw.psychosledge.mapmarkers.MapMarkersAddon;
+import btw.AddonHandler;
 import net.minecraft.src.NBTTagCompound;
 import net.minecraft.src.NBTTagList;
 
@@ -22,32 +22,34 @@ public class MapMarkerDataList {
 
     private void loadFromNBT(NBTTagList tagList) {
         mapMarkers.clear();
+        AddonHandler.logMessage("Loading marker data from " + tagList.tagCount() + " tags...");
         for (int iTempCount = 0; iTempCount < tagList.tagCount(); ++iTempCount) {
             NBTTagCompound tempCompound = (NBTTagCompound)tagList.tagAt(iTempCount);
-            MapMarkerData newMarker = new MapMarkerData(tempCompound);
-            mapMarkers.add(newMarker);
+            try {
+                MapMarkerData newMarker = new MapMarkerData(tempCompound);
+                if (Objects.equals(newMarker.MarkerId, "")) continue;
+                mapMarkers.add(newMarker);
+            } catch (Exception e) {
+                AddonHandler.logMessage("bad marker data: " + tempCompound);
+            }
         }
+        AddonHandler.logMessage("Loaded markers: " + mapMarkers.size());
     }
 
     public NBTTagList saveToNBT() {
         NBTTagList tagList = new NBTTagList("MapMarkers");
+        AddonHandler.logMessage("Saving marker data...");
         for (MapMarkerData mapMarker : mapMarkers) {
             NBTTagCompound tempTagCompound = new NBTTagCompound();
             mapMarker.writeToNBT(tempTagCompound);
             tagList.appendTag(tempTagCompound);
-        }
+        }AddonHandler.logMessage("Saved markers: " + mapMarkers.size());
         return tagList;
     }
 
     public void removeMarkerById(String markerId) {
+        AddonHandler.logMessage("Removing bad marker: " + markerId);
         mapMarkers.removeIf(mapMarkerData -> Objects.equals(mapMarkerData.MarkerId, markerId));
-        ArrayList<String> keysToRemove = new ArrayList<>();
-        for(String key : MapMarkersAddon.MAPDATA_MARKER_CACHE.keySet()){
-            if(key.startsWith(markerId)) keysToRemove.add(key);
-        }
-        for(String key : keysToRemove){
-            MapMarkersAddon.MAPDATA_MARKER_CACHE.remove(key);
-        }
     }
 
     public void addMarker(MapMarkerData markerData) {
