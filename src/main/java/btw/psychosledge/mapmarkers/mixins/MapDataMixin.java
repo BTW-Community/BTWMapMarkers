@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 import static btw.psychosledge.mapmarkers.MapMarkersAddon.MAP_MARKER_DATA;
@@ -27,8 +27,8 @@ public abstract class MapDataMixin extends WorldSavedData implements IMarkerCach
     private final static HashMap<String, HashMap<String, MapCoord>> _markers = new HashMap<>();
 
     @Override
-    public ArrayList<MapCoord> sledgeMapMarkersAddon$getMarkerCache(String mapName){
-        return new ArrayList<>(_markers.getOrDefault(mapName, new HashMap<>()).values());
+    public Collection<MapCoord> sledgeMapMarkersAddon$getMarkerCache(String mapName){
+        return _markers.getOrDefault(mapName, new HashMap<>()).values();
     }
 
     public MapDataMixin(String string) {

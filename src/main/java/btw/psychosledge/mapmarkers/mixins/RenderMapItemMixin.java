@@ -23,7 +23,7 @@ public abstract class RenderMapItemMixin {
         int n = 0;
         int n2 = 0;
         byte by = 0;
-        ArrayList<MapCoord> mapCoords = ((IMarkerCacheAccessible) mapData).sledgeMapMarkersAddon$getMarkerCache(mapData.mapName);
+        ArrayList<MapCoord> mapCoords = new ArrayList<>(((IMarkerCacheAccessible) mapData).sledgeMapMarkersAddon$getMarkerCache(mapData.mapName));
         for (MapCoord mapCoord : mapCoords) {
             if (mapCoord == null) continue;
             GL11.glPushMatrix();
