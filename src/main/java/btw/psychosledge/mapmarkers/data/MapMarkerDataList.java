@@ -1,6 +1,5 @@
 package btw.psychosledge.mapmarkers.data;
 
-import btw.AddonHandler;
 import net.minecraft.src.NBTTagCompound;
 import net.minecraft.src.NBTTagList;
 import java.util.HashMap;
@@ -20,7 +19,6 @@ public class MapMarkerDataList {
 
     private void loadFromNBT(NBTTagList tagList) {
         mapMarkers.clear();
-        AddonHandler.logMessage("Loading marker data from " + tagList.tagCount() + " tags...");
         for (int iTempCount = 0; iTempCount < tagList.tagCount(); ++iTempCount) {
             NBTTagCompound tempCompound = (NBTTagCompound)tagList.tagAt(iTempCount);
             try {
@@ -28,25 +26,22 @@ public class MapMarkerDataList {
                 if (Objects.equals(newMarker.MarkerId, "")) continue;
                 mapMarkers.putIfAbsent(newMarker.MarkerId, newMarker);
             } catch (Exception e) {
-                AddonHandler.logMessage("bad marker data: " + tempCompound);
+                System.out.println("bad marker data: " + tempCompound);
             }
         }
-        AddonHandler.logMessage("Loaded markers: " + mapMarkers.size());
     }
 
     public NBTTagList saveToNBT() {
         NBTTagList tagList = new NBTTagList("MapMarkers");
-        AddonHandler.logMessage("Saving marker data...");
         for (MapMarkerData mapMarker : mapMarkers.values()) {
             NBTTagCompound tempTagCompound = new NBTTagCompound();
             mapMarker.writeToNBT(tempTagCompound);
             tagList.appendTag(tempTagCompound);
-        }AddonHandler.logMessage("Saved markers: " + mapMarkers.size());
+        }
         return tagList;
     }
 
     public void removeMarkerById(String markerId) {
-        AddonHandler.logMessage("Removing bad marker: " + markerId);
         mapMarkers.remove(markerId);
     }
 

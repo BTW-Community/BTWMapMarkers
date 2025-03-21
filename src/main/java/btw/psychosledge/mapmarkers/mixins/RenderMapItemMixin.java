@@ -25,6 +25,7 @@ public abstract class RenderMapItemMixin {
         byte by = 0;
         ArrayList<MapCoord> mapCoords = ((IMarkerCacheAccessible) mapData).sledgeMapMarkersAddon$getMarkerCache(mapData.mapName);
         for (MapCoord mapCoord : mapCoords) {
+            if (mapCoord == null) continue;
             GL11.glPushMatrix();
             GL11.glTranslatef((float)n2 + (float)mapCoord.centerX / 2.0f + 64.0f, (float)by + (float)mapCoord.centerZ / 2.0f + 64.0f, -0.02f);
             GL11.glRotatef((float)(mapCoord.iconRotation * 360) / 16.0f, 0.0f, 0.0f, 1.0f);

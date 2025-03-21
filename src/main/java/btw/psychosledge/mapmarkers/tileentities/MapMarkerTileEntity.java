@@ -71,13 +71,11 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
     public void Initialize() {
         hidden = true;
         removeNearbyBadMarkers();
-        updateWorldMapMarkers();
     }
 
     @Override
     public void updateEntity(){
         super.updateEntity();
-        updateWorldMapMarkers();
     }
 
     private void removeNearbyBadMarkers() {
@@ -146,8 +144,6 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
     public int getIconIndex() { return _iconIndex; }
     public void setIconIndex(int iconIndex) {
         this._iconIndex = iconIndex;
-
-        updateWorldMapMarkers();
         this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
     }
 
