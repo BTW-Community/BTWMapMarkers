@@ -1,7 +1,10 @@
 package btw.psychosledge.mapmarkers.data;
 
+import btw.AddonHandler;
 import net.minecraft.src.NBTTagCompound;
 import net.minecraft.src.NBTTagList;
+
+import java.io.*;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -26,9 +29,10 @@ public class MapMarkerDataList {
                 if (Objects.equals(newMarker.MarkerId, "")) continue;
                 mapMarkers.putIfAbsent(newMarker.MarkerId, newMarker);
             } catch (Exception e) {
-                System.out.println("bad marker data: " + tempCompound);
+                AddonHandler.logWarning("bad marker data: " + tempCompound);
             }
         }
+        AddonHandler.logger.info("markers loaded: " + mapMarkers.size());
     }
 
     public NBTTagList saveToNBT() {
@@ -47,5 +51,28 @@ public class MapMarkerDataList {
 
     public void addMarker(MapMarkerData markerData) {
         mapMarkers.putIfAbsent(markerData.MarkerId, markerData);
+    }
+
+    public void ReInit(DataInputStream data) {
+        try (ObjectInputStream ois = new ObjectInputStream(data)) {
+            mapMarkers = (HashMap)ois.readObject();
+        }
+        catch (InvalidClassException e){
+            AddonHandler.logWarning("InvalidClassException when loading marker data input stream from packet");
+        }
+        catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public byte[] markersToByteArray() {
+        try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(bos)) {
+            oos.writeObject(mapMarkers);
+            return bos.toByteArray();
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

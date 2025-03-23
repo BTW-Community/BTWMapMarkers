@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -24,11 +25,11 @@ public abstract class MapDataMixin extends WorldSavedData implements IMarkerCach
     @Shadow public byte dimension;
 
     @Unique
-    private final static HashMap<String, HashMap<String, MapCoord>> _markers = new HashMap<>();
+    private final static HashMap<String, ArrayList<MapCoord>> markers = new HashMap<>();
 
     @Override
     public Collection<MapCoord> sledgeMapMarkersAddon$getMarkerCache(String mapName){
-        return _markers.getOrDefault(mapName, new HashMap<>()).values();
+        return markers.getOrDefault(mapName, new ArrayList<>());
     }
 
     public MapDataMixin(String string) {
@@ -37,10 +38,11 @@ public abstract class MapDataMixin extends WorldSavedData implements IMarkerCach
 
     @Inject(method = "updateVisiblePlayers", at = @At("TAIL"))
     private void addMapMarkers(EntityPlayer player, ItemStack par2ItemStack, CallbackInfo ci) {
-        HashMap<String, MapCoord> markerList = _markers.getOrDefault(this.mapName, new HashMap<>());
-        markerList.clear();
-        _markers.putIfAbsent(this.mapName, markerList);
-        for (MapMarkerData markerData : player.worldObj.getData(MAP_MARKER_DATA).mapMarkers.values()) {
+        ArrayList<MapCoord> thisMapMarkers = markers.getOrDefault(mapName, new ArrayList<>());
+        markers.putIfAbsent(mapName, thisMapMarkers);
+        thisMapMarkers.clear();
+        Collection<MapMarkerData> worldMarkers = player.worldObj.getData(MAP_MARKER_DATA).mapMarkers.values();
+        for (MapMarkerData markerData : worldMarkers) {
             if (IsLocationInMap(markerData.XPos, markerData.ZPos)) {
                 func_82567_a(markerData.IconIndex, player.worldObj, markerData.MarkerId, markerData.XPos, markerData.ZPos, 1);
             }
@@ -90,6 +92,6 @@ public abstract class MapDataMixin extends WorldSavedData implements IMarkerCach
             }
         }
 
-        _markers.get(this.mapName).putIfAbsent(markerId, new MapCoord(null, (byte)iconIndex, var13, var14, var15));
+        markers.get(mapName).add(new MapCoord(null, (byte)iconIndex, var13, var14, var15));
     }
 }

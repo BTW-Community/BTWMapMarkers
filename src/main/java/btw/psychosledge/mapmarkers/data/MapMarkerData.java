@@ -2,7 +2,9 @@ package btw.psychosledge.mapmarkers.data;
 
 import net.minecraft.src.NBTTagCompound;
 
-public class MapMarkerData {
+import java.io.Serializable;
+
+public class MapMarkerData implements Serializable {
     public String MarkerId;
     public int XPos;
     public int YPos;
