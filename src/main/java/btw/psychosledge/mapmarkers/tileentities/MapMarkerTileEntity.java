@@ -1,6 +1,7 @@
 package btw.psychosledge.mapmarkers.tileentities;
 
 import btw.block.tileentity.TileEntityDataPacketHandler;
+import btw.psychosledge.mapmarkers.MapMarkersAddon;
 import btw.psychosledge.mapmarkers.data.MapMarkerData;
 import net.minecraft.src.*;
 
@@ -87,28 +88,28 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
                     && existingMarker.ZPos >= this.zCoord - 64
                     && existingMarker.ZPos <= this.zCoord + 64
                     && this.worldObj.getBlockId(existingMarker.XPos, existingMarker.YPos, existingMarker.ZPos) != mapMarker.blockID) {
-                badMarkerIds.add(existingMarker.MarkerId);
+                badMarkerIds.add(existingMarker.toString());
             }
         }
         for (String badMarkerId : badMarkerIds) {
             markers.removeMarkerById(badMarkerId);
+            MapMarkersAddon.sendRemovedMapMarkerToAllPlayers(badMarkerId);
         }
     }
 
     private void updateWorldMapMarkers() {
         if (this.worldObj != null && !this.worldObj.isRemote) {
 
-            if (hidden) {
-                worldObj.getData(MAP_MARKER_DATA).removeMarkerById(this.GetMarkerId());
-            } else {
-                MapMarkerData markerData = new MapMarkerData(this.GetMarkerId(), this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
+            if (!hidden) {
+                MapMarkerData markerData = new MapMarkerData(this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
                 worldObj.getData(MAP_MARKER_DATA).addMarker(markerData);
+                MapMarkersAddon.sendAddedMapMarkerToAllPlayers(markerData);
             }
        }
     }
 
     public String GetMarkerId() {
-        return "SMM-Marker " + this.xCoord + "." + this.yCoord + '.' + this.zCoord;
+        return this.xCoord + "," + this.yCoord + "," + this.zCoord + "," + this._iconIndex;
     }
 
     public void setFlagRotation (int rotation)

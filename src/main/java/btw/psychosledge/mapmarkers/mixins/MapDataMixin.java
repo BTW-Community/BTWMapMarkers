@@ -44,7 +44,7 @@ public abstract class MapDataMixin extends WorldSavedData implements IMarkerCach
         Collection<MapMarkerData> worldMarkers = player.worldObj.getData(MAP_MARKER_DATA).mapMarkers.values();
         for (MapMarkerData markerData : worldMarkers) {
             if (IsLocationInMap(markerData.XPos, markerData.ZPos)) {
-                func_82567_a(markerData.IconIndex, player.worldObj, markerData.MarkerId, markerData.XPos, markerData.ZPos, 1);
+                func_82567_a(markerData.IconIndex, player.worldObj, markerData.toString(), markerData.XPos, markerData.ZPos, 1);
             }
         }
     }

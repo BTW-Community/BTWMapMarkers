@@ -4,9 +4,9 @@ import btw.AddonHandler;
 import net.minecraft.src.NBTTagCompound;
 import net.minecraft.src.NBTTagList;
 
-import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class MapMarkerDataList {
     public HashMap<String, MapMarkerData> mapMarkers = new HashMap<>();
@@ -25,14 +25,14 @@ public class MapMarkerDataList {
         for (int iTempCount = 0; iTempCount < tagList.tagCount(); ++iTempCount) {
             NBTTagCompound tempCompound = (NBTTagCompound)tagList.tagAt(iTempCount);
             try {
+                if (tempCompound.hasNoTags()) continue;
                 MapMarkerData newMarker = new MapMarkerData(tempCompound);
-                if (Objects.equals(newMarker.MarkerId, "")) continue;
-                mapMarkers.putIfAbsent(newMarker.MarkerId, newMarker);
+                mapMarkers.putIfAbsent(newMarker.toString(), newMarker);
             } catch (Exception e) {
                 AddonHandler.logWarning("bad marker data: " + tempCompound);
             }
         }
-        AddonHandler.logger.info("markers loaded: " + mapMarkers.size());
+        AddonHandler.logMessage("markers loaded: " + mapMarkers.size());
     }
 
     public NBTTagList saveToNBT() {
@@ -50,29 +50,25 @@ public class MapMarkerDataList {
     }
 
     public void addMarker(MapMarkerData markerData) {
-        mapMarkers.putIfAbsent(markerData.MarkerId, markerData);
-    }
-
-    public void ReInit(DataInputStream data) {
-        try (ObjectInputStream ois = new ObjectInputStream(data)) {
-            mapMarkers = (HashMap)ois.readObject();
-        }
-        catch (InvalidClassException e){
-            AddonHandler.logWarning("InvalidClassException when loading marker data input stream from packet");
-        }
-        catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        mapMarkers.putIfAbsent(markerData.toString(), markerData);
     }
 
     public byte[] markersToByteArray() {
-        try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            ObjectOutputStream oos = new ObjectOutputStream(bos)) {
-            oos.writeObject(mapMarkers);
-            return bos.toByteArray();
+        ArrayList<String> markerStrings = new ArrayList<>();
+        for(MapMarkerData marker : mapMarkers.values()){
+            markerStrings.add(marker.toString());
         }
-        catch (IOException e) {
-            throw new RuntimeException(e);
+        String markers = String.join("|", markerStrings);
+        return markers.getBytes();
+    }
+
+    public void loadFromBytes(byte[] bytes){
+        String string = new String(bytes, StandardCharsets.UTF_8);
+        String[] parts = string.split("\\|");
+        for (String part : parts){
+            if (!part.contains(",")) continue;
+            MapMarkerData marker = new MapMarkerData(part);
+            mapMarkers.putIfAbsent(marker.toString(), marker);
         }
     }
 }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 @Mixin(MapItemRenderer.class)
 public abstract class RenderMapItemMixin {
     @Unique
-    private static final ResourceLocation customMapIcons = new ResourceLocation("mapmarkers:/misc/mapmarkericons.png");
+    private static final ResourceLocation customMapIcons = new ResourceLocation("mapmarkers", "/misc/mapmarkericons.png");
 
     @Inject(method = "renderMap",
     at = @At(value = "INVOKE", target = "Lorg/lwjgl/opengl/GL11;glPushMatrix()V", ordinal = 1))
