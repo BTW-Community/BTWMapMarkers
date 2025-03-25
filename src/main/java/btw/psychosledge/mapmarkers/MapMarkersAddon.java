@@ -19,6 +19,8 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.src.*;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import static btw.crafting.recipe.RecipeManager.addCauldronRecipe;
 import static btw.crafting.recipe.RecipeManager.addShapelessRecipe;
@@ -46,6 +48,7 @@ public class MapMarkersAddon extends BTWAddon {
             })
             .writeNBT((tag, markerList) -> tag.setTag(SLEDGE_MAP_MARKERS_NAME, markerList.saveToNBT()))
             .build();
+    public static final HashMap<String, ArrayList<MapCoord>> MAP_SPECIFIC_MARKERS = new HashMap<>();
 
     @Override
     public void initialize() {

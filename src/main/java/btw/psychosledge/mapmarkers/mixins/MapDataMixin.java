@@ -1,7 +1,6 @@
 package btw.psychosledge.mapmarkers.mixins;
 
 import btw.psychosledge.mapmarkers.data.MapMarkerData;
-import btw.psychosledge.mapmarkers.interfaces.IMarkerCacheAccessible;
 import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -12,39 +11,41 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 
 import static btw.psychosledge.mapmarkers.MapMarkersAddon.MAP_MARKER_DATA;
+import static btw.psychosledge.mapmarkers.MapMarkersAddon.MAP_SPECIFIC_MARKERS;
 
 @Mixin(MapData.class)
-public abstract class MapDataMixin extends WorldSavedData implements IMarkerCacheAccessible {
+public abstract class MapDataMixin extends WorldSavedData {
 
     @Shadow public int xCenter;
     @Shadow public int zCenter;
     @Shadow public byte scale;
     @Shadow public byte dimension;
 
-    @Unique
-    private final static HashMap<String, ArrayList<MapCoord>> markers = new HashMap<>();
-
-    @Override
-    public Collection<MapCoord> sledgeMapMarkersAddon$getMarkerCache(String mapName){
-        return markers.getOrDefault(mapName, new ArrayList<>());
-    }
-
     public MapDataMixin(String string) {
         super(string);
     }
 
+    @Inject(method = "updateMPMapData", at = @At(value = "INVOKE", target = "Ljava/util/Map;clear()V"))
+    private void addMapMarkersMP(byte[] bytes, CallbackInfo ci) {
+        addMarkersToMapData(Minecraft.getMinecraft().theWorld);
+    }
+
     @Inject(method = "updateVisiblePlayers", at = @At("TAIL"))
-    private void addMapMarkers(EntityPlayer player, ItemStack par2ItemStack, CallbackInfo ci) {
-        ArrayList<MapCoord> thisMapMarkers = markers.getOrDefault(mapName, new ArrayList<>());
-        markers.putIfAbsent(mapName, thisMapMarkers);
+    private void addMapMarkersSP(EntityPlayer player, ItemStack itemStack, CallbackInfo ci) {
+        addMarkersToMapData((WorldClient) player.worldObj);
+    }
+
+    @Unique
+    private void addMarkersToMapData(WorldClient world) {
+        ArrayList<MapCoord> thisMapMarkers = MAP_SPECIFIC_MARKERS.getOrDefault(mapName, new ArrayList<>());
+        MAP_SPECIFIC_MARKERS.putIfAbsent(mapName, thisMapMarkers);
         thisMapMarkers.clear();
-        Collection<MapMarkerData> worldMarkers = player.worldObj.getData(MAP_MARKER_DATA).mapMarkers.values();
+        Collection<MapMarkerData> worldMarkers = world.getData(MAP_MARKER_DATA).mapMarkers.values();
         for (MapMarkerData markerData : worldMarkers) {
             if (IsLocationInMap(markerData.XPos, markerData.ZPos)) {
-                func_82567_a(markerData.IconIndex, player.worldObj, markerData.toString(), markerData.XPos, markerData.ZPos, 1);
+                func_82567_a(markerData.IconIndex, world, markerData.XPos, markerData.ZPos, 1);
             }
         }
     }
@@ -61,7 +62,7 @@ public abstract class MapDataMixin extends WorldSavedData implements IMarkerCach
     }
 
     @Unique
-    private void func_82567_a(int iconIndex, World world, String markerId, double xPos, double zPos, double rotation) {
+    private void func_82567_a(int iconIndex, World world, double xPos, double zPos, double rotation) {
         byte var15;
         int var10 = 1 << this.scale;
         float var11 = (float)(xPos - (double)this.xCenter) / (float)var10;
@@ -92,6 +93,6 @@ public abstract class MapDataMixin extends WorldSavedData implements IMarkerCach
             }
         }
 
-        markers.get(mapName).add(new MapCoord(null, (byte)iconIndex, var13, var14, var15));
+        MAP_SPECIFIC_MARKERS.get(mapName).add(new MapCoord(null, (byte)iconIndex, var13, var14, var15));
     }
 }

@@ -4,9 +4,9 @@
   "package": "btw.psychosledge.mapmarkers.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "MapDataMixin"
   ],
   "client": [
+    "MapDataMixin",
     "RenderMapItemMixin",
     "RenderItemFrameMixin"
   ],

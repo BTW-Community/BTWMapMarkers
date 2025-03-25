@@ -1,6 +1,6 @@
 package btw.psychosledge.mapmarkers.mixins;
 
-import btw.psychosledge.mapmarkers.interfaces.IMarkerCacheAccessible;
+import btw.psychosledge.mapmarkers.MapMarkersAddon;
 import net.minecraft.src.*;
 import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.*;
@@ -23,7 +23,7 @@ public abstract class RenderMapItemMixin {
         int n = 0;
         int n2 = 0;
         byte by = 0;
-        ArrayList<MapCoord> mapCoords = new ArrayList<>(((IMarkerCacheAccessible) mapData).sledgeMapMarkersAddon$getMarkerCache(mapData.mapName));
+        ArrayList<MapCoord> mapCoords = new ArrayList<>(MapMarkersAddon.MAP_SPECIFIC_MARKERS.getOrDefault(mapData.mapName, new ArrayList<>()));
         for (MapCoord mapCoord : mapCoords) {
             if (mapCoord == null) continue;
             GL11.glPushMatrix();
