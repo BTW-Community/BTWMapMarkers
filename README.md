@@ -23,7 +23,7 @@ The flag colors correspond with the markers on the map.
 
 ![readme-all-colors.png](readme-all-colors.png)
 
-When the maps are in an item-frame, you can right-click to switch them to a seamless display. This makes the connected maps look like one bigger map.
+When the maps are in an item-frame, you can right-click to switch them to a seamless display. This makes the connected maps look like one bigger map. This was something that previously existed as part of the [Deco](https://github.com/BTW-Community/Deco-Addon-2) addon and will be removed from this addon if/when it is included in either an update for Deco or as part of the core of BTW.
 
 ![readme-maps-frames.png](readme-maps-frames.png)
 ![readme-maps-seamless.png](readme-maps-seamless.png)
