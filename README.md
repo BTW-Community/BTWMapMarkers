@@ -1,12 +1,14 @@
 # BTW Map Markers
 Adds Map Marker flags that can be placed anywhere in the overworld to add colored markers to in game maps. Or placed anywhere for decoration.
 
-The recipe is shapeless consisting of paper and either a stick(shaft) or any type of wood moulding. 
+The recipe is shapeless consisting of paper and either a stick(shaft) or any type of wood moulding.
+
 ![readme-crafting.png](readme-crafting.png)
 
 Dye can be applied to any flag to change colors. In a cauldron, 16 flags can be dyed with a single dye for added efficiency.
 
 ![readme-dye.png](readme-dye.png)
+
 ![readme-cauldron-png](readme-cauldron.png)
 
 All 16 standard colors are supported using standard dyes
@@ -25,3 +27,5 @@ When the maps are in an item-frame, you can right-click to switch them to a seam
 
 ![readme-maps-frames.png](readme-maps-frames.png)
 ![readme-maps-seamless.png](readme-maps-seamless.png)
+
+Once a marker has been activated by a valid map (one containing the area containing th marker), it will become visible on all maps of that area regardless of scale or which player has activated the map or the marker.
