@@ -4,8 +4,6 @@ import btw.AddonHandler;
 import net.minecraft.src.NBTTagCompound;
 import net.minecraft.src.NBTTagList;
 
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MapMarkerDataList {
@@ -53,22 +51,4 @@ public class MapMarkerDataList {
         mapMarkers.putIfAbsent(markerData.toString(), markerData);
     }
 
-    public byte[] markersToByteArray() {
-        ArrayList<String> markerStrings = new ArrayList<>();
-        for(MapMarkerData marker : mapMarkers.values()){
-            markerStrings.add(marker.toString());
-        }
-        String markers = String.join("|", markerStrings);
-        return markers.getBytes();
-    }
-
-    public void loadFromBytes(byte[] bytes){
-        String string = new String(bytes, StandardCharsets.UTF_8);
-        String[] parts = string.split("\\|");
-        for (String part : parts){
-            if (!part.contains(",")) continue;
-            MapMarkerData marker = new MapMarkerData(part);
-            mapMarkers.putIfAbsent(marker.toString(), marker);
-        }
-    }
 }

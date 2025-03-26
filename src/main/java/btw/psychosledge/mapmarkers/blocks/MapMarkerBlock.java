@@ -1,6 +1,5 @@
 package btw.psychosledge.mapmarkers.blocks;
 
-import btw.psychosledge.mapmarkers.MapMarkersAddon;
 import btw.psychosledge.mapmarkers.tileentities.MapMarkerTileEntity;
 import btw.world.util.BlockPos;
 import btw.world.util.WorldUtils;
@@ -74,9 +73,8 @@ public class MapMarkerBlock extends BlockContainer {
     @Override
     public void breakBlock(World world, int x, int y, int z, int par5, int par6) {
         MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
-        if (tile != null) {
+        if (tile != null && !world.isRemote) {
             world.getData(MAP_MARKER_DATA).removeMarkerById(tile.GetMarkerId());
-            MapMarkersAddon.sendRemovedMapMarkerToAllPlayers(tile.GetMarkerId());
         }
         super.breakBlock(world, x, y, z, par5, par6);
     }
@@ -97,8 +95,7 @@ public class MapMarkerBlock extends BlockContainer {
         int itemID = mapMarkerItem.itemID;
         MapMarkerTileEntity tile = (MapMarkerTileEntity) world.getBlockTileEntity(x, y, z);
         if (tile != null) {
-            world.getData(MAP_MARKER_DATA).removeMarkerById(tile.GetMarkerId());
-            MapMarkersAddon.sendRemovedMapMarkerToAllPlayers(tile.GetMarkerId());
+            if (!world.isRemote) world.getData(MAP_MARKER_DATA).removeMarkerById(tile.GetMarkerId());
             int iconIndex = tile.getIconIndex();
             ItemStack stackDropped = new ItemStack(itemID, 1, iconIndex);
             dropBlockAsItem_do(world, x, y, z, stackDropped);

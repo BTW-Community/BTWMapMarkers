@@ -27,18 +27,13 @@ public abstract class MapDataMixin extends WorldSavedData {
         super(string);
     }
 
-    @Inject(method = "updateMPMapData", at = @At(value = "INVOKE", target = "Ljava/util/Map;clear()V"))
-    private void addMapMarkersMP(byte[] bytes, CallbackInfo ci) {
-        addMarkersToMapData(Minecraft.getMinecraft().theWorld);
-    }
-
     @Inject(method = "updateVisiblePlayers", at = @At("TAIL"))
     private void addMapMarkersSP(EntityPlayer player, ItemStack itemStack, CallbackInfo ci) {
-        addMarkersToMapData((WorldClient) player.worldObj);
+        addMarkersToMapData(player.worldObj);
     }
 
     @Unique
-    private void addMarkersToMapData(WorldClient world) {
+    private void addMarkersToMapData(World world) {
         ArrayList<MapCoord> thisMapMarkers = MAP_SPECIFIC_MARKERS.getOrDefault(mapName, new ArrayList<>());
         MAP_SPECIFIC_MARKERS.putIfAbsent(mapName, thisMapMarkers);
         thisMapMarkers.clear();
@@ -93,6 +88,6 @@ public abstract class MapDataMixin extends WorldSavedData {
             }
         }
 
-        MAP_SPECIFIC_MARKERS.get(mapName).add(new MapCoord(null, (byte)iconIndex, var13, var14, var15));
+        MAP_SPECIFIC_MARKERS.get(mapName).add( new MapCoord(null, (byte)iconIndex, var13, var14, var15));
     }
 }

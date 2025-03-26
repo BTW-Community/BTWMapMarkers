@@ -1,7 +1,6 @@
 package btw.psychosledge.mapmarkers.tileentities;
 
 import btw.block.tileentity.TileEntityDataPacketHandler;
-import btw.psychosledge.mapmarkers.MapMarkersAddon;
 import btw.psychosledge.mapmarkers.data.MapMarkerData;
 import net.minecraft.src.*;
 
@@ -71,7 +70,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
 
     public void Initialize() {
         hidden = true;
-        removeNearbyBadMarkers();
+        if (!worldObj.isRemote) removeNearbyBadMarkers();
     }
 
     @Override
@@ -93,7 +92,6 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
         }
         for (String badMarkerId : badMarkerIds) {
             markers.removeMarkerById(badMarkerId);
-            MapMarkersAddon.sendRemovedMapMarkerToAllPlayers(badMarkerId);
         }
     }
 
@@ -103,7 +101,6 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
             if (!hidden) {
                 MapMarkerData markerData = new MapMarkerData(this.xCoord, this.yCoord, this.zCoord, this._iconIndex);
                 worldObj.getData(MAP_MARKER_DATA).addMarker(markerData);
-                MapMarkersAddon.sendAddedMapMarkerToAllPlayers(markerData);
             }
        }
     }

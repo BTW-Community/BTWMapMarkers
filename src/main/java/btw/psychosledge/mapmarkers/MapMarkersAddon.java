@@ -5,12 +5,10 @@ import btw.BTWAddon;
 import btw.inventory.util.InventoryUtils;
 import btw.item.BTWItems;
 import btw.psychosledge.mapmarkers.blocks.MapMarkerBlock;
-import btw.psychosledge.mapmarkers.data.MapMarkerData;
 import btw.psychosledge.mapmarkers.data.MapMarkerDataList;
 import btw.psychosledge.mapmarkers.items.MapMarkerItem;
 import btw.psychosledge.mapmarkers.tileentities.MapMarkerTileEntity;
 import btw.util.color.ColorHelper;
-import btw.world.util.WorldUtils;
 import btw.world.util.data.DataEntry;
 import btw.world.util.data.DataProvider;
 import net.fabricmc.api.EnvType;
@@ -63,30 +61,21 @@ public class MapMarkersAddon extends BTWAddon {
 
     @Environment(value= EnvType.CLIENT)
     private void initClientPacketInfo() {
-        registerPacketHandler(modID + "|markers", (packet, player) -> {
-            if (packet.channel.startsWith("mapmarkers|markers")) {
+        registerPacketHandler(modID + "|mapList", (packet, player) -> {
+            if (packet.channel.startsWith(modID + "|mapList")) {
                 ByteArrayInputStream stream = new ByteArrayInputStream(packet.data);
-                MapMarkerDataList markerDataList = player.worldObj.getData(MAP_MARKER_DATA);
-                markerDataList.loadFromBytes(stream.readAllBytes());
-                AddonHandler.logMessage("Marker count after load: " + markerDataList.mapMarkers.size());
-            }
-        });
-        registerPacketHandler(modID + "|added", (packet, player) -> {
-            if (packet.channel.startsWith("mapmarkers|added")) {
-                ByteArrayInputStream stream = new ByteArrayInputStream(packet.data);
-                MapMarkerDataList markerDataList = player.worldObj.getData(MAP_MARKER_DATA);
-                byte[] bytes = stream.readAllBytes();
-                markerDataList.addMarker(new MapMarkerData(new String(bytes, StandardCharsets.UTF_8)));
-                AddonHandler.logMessage("Marker count after add: " + markerDataList.mapMarkers.size());
-            }
-        });
-        registerPacketHandler(modID + "|removed", (packet, player) -> {
-            if (packet.channel.startsWith("mapmarkers|removed")) {
-                ByteArrayInputStream stream = new ByteArrayInputStream(packet.data);
-                String markerId = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
-                MapMarkerDataList markerDataList = player.worldObj.getData(MAP_MARKER_DATA);
-                markerDataList.removeMarkerById(markerId);
-                AddonHandler.logMessage("Marker count after remove: " + markerDataList.mapMarkers.size());
+                String received = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
+                String mapName = received.split(":")[0];
+                ArrayList<MapCoord> mapCoords = new ArrayList<>();
+                for (String rawCoord : received.split(":")[1].split("\\|")) {
+                    String[] coordParts = rawCoord.split(",");
+                    int iconIndex = Integer.parseInt(coordParts[0]);
+                    int xPos = Integer.parseInt(coordParts[1]);
+                    int zPos = Integer.parseInt(coordParts[2]);
+                    int rotation = Integer.parseInt(coordParts[3]);
+                    mapCoords.add(new MapCoord(null, (byte) iconIndex, (byte) xPos, (byte) zPos, (byte) rotation));
+                }
+                MAP_SPECIFIC_MARKERS.put(mapName, mapCoords);
             }
         });
     }
@@ -102,21 +91,23 @@ public class MapMarkersAddon extends BTWAddon {
         sendAllWorldMarkersToPlayer(serverHandler);
     }
 
-    private void sendAllWorldMarkersToPlayer(NetServerHandler serverHandler) {
-        MapMarkerDataList data = MinecraftServer.getServer().worldServers[0].getData(MAP_MARKER_DATA);
-        byte[] markerBytes = data.markersToByteArray();
-        AddonHandler.logMessage("sending player update - world marker count: " + data.mapMarkers.size());
-        WorldUtils.sendPacketToPlayer(serverHandler, new Packet250CustomPayload(modID + "|markers", markerBytes));
+    private void sendAllWorldMarkersToPlayer(NetServerHandler serverHandler){
+        for (String mapName : MAP_SPECIFIC_MARKERS.keySet()) {
+            sendMapMarkersToPlayer(mapName, serverHandler);
+        }
     }
 
-    public static void sendAddedMapMarkerToAllPlayers(MapMarkerData marker){
-        AddonHandler.logMessage("sending broadcast update - world marker added: " + marker.toString());
-        MinecraftServer.getServer().getConfigurationManager().sendPacketToAllPlayers(new Packet250CustomPayload("mapmarkers|added", marker.toString().getBytes()));
-    }
-
-    public static void sendRemovedMapMarkerToAllPlayers(String markerId){
-        AddonHandler.logMessage("sending broadcast update - world marker removed: " + markerId);
-        MinecraftServer.getServer().getConfigurationManager().sendPacketToAllPlayers(new Packet250CustomPayload("mapmarkers|removed", markerId.getBytes()));
+    public static void sendMapMarkersToPlayer(String mapName, NetServerHandler netServerHandler) {
+        ArrayList<MapCoord> markers = MAP_SPECIFIC_MARKERS.getOrDefault(mapName, new ArrayList<>());
+        if (markers.isEmpty()) return;
+        ArrayList<String> markerStrings = new ArrayList<>();
+        for (MapCoord marker : markers) {
+            markerStrings.add(marker.iconSize + "," + marker.centerX + "," + marker.centerZ + "," + marker.iconRotation);
+        }
+        String markerString = String.join("|", markerStrings);
+        markerString = mapName + ":" + markerString;
+        Packet250CustomPayload packet = new Packet250CustomPayload("mapmarkers|mapList", markerString.getBytes());
+        netServerHandler.sendPacketToPlayer(packet);
     }
 
     private void AddDefinitions() {
