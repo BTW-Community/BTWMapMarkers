@@ -106,7 +106,7 @@ public class MapMarkerTileEntity extends TileEntity implements TileEntityDataPac
     }
 
     public String GetMarkerId() {
-        return this.xCoord + "," + this.yCoord + "," + this.zCoord + "," + this._iconIndex;
+        return this.xCoord + "." + this.yCoord + "." + this.zCoord + "." + this._iconIndex;
     }
 
     public void setFlagRotation (int rotation)

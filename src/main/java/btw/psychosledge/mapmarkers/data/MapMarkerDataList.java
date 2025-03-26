@@ -1,10 +1,14 @@
 package btw.psychosledge.mapmarkers.data;
 
 import btw.AddonHandler;
+import btw.psychosledge.mapmarkers.MapMarkersAddon;
 import net.minecraft.src.NBTTagCompound;
 import net.minecraft.src.NBTTagList;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class MapMarkerDataList {
     public HashMap<String, MapMarkerData> mapMarkers = new HashMap<>();
@@ -45,6 +49,9 @@ public class MapMarkerDataList {
 
     public void removeMarkerById(String markerId) {
         mapMarkers.remove(markerId);
+        for (Map.Entry<String, ArrayList<MarkerCoord>> entry : MapMarkersAddon.MAP_SPECIFIC_MARKERS.entrySet()){
+            entry.getValue().removeIf(markerCoord -> Objects.equals(markerCoord.markerId(), markerId));
+        }
     }
 
     public void addMarker(MapMarkerData markerData) {
