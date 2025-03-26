@@ -1,6 +1,7 @@
 package btw.psychosledge.mapmarkers.mixins;
 
 import btw.psychosledge.mapmarkers.data.MapMarkerData;
+import btw.psychosledge.mapmarkers.data.MarkerCoord;
 import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -34,13 +35,13 @@ public abstract class MapDataMixin extends WorldSavedData {
 
     @Unique
     private void addMarkersToMapData(World world) {
-        ArrayList<MapCoord> thisMapMarkers = MAP_SPECIFIC_MARKERS.getOrDefault(mapName, new ArrayList<>());
+        ArrayList<MarkerCoord> thisMapMarkers = MAP_SPECIFIC_MARKERS.getOrDefault(mapName, new ArrayList<>());
         MAP_SPECIFIC_MARKERS.putIfAbsent(mapName, thisMapMarkers);
         thisMapMarkers.clear();
         Collection<MapMarkerData> worldMarkers = world.getData(MAP_MARKER_DATA).mapMarkers.values();
         for (MapMarkerData markerData : worldMarkers) {
             if (IsLocationInMap(markerData.XPos, markerData.ZPos)) {
-                func_82567_a(markerData.IconIndex, world, markerData.XPos, markerData.ZPos, 1);
+                func_82567_a(markerData.IconIndex, world, markerData.toString(), markerData.XPos, markerData.ZPos, 1);
             }
         }
     }
@@ -57,7 +58,7 @@ public abstract class MapDataMixin extends WorldSavedData {
     }
 
     @Unique
-    private void func_82567_a(int iconIndex, World world, double xPos, double zPos, double rotation) {
+    private void func_82567_a(int iconIndex, World world, String markerId, double xPos, double zPos, double rotation) {
         byte var15;
         int var10 = 1 << this.scale;
         float var11 = (float)(xPos - (double)this.xCenter) / (float)var10;
@@ -88,6 +89,6 @@ public abstract class MapDataMixin extends WorldSavedData {
             }
         }
 
-        MAP_SPECIFIC_MARKERS.get(mapName).add( new MapCoord(null, (byte)iconIndex, var13, var14, var15));
+        MAP_SPECIFIC_MARKERS.get(mapName).add(new MarkerCoord(markerId, new MapCoord(null, (byte)iconIndex, var13, var14, var15)));
     }
 }

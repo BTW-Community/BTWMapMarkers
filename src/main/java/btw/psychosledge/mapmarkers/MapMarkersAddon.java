@@ -6,6 +6,7 @@ import btw.inventory.util.InventoryUtils;
 import btw.item.BTWItems;
 import btw.psychosledge.mapmarkers.blocks.MapMarkerBlock;
 import btw.psychosledge.mapmarkers.data.MapMarkerDataList;
+import btw.psychosledge.mapmarkers.data.MarkerCoord;
 import btw.psychosledge.mapmarkers.items.MapMarkerItem;
 import btw.psychosledge.mapmarkers.tileentities.MapMarkerTileEntity;
 import btw.util.color.ColorHelper;
@@ -46,7 +47,7 @@ public class MapMarkersAddon extends BTWAddon {
             })
             .writeNBT((tag, markerList) -> tag.setTag(SLEDGE_MAP_MARKERS_NAME, markerList.saveToNBT()))
             .build();
-    public static final HashMap<String, ArrayList<MapCoord>> MAP_SPECIFIC_MARKERS = new HashMap<>();
+    public static final HashMap<String, ArrayList<MarkerCoord>> MAP_SPECIFIC_MARKERS = new HashMap<>();
 
     @Override
     public void initialize() {
@@ -66,16 +67,17 @@ public class MapMarkersAddon extends BTWAddon {
                 ByteArrayInputStream stream = new ByteArrayInputStream(packet.data);
                 String received = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
                 String mapName = received.split(":")[0];
-                ArrayList<MapCoord> mapCoords = new ArrayList<>();
+                ArrayList<MarkerCoord> markerCoords = new ArrayList<>();
                 for (String rawCoord : received.split(":")[1].split("\\|")) {
                     String[] coordParts = rawCoord.split(",");
-                    int iconIndex = Integer.parseInt(coordParts[0]);
-                    int xPos = Integer.parseInt(coordParts[1]);
-                    int zPos = Integer.parseInt(coordParts[2]);
-                    int rotation = Integer.parseInt(coordParts[3]);
-                    mapCoords.add(new MapCoord(null, (byte) iconIndex, (byte) xPos, (byte) zPos, (byte) rotation));
+                    String markerId = coordParts[0];
+                    int iconIndex = Integer.parseInt(coordParts[1]);
+                    int xPos = Integer.parseInt(coordParts[2]);
+                    int zPos = Integer.parseInt(coordParts[3]);
+                    int rotation = Integer.parseInt(coordParts[4]);
+                    markerCoords.add(new MarkerCoord(markerId, new MapCoord(null, (byte) iconIndex, (byte) xPos, (byte) zPos, (byte) rotation)));
                 }
-                MAP_SPECIFIC_MARKERS.put(mapName, mapCoords);
+                MAP_SPECIFIC_MARKERS.put(mapName, markerCoords);
             }
         });
     }
@@ -98,11 +100,12 @@ public class MapMarkersAddon extends BTWAddon {
     }
 
     public static void sendMapMarkersToPlayer(String mapName, NetServerHandler netServerHandler) {
-        ArrayList<MapCoord> markers = MAP_SPECIFIC_MARKERS.getOrDefault(mapName, new ArrayList<>());
+        ArrayList<MarkerCoord> markers = MAP_SPECIFIC_MARKERS.getOrDefault(mapName, new ArrayList<>());
         if (markers.isEmpty()) return;
         ArrayList<String> markerStrings = new ArrayList<>();
-        for (MapCoord marker : markers) {
-            markerStrings.add(marker.iconSize + "," + marker.centerX + "," + marker.centerZ + "," + marker.iconRotation);
+        for (MarkerCoord marker : markers) {
+            MapCoord coord = marker.mapCoord();
+            markerStrings.add(marker.markerId() + "," + coord.iconSize + "," + coord.centerX + "," + coord.centerZ + "," + coord.iconRotation);
         }
         String markerString = String.join("|", markerStrings);
         markerString = mapName + ":" + markerString;

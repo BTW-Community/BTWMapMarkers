@@ -19,13 +19,9 @@ public class MapMarkerData {
         loadFromNBT(tempCompound);
     }
 
-    public MapMarkerData(String string) {
-        loadFromString(string);
-    }
-
     @Override
     public String toString() {
-        return XPos + "," + YPos + "," + ZPos + "," + IconIndex;
+        return XPos + "." + YPos + "." + ZPos + "." + IconIndex;
     }
 
     public void writeToNBT(NBTTagCompound tagCompound){
@@ -40,13 +36,5 @@ public class MapMarkerData {
         YPos = tagCompound.getInteger("YPos");
         ZPos = tagCompound.getInteger("ZPos");
         IconIndex = tagCompound.getInteger("IconIndex");
-    }
-
-    private void loadFromString(String string){
-        String[] parts = string.split(",");
-        XPos = Integer.parseInt(parts[0]);
-        YPos = Integer.parseInt(parts[1]);
-        ZPos = Integer.parseInt(parts[2]);
-        IconIndex = Integer.parseInt(parts[3]);
     }
 }

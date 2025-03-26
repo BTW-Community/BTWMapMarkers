@@ -1,6 +1,7 @@
 package btw.psychosledge.mapmarkers.mixins;
 
 import btw.psychosledge.mapmarkers.MapMarkersAddon;
+import btw.psychosledge.mapmarkers.data.MarkerCoord;
 import net.minecraft.src.*;
 import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.*;
@@ -23,9 +24,10 @@ public abstract class RenderMapItemMixin {
         int n = 0;
         int n2 = 0;
         byte by = 0;
-        ArrayList<MapCoord> mapCoords = new ArrayList<>(MapMarkersAddon.MAP_SPECIFIC_MARKERS.getOrDefault(mapData.mapName, new ArrayList<>()));
-        for (MapCoord mapCoord : mapCoords) {
-            if (mapCoord == null) continue;
+        ArrayList<MarkerCoord> markerCoords = new ArrayList<>(MapMarkersAddon.MAP_SPECIFIC_MARKERS.getOrDefault(mapData.mapName, new ArrayList<>()));
+        for (MarkerCoord markerCoord : markerCoords) {
+            if (markerCoord == null) continue;
+            MapCoord mapCoord = markerCoord.mapCoord();
             GL11.glPushMatrix();
             GL11.glTranslatef((float)n2 + (float)mapCoord.centerX / 2.0f + 64.0f, (float)by + (float)mapCoord.centerZ / 2.0f + 64.0f, -0.02f);
             GL11.glRotatef((float)(mapCoord.iconRotation * 360) / 16.0f, 0.0f, 0.0f, 1.0f);
